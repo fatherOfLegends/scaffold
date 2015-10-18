@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CollapsingToolbarTabLayout">
+        <attr name="scaffoldExpandedTitleMargin" format="dimension"/>
+        <attr name="scaffoldExpandedTitleMarginStart" format="dimension"/>
+        <attr name="scaffoldExpandedTitleMarginTop" format="dimension"/>
+        <attr name="scaffoldExpandedTitleMarginEnd" format="dimension"/>
+        <attr name="scaffoldExpandedTitleMarginBottom" format="dimension"/>
+        <attr name="scaffoldExpandedTitleTextAppearance" format="reference"/>
+        <attr name="scaffoldCollapsedTitleTextAppearance" format="reference"/>
+        <attr name="scaffoldContentScrim" format="color"/>
+        <attr name="scaffoldStatusBarScrim" format="color"/>
+        <attr name="scaffoldToolbarId" format="reference"/>
+        <attr name="scaffoldCollapsedTitleGravity">
+            <flag name="top" value="0x30"/>
+            <flag name="bottom" value="0x50"/>
+            <flag name="left" value="0x03"/>
+            <flag name="right" value="0x05"/>
+            <flag name="center_vertical" value="0x10"/>
+            <flag name="fill_vertical" value="0x70"/>
+            <flag name="center_horizontal" value="0x01"/>
+            <flag name="center" value="0x11"/>
+            <flag name="start" value="0x00800003"/>
+            <flag name="end" value="0x00800005"/>
+        </attr>
+        <attr name="scaffoldExpandedTitleGravity">
+            <flag name="top" value="0x30"/>
+            <flag name="bottom" value="0x50"/>
+            <flag name="left" value="0x03"/>
+            <flag name="right" value="0x05"/>
+            <flag name="center_vertical" value="0x10"/>
+            <flag name="fill_vertical" value="0x70"/>
+            <flag name="center_horizontal" value="0x01"/>
+            <flag name="center" value="0x11"/>
+            <flag name="start" value="0x00800003"/>
+            <flag name="end" value="0x00800005"/>
+        </attr>
+        <attr name="scaffoldTitleEnabled" format="boolean"/>
+        <attr name="scaffoldTitle" format="string"/>
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="splash_image" type="id"/>
+    <item name="content" type="id"/>
+    <item name="content_end_pane" type="id"/>
+    <item name="content_start_pane" type="id"/>
+    <item name="view_pager" type="id"/>
+    <item name="recycler_view" type="id"/>
+    <item name="swipe_refresh_layout" type="id"/>
+    <item name="coordinator_layout" type="id"/>
+    <item name="content_stub" type="id"/>
+    <item name="app_bar_layout" type="id"/>
+    <item name="collapsing_toolbar_layout" type="id"/>
+    <item name="collapsing_toolbar_backdrop_stub" type="id"/>
+    <item name="collapsing_toolbar_backdrop" type="id"/>
+    <item name="toolbar" type="id"/>
+    <item name="nested_scroll_view" type="id"/>
+    <item name="floating_action_button" type="id"/>
+    <item name="navigation_view" type="id"/>
+    <item name="tab_layout" type="id"/>
+    <item name="toolbar_search_view" type="id"/>
+    <item name="search_edit_text" type="id"/>
+
+    <item name="navigation_view_header_image" type="id"/>
+    <item name="navigation_view_header_image_overlay" type="id"/>
+    <item name="navigation_view_account_image_container" type="id"/>
+    <item name="navigation_view_current_account_image" type="id"/>
+    <item name="navigation_view_alt_account_image_1" type="id"/>
+    <item name="navigation_view_alt_account_image_2" type="id"/>
+    <item name="navigation_view_alt_account_image_3" type="id"/>
+    <item name="navigation_view_current_account_name" type="id"/>
+    <item name="navigation_view_current_account_email" type="id"/>
+    <item name="navigation_view_account_drop_down_button" type="id"/>
+    
+    <item name="navigation_item_header" type="id"/>
+    <item name="navigation_item_divider" type="id"/>
+    <item name="navigation_item_navigable_item" type="id"/>
+
+</resources>

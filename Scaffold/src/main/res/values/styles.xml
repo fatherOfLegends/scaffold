@@ -1,0 +1,180 @@
+<resources>
+
+    <style name="ScaffoldLight" parent="Theme.AppCompat.Light">
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="actionBarSize">@dimen/abc_action_bar_default_height_material</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+    </style>
+
+    <style name="ScaffoldLight.DarkActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle.DarkActionBar</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="actionBarSize">@dimen/abc_action_bar_default_height_material</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+    </style>
+
+    <style name="ScaffoldNavigationView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="itemIconTint">@color/navigation_drawer_item_icon_tint</item>
+        <item name="itemTextColor">@color/navigation_drawer_item_text_color</item>
+    </style>
+
+    <style name="NestedScrollView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="layout_behavior">@string/appbar_scrolling_view_behavior</item>
+    </style>
+
+    <style name="AppBarLayout" parent="ThemeOverlay.AppCompat.ActionBar"/>
+
+    <style name="ActionBarTheme" parent="ThemeOverlay.AppCompat.ActionBar"/>
+
+    <style name="Toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:theme">@style/ActionBarTheme</item>
+    </style>
+
+    <style name="CollapsingToolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">false</item>
+        <item name="color">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="DrawerArrowStyle.DarkActionBar" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">false</item>
+        <item name="color">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="HorizontalSpacer">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="VerticalSpacer">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
+
+    <style name="NavigationHeaderView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">180dp</item>
+    </style>
+
+    <style name="NavigationViewHeaderBackgroundImage">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="NavigationViewHeaderBackgroundImageOverlay">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:alpha">0.15</item>
+        <item name="android:src">@android:color/black</item>
+    </style>
+
+    <style name="NavigationViewHeaderContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingBottom">@dimen/scaffold_navigation_header_margin</item>
+        <item name="android:paddingLeft">@dimen/scaffold_navigation_header_margin</item>
+        <item name="android:paddingRight">@dimen/scaffold_navigation_header_margin</item>
+        <item name="android:paddingTop">@dimen/scaffold_navigation_header_margin_top</item>
+    </style>
+
+    <style name="NavigationViewHeaderAccountImageContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="NavigationViewHeaderCurrentAccountImage">
+        <item name="android:layout_width">@dimen/scaffold_navigation_header_current_account_image_size</item>
+        <item name="android:layout_height">@dimen/scaffold_navigation_header_current_account_image_size</item>
+        <item name="riv_border_color">@android:color/white</item>
+        <item name="riv_border_width">@dimen/scaffold_navigation_header_current_account_image_border_width</item>
+        <item name="riv_oval">true</item>
+    </style>
+
+    <style name="NavigationViewHeaderAltAccountImage">
+        <item name="android:layout_width">@dimen/scaffold_navigation_header_alt_account_image_size</item>
+        <item name="android:layout_height">@dimen/scaffold_navigation_header_alt_account_image_size</item>
+        <item name="android:layout_marginLeft">@dimen/scaffold_navigation_header_alt_account_image_margin</item>
+        <item name="android:layout_marginRight">@dimen/scaffold_navigation_header_alt_account_image_margin</item>
+        <item name="riv_oval">true</item>
+    </style>
+
+    <style name="NavigationViewHeaderAccountDropDownButton">
+        <item name="android:layout_width">56dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:tint">@android:color/white</item>
+        <item name="android:src">@drawable/ic_arrow_drop_down_white_18dp</item>
+    </style>
+
+    <style name="NavigationViewHeaderCurrentAccountName">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+    </style>
+
+    <style name="NavigationViewHeaderCurrentAccountEmail">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+    </style>
+
+    <style name="FloatingActionButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:src">@drawable/ic_add_white_24dp</item>
+        <item name="elevation">4dp</item>
+        <item name="borderWidth">0dp</item>
+        <item name="fabSize">normal</item>
+    </style>
+
+    <style name="TabLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Widget.Scaffold.CollapsingToolbarTabLayout" parent="android:Widget">
+        <item name="scaffoldExpandedTitleMargin">32dp</item>
+        <item name="scaffoldStatusBarScrim">?attr/colorPrimaryDark</item>
+    </style>
+
+    <style name="CollapsingToolbar.ExpandedTextAppearance" parent="TextAppearance.AppCompat.Display1">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+</resources>

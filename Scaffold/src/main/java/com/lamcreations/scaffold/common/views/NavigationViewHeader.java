@@ -1,0 +1,261 @@
+package com.lamcreations.scaffold.common.views;
+
+import com.lamcreations.scaffold.R;
+import com.lamcreations.scaffold.users.UserAccount;
+import com.makeramen.roundedimageview.RoundedImageView;
+
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.FloatRange;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
+import android.util.AttributeSet;
+import android.view.LayoutInflater;
+import android.widget.FrameLayout;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class NavigationViewHeader extends FrameLayout {
+
+    private ImageView mHeaderImage;
+    private ImageView mHeaderImageOverlay;
+    private RoundedImageView mCurrentAccountImageView;
+    private RoundedImageView mAltAccountImageView1;
+    private RoundedImageView mAltAccountImageView2;
+    private RoundedImageView mAltAccountImageView3;
+    private TextView mCurrentAccountName;
+    private TextView mCurrentAccountEmail;
+    private ImageButton mAccountDropDownButton;
+
+    private int mCurrentAccountIndex = -1;
+    private List<UserAccount> mUserAccounts = new ArrayList<>();
+
+    public NavigationViewHeader(Context context) {
+        super(context);
+        init();
+    }
+
+    public NavigationViewHeader(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init();
+    }
+
+    public NavigationViewHeader(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        init();
+    }
+
+    private void init() {
+        setBackgroundResource(android.R.color.white);
+        LayoutInflater.from(getContext()).inflate(R.layout.navigation_drawer_header, this, true);
+
+        mHeaderImage = (ImageView) findViewById(R.id.navigation_view_header_image);
+        mHeaderImageOverlay = (ImageView) findViewById(R.id.navigation_view_header_image_overlay);
+        mCurrentAccountImageView = (RoundedImageView) findViewById(R.id.navigation_view_current_account_image);
+        mAltAccountImageView1 = (RoundedImageView) findViewById(R.id.navigation_view_alt_account_image_1);
+        mAltAccountImageView2 = (RoundedImageView) findViewById(R.id.navigation_view_alt_account_image_2);
+        mAltAccountImageView3 = (RoundedImageView) findViewById(R.id.navigation_view_alt_account_image_3);
+        mCurrentAccountName = (TextView) findViewById(R.id.navigation_view_current_account_name);
+        mCurrentAccountEmail = (TextView) findViewById(R.id.navigation_view_current_account_email);
+        mAccountDropDownButton = (ImageButton) findViewById(R.id.navigation_view_account_drop_down_button);
+    }
+
+    public void setHeaderImageBitmap(Bitmap bitmap){
+        if (mHeaderImage != null) {
+            mHeaderImage.setImageBitmap(bitmap);
+        }
+    }
+
+    public void setHeaderImageDrawable(Drawable drawable){
+        if (mHeaderImage != null) {
+            mHeaderImage.setImageDrawable(drawable);
+        }
+    }
+
+    public void setHeaderImageResource(@DrawableRes int resId){
+        if (mHeaderImage != null) {
+            mHeaderImage.setImageResource(resId);
+        }
+    }
+
+    public void setHeaderImageOverlayAlpha(@FloatRange(from=0.0, to=1.0) float alpha){
+        mHeaderImageOverlay.setAlpha(alpha);
+    }
+
+    public Drawable getCurrentAccountImage(){
+        if (mCurrentAccountImageView != null) {
+            return mCurrentAccountImageView.getDrawable();
+        }
+        return null;
+    }
+
+    private void setCurrentAccountImage(Bitmap bitmap) {
+        if (mCurrentAccountImageView != null) {
+            mCurrentAccountImageView.setImageBitmap(bitmap);
+        }
+    }
+
+    private void setFirstAltAccountImage(Bitmap bitmap) {
+        if (mAltAccountImageView1 != null) {
+            mAltAccountImageView1.setImageBitmap(bitmap);
+        }
+    }
+
+    private void setSecondAltAccountImage(Bitmap bitmap) {
+        if (mAltAccountImageView2 != null) {
+            mAltAccountImageView2.setImageBitmap(bitmap);
+        }
+    }
+
+    private void setThirdAltAccountImage(Bitmap bitmap) {
+        if (mAltAccountImageView3 != null) {
+            mAltAccountImageView3.setImageBitmap(bitmap);
+        }
+    }
+
+    public CharSequence getCurrentAccountName() {
+        if (mCurrentAccountName != null) {
+            return mCurrentAccountName.getText();
+        }
+        return null;
+    }
+
+    private void setCurrentAccountName(CharSequence accountName) {
+        if (mCurrentAccountName != null) {
+            mCurrentAccountName.setText(accountName);
+        }
+    }
+
+    public CharSequence getCurrentAccountEmail() {
+        if (mCurrentAccountEmail != null) {
+            return mCurrentAccountEmail.getText();
+        }
+        return null;
+    }
+
+    private void setCurrentAccountEmail(CharSequence accountEmail) {
+        if (mCurrentAccountEmail != null) {
+            mCurrentAccountEmail.setText(accountEmail);
+        }
+    }
+
+    public void setAccountDropDownButtonClickListener(OnClickListener listener){
+        if (mAccountDropDownButton != null) {
+            mAccountDropDownButton.setOnClickListener(listener);
+        }
+    }
+
+    private void showDropDownMenu(boolean show) {
+        if(mAccountDropDownButton != null){
+            mAccountDropDownButton.setVisibility(show ? VISIBLE : GONE);
+        }
+    }
+
+    public boolean hasMultipleAccounts(){
+        return mUserAccounts.size() > 1;
+    }
+
+    public void addUserAccount(UserAccount userAccount) {
+        if(userAccount != null){
+            mUserAccounts.add(userAccount);
+            if(mUserAccounts.size() == 1){
+                loadUserAccount(0);
+            }
+            showDropDownMenu(hasMultipleAccounts());
+        }
+    }
+
+    public void addUserAccounts(List<UserAccount> userAccounts) {
+        mUserAccounts.addAll(userAccounts);
+        if(mUserAccounts.size() >= 1 && mCurrentAccountIndex == -1){
+            loadUserAccount(0);
+        }
+        showDropDownMenu(hasMultipleAccounts());
+    }
+
+    public void removeCurrentUserAccount(){
+        mUserAccounts.remove(mCurrentAccountIndex);
+        if(mUserAccounts.size() >= 1){
+            loadUserAccount(0);
+        } else {
+            loadUserAccount(-1);
+        }
+        showDropDownMenu(hasMultipleAccounts());
+    }
+
+    private void loadUserAccount(int index){
+        mCurrentAccountIndex = index;
+        if(mCurrentAccountIndex >= 0 && mCurrentAccountIndex < mUserAccounts.size()){
+            UserAccount userAccount = mUserAccounts.get(mCurrentAccountIndex);
+            setCurrentAccountName(userAccount.getName());
+            setCurrentAccountEmail(userAccount.getEmail());
+            setCurrentAccountImage(null);
+            setHeaderImageDrawable(null);
+            userAccount.getProfileImage(getContext(), new UserAccount.ImageCallback() {
+                @Override
+                public void onImageAvailable(Bitmap image) {
+                    setCurrentAccountImage(image);
+                }
+            });
+            userAccount.getHeaderImage(getContext(), new UserAccount.ImageCallback() {
+                @Override
+                public void onImageAvailable(Bitmap image) {
+                    setHeaderImageBitmap(image);
+                }
+            });
+            setAltAccountImages(mCurrentAccountIndex);
+        } else {
+            setCurrentAccountName(null);
+            setCurrentAccountEmail(null);
+            setCurrentAccountImage(null);
+            setHeaderImageDrawable(null);
+            setFirstAltAccountImage(null);
+            setSecondAltAccountImage(null);
+            setThirdAltAccountImage(null);
+        }
+    }
+
+    private void setAltAccountImages(int currentAccountIndex) {
+        ArrayList<UserAccount> otherAccounts = new ArrayList<>();
+        int size = mUserAccounts.size();
+        for(int i = 0; i < size; ++i){
+            if(i < currentAccountIndex){
+                otherAccounts.add(mUserAccounts.get(i));
+            } else if (i > currentAccountIndex) {
+                otherAccounts.add(i - currentAccountIndex, mUserAccounts.get(i));
+            }
+        }
+        size = otherAccounts.size();
+        for(int i = 0; i < 3 && i < size; ++i){
+            final int finalI = i;
+            otherAccounts.get(i).getProfileImage(getContext(), new UserAccount.ImageCallback() {
+                @Override
+                public void onImageAvailable(Bitmap image) {
+                    switch (finalI){
+                        case 0:
+                            setFirstAltAccountImage(image);
+                            break;
+                        case 1:
+                            setSecondAltAccountImage(image);
+                            break;
+                        case 2:
+                            setThirdAltAccountImage(image);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            });
+        }
+    }
+
+    private Drawable roundDrawable(Bitmap bitmap){
+        return bitmap != null ? RoundedBitmapDrawableFactory.create(getResources(), bitmap) : null;
+    }
+}

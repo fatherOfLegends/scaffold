@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Scaffold Sample App</string>
+    <string name="drawer_activity">Drawer Activity</string>
+    <string name="video_splash_screen">Video Splash Screen</string>
+    <string name="toolbar_activity">Toolbar Activity</string>
+    <string name="coordinator_activity">Coordinator Activity</string>
+    <string name="tab_activity">Tab Activity</string>
+    <string name="tab_drawer_activity">Tab Drawer Activity</string>
+    <string name="collapsing_toolbar_activity">Collapsing Toolbar Activity</string>
+    <string name="collapsing_toolbar_drawer_activity">Collapsing Toolbar Drawer Activity</string>
+    <string name="collapsing_toolbar_tab_drawer_activity">Collapsing Toolbar Tab Drawer Activity</string>
+    <string name="searchable_activity">Searchable Activity</string>
+    <string name="settings_activity">Settings Activity</string>
+    <string name="settings_activity_with_headers">Setting Activity with Headers</string>
+    <string name="search_scaffold">Search Scaffold</string>
+</resources>

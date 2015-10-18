@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.NavigationView
+    android:id="@id/navigation_view"
+    style="@style/ScaffoldNavigationView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fitsSystemWindows="true"/>

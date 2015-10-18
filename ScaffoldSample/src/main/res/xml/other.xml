@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="Other">
+
+    <CheckBoxPreference
+        android:key="other_one"
+        android:summary="This is a setting"
+        android:title="Does something when checked" />
+
+    <CheckBoxPreference
+        android:key="other_two"
+        android:summary="This is a setting"
+        android:title="Does something when checked" />
+</PreferenceScreen>

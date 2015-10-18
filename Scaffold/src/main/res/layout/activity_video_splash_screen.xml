@@ -1,0 +1,16 @@
+<FrameLayout
+    android:id="@+id/splash_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:padding="10dp"
+    tools:context=".SplashScreenActivity">
+
+    <com.lamcreations.scaffold.common.views.AutoFitTextureView
+        android:id="@+id/auto_fit_texture_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+</FrameLayout>

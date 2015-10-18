@@ -1,0 +1,11 @@
+<resources>
+
+    <style name="AppTheme" parent="ScaffoldLight.DarkActionBar">
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+    </style>
+
+    <style name="AppTheme.TranslucentStatus" parent="AppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+</resources>

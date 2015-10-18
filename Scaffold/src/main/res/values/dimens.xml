@@ -1,0 +1,20 @@
+<resources>
+    <dimen name="scaffold_navigation_header_margin_top">40dp</dimen>
+    <dimen name="scaffold_navigation_header_margin">16dp</dimen>
+    <dimen name="scaffold_navigation_header_current_account_image_size">72dp</dimen>
+    <dimen name="scaffold_navigation_header_current_account_image_border_width">2dp</dimen>
+    <dimen name="scaffold_navigation_header_alt_account_image_size">32dp</dimen>
+    <dimen name="scaffold_navigation_header_alt_account_image_margin">8dp</dimen>
+    <dimen name="scaffold_navigation_separator_vertical_padding">8dp</dimen>
+
+    <dimen name="scaffold_default_item_spacing">8dp</dimen>
+
+    <dimen name="scaffold_tab_layout_minimum_height">48dp</dimen>
+
+    <dimen name="scaffold_left_start_drawer_width">280dp</dimen>
+    <dimen name="scaffold_right_end_drawer_width">280dp</dimen>
+
+    <dimen name="scaffold_navigation_item_header_height">64dp</dimen>
+    <dimen name="scaffold_navigation_item_divider_height">1dp</dimen>
+    <dimen name="scaffold_navigation_item_navigable_item_height">64dp</dimen>
+</resources>

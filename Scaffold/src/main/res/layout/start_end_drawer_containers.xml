@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:id="@+id/scaffold_left_start_drawer_container"
+        android:layout_width="@dimen/scaffold_left_start_drawer_width"
+        android:layout_height="match_parent"
+        android:layout_gravity="left|start"
+        android:background="@color/window_background"
+        android:fitsSystemWindows="true"/>
+
+    <FrameLayout
+        android:id="@+id/scaffold_right_end_drawer_container"
+        android:layout_width="@dimen/scaffold_right_end_drawer_width"
+        android:layout_height="match_parent"
+        android:layout_gravity="right|end"
+        android:background="@color/window_background"
+        android:fitsSystemWindows="true"/>
+</merge>

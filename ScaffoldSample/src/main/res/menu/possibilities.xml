@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/toolbar_activity"
+        android:title="@string/toolbar_activity" />
+
+    <item
+        android:id="@+id/coordinator_activity"
+        android:title="@string/coordinator_activity" />
+
+    <item
+        android:id="@+id/tab_activity"
+        android:title="@string/tab_activity" />
+
+    <item
+        android:id="@+id/drawer_activity"
+        android:title="@string/drawer_activity" />
+
+    <item
+        android:id="@+id/tab_drawer_activity"
+        android:title="@string/tab_drawer_activity" />
+
+    <item
+        android:id="@+id/collapsing_toolbar_activity"
+        android:title="@string/collapsing_toolbar_activity" />
+
+    <item
+        android:id="@+id/collapsing_toolbar_drawer_activity"
+        android:title="@string/collapsing_toolbar_drawer_activity" />
+
+    <item
+        android:id="@+id/collapsing_toolbar_tab_drawer_activity"
+        android:title="@string/collapsing_toolbar_tab_drawer_activity" />
+
+    <item
+        android:id="@+id/searchable_activity"
+        android:title="@string/searchable_activity" />
+
+    <item
+        android:id="@+id/settings_activity"
+        android:title="@string/settings_activity" />
+
+    <item
+        android:id="@+id/settings_activity_headers"
+        android:title="@string/settings_activity_with_headers" />
+</menu>
