@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
-    style="@style/NavigationHeaderView"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/NavigationHeaderView">
 
     <ImageView
         android:id="@id/navigation_view_header_image"
-        style="@style/NavigationViewHeaderBackgroundImage"/>
+        style="@style/NavigationViewHeaderBackgroundImage"
+        android:contentDescription="@string/empty" />
 
     <ImageView
         android:id="@id/navigation_view_header_image_overlay"
-        style="@style/NavigationViewHeaderBackgroundImageOverlay"/>
+        style="@style/NavigationViewHeaderBackgroundImageOverlay"
+        android:contentDescription="@string/empty" />
 
     <RelativeLayout style="@style/NavigationViewHeaderContainer">
 
@@ -19,21 +21,21 @@
 
             <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@id/navigation_view_current_account_image"
-                style="@style/NavigationViewHeaderCurrentAccountImage"/>
+                style="@style/NavigationViewHeaderCurrentAccountImage" />
 
-            <View style="@style/HorizontalSpacer"/>
+            <View style="@style/HorizontalSpacer" />
 
             <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@id/navigation_view_alt_account_image_1"
-                style="@style/NavigationViewHeaderAltAccountImage"/>
+                style="@style/NavigationViewHeaderAltAccountImage" />
 
             <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@id/navigation_view_alt_account_image_2"
-                style="@style/NavigationViewHeaderAltAccountImage"/>
+                style="@style/NavigationViewHeaderAltAccountImage" />
 
             <com.makeramen.roundedimageview.RoundedImageView
                 android:id="@id/navigation_view_alt_account_image_3"
-                style="@style/NavigationViewHeaderAltAccountImage"/>
+                style="@style/NavigationViewHeaderAltAccountImage" />
         </LinearLayout>
 
         <LinearLayout
@@ -51,16 +53,17 @@
 
                 <TextView
                     android:id="@id/navigation_view_current_account_name"
-                    style="@style/NavigationViewHeaderCurrentAccountName"/>
+                    style="@style/NavigationViewHeaderCurrentAccountName" />
 
                 <TextView
                     android:id="@id/navigation_view_current_account_email"
-                    style="@style/NavigationViewHeaderCurrentAccountEmail"/>
+                    style="@style/NavigationViewHeaderCurrentAccountEmail" />
             </LinearLayout>
 
             <ImageButton
                 android:id="@id/navigation_view_account_drop_down_button"
-                style="@style/NavigationViewHeaderAccountDropDownButton"/>
+                style="@style/NavigationViewHeaderAccountDropDownButton"
+                android:contentDescription="@string/empty" />
         </LinearLayout>
     </RelativeLayout>
 </FrameLayout>

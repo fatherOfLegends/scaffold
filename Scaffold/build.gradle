@@ -1,5 +1,11 @@
 apply plugin: 'com.android.library'
 
+ext {
+    PUBLISH_GROUP_ID = 'com.lamcreations'
+    PUBLISH_ARTIFACT_ID = 'scaffold'
+    PUBLISH_VERSION = '0.1.0'
+}
+
 android {
     compileSdkVersion 23
     buildToolsVersion '23.0.1'
@@ -12,6 +18,9 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+    }
+    lintOptions {
+        abortOnError false
     }
     productFlavors {
     }
@@ -33,3 +42,5 @@ dependencies {
     compile "com.android.support:gridlayout-v7:${androidSupportLibVersion}";
     compile "com.makeramen:roundedimageview:2.1.0";
 }
+
+apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'

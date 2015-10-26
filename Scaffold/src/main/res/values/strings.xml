@@ -16,4 +16,7 @@
     <string name="navigation_sub_item_5">Navigation Sub Item 5</string>
     <string name="clear">Clear</string>
     <string name="voice_search">Voice Search</string>
+    <string name="icon">Icon</string>
+    <string name="splash_image">Splash Screen Image</string>
+    <string name="empty" />
 </resources>

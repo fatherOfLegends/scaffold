@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.lamcreations.scaffoldsampleapp"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lamcreations.scaffoldsampleapp">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".SampleApplication"
@@ -14,39 +15,39 @@
             android:name=".SplashActivity"
             android:noHistory="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".SampleCollapsingToolbarActivity"
-            android:theme="@style/AppTheme.TranslucentStatus"/>
+            android:theme="@style/AppTheme.TranslucentStatus" />
         <activity
             android:name=".SampleCollapsingToolbarDrawerActivity"
-            android:theme="@style/AppTheme.TranslucentStatus"/>
+            android:theme="@style/AppTheme.TranslucentStatus" />
         <activity
             android:name=".SampleCollapsingToolbarTabDrawerActivity"
-            android:theme="@style/AppTheme.TranslucentStatus"/>
-        <activity android:name=".SampleCoordinatorActivity"/>
+            android:theme="@style/AppTheme.TranslucentStatus" />
+        <activity android:name=".SampleCoordinatorActivity" />
         <activity
             android:name=".SampleDrawerActivity"
-            android:theme="@style/AppTheme.TranslucentStatus"/>
+            android:theme="@style/AppTheme.TranslucentStatus" />
         <activity
             android:name=".SampleSearchableActivity"
             android:theme="@style/AppTheme.TranslucentStatus">
             <intent-filter>
-                <action android:name="android.intent.action.SEARCH"/>
+                <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
         </activity>
-        <activity android:name=".SampleSettingsActivity"/>
-        <activity android:name=".SampleSettingsActivityWithHeaders"/>
-        <activity android:name=".SampleTabActivity"/>
+        <activity android:name=".SampleSettingsActivity" />
+        <activity android:name=".SampleSettingsActivityWithHeaders" />
+        <activity android:name=".SampleTabActivity" />
         <activity
             android:name=".SampleTabDrawerActivity"
-            android:theme="@style/AppTheme.TranslucentStatus"/>
-        <activity android:name=".SampleToolbarActivity"/>
+            android:theme="@style/AppTheme.TranslucentStatus" />
+        <activity android:name=".SampleToolbarActivity" />
     </application>
 
 </manifest>
