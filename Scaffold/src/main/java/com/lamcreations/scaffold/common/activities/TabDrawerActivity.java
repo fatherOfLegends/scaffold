@@ -31,7 +31,7 @@ public abstract class TabDrawerActivity extends DrawerActivity {
 
     @Override
     protected int getActivityLayoutResId() {
-        return R.layout.activity_tab_drawer;
+        return R.layout.scaffold_activity_tab_drawer;
     }
 
     @Override
@@ -55,8 +55,8 @@ public abstract class TabDrawerActivity extends DrawerActivity {
     @CallSuper
     protected void setupTabs() {
         PagerAdapter pagerAdapter = getPagerAdapter();
-        mTabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        mViewPager = (ViewPager) findViewById(R.id.content);
+        mTabLayout = (TabLayout) findViewById(R.id.scaffold_tab_layout);
+        mViewPager = (ViewPager) findViewById(R.id.scaffold_content);
         mViewPager.setAdapter(pagerAdapter);
         mViewPager.setOffscreenPageLimit(1);
         mTabLayout.setTabMode(getTabMode());
@@ -86,7 +86,7 @@ public abstract class TabDrawerActivity extends DrawerActivity {
 
     @Override
     protected int getContentLayoutResId() {
-        return R.layout.tab_view_pager;
+        return R.layout.scaffold_tab_view_pager;
     }
 
     @TabLayoutMode

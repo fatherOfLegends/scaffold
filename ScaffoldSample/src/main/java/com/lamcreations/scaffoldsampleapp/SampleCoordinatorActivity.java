@@ -16,7 +16,7 @@ public class SampleCoordinatorActivity extends CoordinatorActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        replaceFragment(R.id.content, new EarthquakesFragment());
+        replaceFragment(R.id.scaffold_content, new EarthquakesFragment());
     }
 
     @Override
@@ -37,7 +37,7 @@ public class SampleCoordinatorActivity extends CoordinatorActivity {
 
     @Override
     protected int getActivityLayoutResId() {
-        return R.layout.activity_coordinator;
+        return R.layout.scaffold_activity_coordinator;
     }
 
     @Override

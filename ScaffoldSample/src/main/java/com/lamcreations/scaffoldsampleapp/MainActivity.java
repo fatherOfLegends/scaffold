@@ -12,7 +12,7 @@ public class MainActivity extends ToolbarActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        replaceFragment(R.id.content, new PossibilitiesFragment());
+        replaceFragment(R.id.scaffold_content, new PossibilitiesFragment());
     }
 
     @Override
@@ -32,6 +32,6 @@ public class MainActivity extends ToolbarActivity {
 
     @Override
     protected int getActivityLayoutResId() {
-        return R.layout.activity_toolbar;
+        return R.layout.scaffold_activity_toolbar;
     }
 }

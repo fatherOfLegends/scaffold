@@ -5,7 +5,7 @@
     <item
         android:id="@+id/voice_search"
         android:icon="@drawable/abc_ic_voice_search_api_mtrl_alpha"
-        android:title="@string/voice_search"
+        android:title="@string/scaffold_voice_search"
         app:showAsAction="always"/>
 
 </menu>

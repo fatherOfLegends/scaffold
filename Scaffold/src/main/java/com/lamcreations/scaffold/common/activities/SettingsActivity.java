@@ -21,7 +21,7 @@ public abstract class SettingsActivity extends ToolbarActivity
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        replaceFragment(R.id.content, getSettingsFragment());
+        replaceFragment(R.id.scaffold_content, getSettingsFragment());
     }
 
     private Fragment getSettingsFragment() {
@@ -34,11 +34,11 @@ public abstract class SettingsActivity extends ToolbarActivity
 
     @Override
     protected int getActivityLayoutResId() {
-        return R.layout.activity_settings;
+        return R.layout.scaffold_activity_settings;
     }
 
     protected boolean isDualPane() {
-        return findViewById(R.id.content_end_pane) != null;
+        return findViewById(R.id.scaffold_content_end_pane) != null;
     }
 
     @XmlRes
@@ -52,9 +52,9 @@ public abstract class SettingsActivity extends ToolbarActivity
             args.putInt(SettingsFragment.PREFERENCE_RES_ID, getPreferenceResId(preference.getKey()));
             fragment.setArguments(args);
             if(isDualPane()){
-                replaceFragment(R.id.content_end_pane, fragment);
+                replaceFragment(R.id.scaffold_content_end_pane, fragment);
             } else {
-                addFragmentToStack(R.id.content, fragment);
+                addFragmentToStack(R.id.scaffold_content, fragment);
             }
             return true;
         } catch (Exception ignored) {
@@ -69,7 +69,7 @@ public abstract class SettingsActivity extends ToolbarActivity
             Bundle args = new Bundle();
             args.putInt(SettingsFragment.PREFERENCE_RES_ID, getPreferenceResId(preferenceScreen.getKey()));
             fragment.setArguments(args);
-            addFragmentToStack(R.id.content, fragment);
+            addFragmentToStack(R.id.scaffold_content, fragment);
             return true;
         } catch (Exception ignored) {
             return false;

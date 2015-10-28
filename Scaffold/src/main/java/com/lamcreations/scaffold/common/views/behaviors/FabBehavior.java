@@ -66,7 +66,7 @@ public class FabBehavior extends FloatingActionButton.Behavior {
                         }
                     }).start();
         } else {
-            Animation anim = AnimationUtils.loadAnimation(button.getContext(), R.anim.fab_out);
+            Animation anim = AnimationUtils.loadAnimation(button.getContext(), R.anim.scaffold_fab_out);
             anim.setInterpolator(INTERPOLATOR);
             anim.setDuration(200L);
             anim.setAnimationListener(new Animation.AnimationListener() {
@@ -94,7 +94,7 @@ public class FabBehavior extends FloatingActionButton.Behavior {
                     .setInterpolator(INTERPOLATOR).withLayer().setListener(null)
                     .start();
         } else {
-            Animation anim = AnimationUtils.loadAnimation(button.getContext(), R.anim.fab_in);
+            Animation anim = AnimationUtils.loadAnimation(button.getContext(), R.anim.scaffold_fab_in);
             anim.setDuration(200L);
             anim.setInterpolator(INTERPOLATOR);
             button.startAnimation(anim);

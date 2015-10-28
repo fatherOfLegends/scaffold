@@ -19,7 +19,7 @@ public class SampleCollapsingToolbarActivity extends CollapsingToolbarActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        replaceFragment(R.id.content, new EarthquakesFragment());
+        replaceFragment(R.id.scaffold_content, new EarthquakesFragment());
     }
 
     @Override
@@ -57,7 +57,7 @@ public class SampleCollapsingToolbarActivity extends CollapsingToolbarActivity {
 
     @Override
     protected int getFabAnchorId() {
-        return R.id.app_bar_layout;
+        return R.id.scaffold_app_bar_layout;
     }
 
     @Override

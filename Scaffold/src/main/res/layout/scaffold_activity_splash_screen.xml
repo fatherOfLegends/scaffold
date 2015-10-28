@@ -3,9 +3,9 @@
     tools:context=".SplashScreenActivity">
 
     <ImageView
-        android:id="@id/splash_image"
+        android:id="@id/scaffold_splash_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:contentDescription="@string/splash_image" />
+        android:contentDescription="@string/scaffold_splash_image" />
 </merge>

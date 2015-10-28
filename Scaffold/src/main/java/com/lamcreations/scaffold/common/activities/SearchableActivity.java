@@ -55,7 +55,7 @@ public abstract class SearchableActivity extends CoordinatorActivity implements 
 
     @Override
     protected int getActivityLayoutResId() {
-        return R.layout.activity_searchable;
+        return R.layout.scaffold_activity_searchable;
     }
 
     protected boolean handleNewIntent(Intent intent) {
@@ -71,10 +71,10 @@ public abstract class SearchableActivity extends CoordinatorActivity implements 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         if(showClearSearch()){
-            getMenuInflater().inflate(R.menu.search_clear, menu);
+            getMenuInflater().inflate(R.menu.scaffold_clear_search, menu);
         }
         if(showVoiceSearch()){
-            getMenuInflater().inflate(R.menu.search_voice, menu);
+            getMenuInflater().inflate(R.menu.scaffold_voice_search, menu);
         }
         return super.onCreateOptionsMenu(menu);
     }
@@ -108,8 +108,8 @@ public abstract class SearchableActivity extends CoordinatorActivity implements 
     protected void setupActionBar() {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar == null) {
-            mAppBarLayout = (AppBarLayout)findViewById(R.id.app_bar_layout);
-            mToolbar = (Toolbar)findViewById(R.id.toolbar);
+            mAppBarLayout = (AppBarLayout)findViewById(R.id.scaffold_app_bar_layout);
+            mToolbar = (Toolbar)findViewById(R.id.scaffold_toolbar);
             if (mToolbar.getParent().getClass().equals(AppBarLayout.class)) {
                 ((AppBarLayout.LayoutParams)mToolbar.getLayoutParams()).setScrollFlags(getScrollFlags());
             }
@@ -123,7 +123,7 @@ public abstract class SearchableActivity extends CoordinatorActivity implements 
 
     @CallSuper
     protected void setupSearchEditText() {
-        mSearchEditText = (EditText) findViewById(R.id.search_edit_text);
+        mSearchEditText = (EditText) findViewById(R.id.scaffold_search_edit_text);
         mSearchEditText.addTextChangedListener(this);
     }
 

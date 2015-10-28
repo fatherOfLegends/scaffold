@@ -13,12 +13,12 @@ public class SampleToolbarActivity extends ToolbarActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        replaceFragment(R.id.content, new EarthquakesFragment());
+        replaceFragment(R.id.scaffold_content, new EarthquakesFragment());
     }
 
     @Override
     protected int getActivityLayoutResId() {
-        return R.layout.activity_toolbar;
+        return R.layout.scaffold_activity_toolbar;
     }
 
     @Override

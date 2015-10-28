@@ -70,7 +70,7 @@ public abstract class RecyclerViewFragment<Adapter extends BasicRecyclerViewAdap
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.recycler_view, container, false);
+        return inflater.inflate(R.layout.scaffold_recycler_view_fragment, container, false);
     }
 
     @CallSuper
@@ -81,7 +81,7 @@ public abstract class RecyclerViewFragment<Adapter extends BasicRecyclerViewAdap
         setupRecyclerView(view);
         assert mRecyclerView != null;
 
-        mSwipeRefreshLayout = (SwipeRefreshLayout)view.findViewById(R.id.swipe_refresh_layout);
+        mSwipeRefreshLayout = (SwipeRefreshLayout)view.findViewById(R.id.scaffold_swipe_refresh_layout);
         if(mSwipeRefreshLayout != null){
             mSwipeRefreshLayout.setColorSchemeResources(getSwipeRefreshColorScheme());
             mSwipeRefreshLayout.setOnRefreshListener(this);
@@ -223,7 +223,7 @@ public abstract class RecyclerViewFragment<Adapter extends BasicRecyclerViewAdap
 
     @CallSuper
     protected void setupRecyclerView(View view) {
-        mRecyclerView = (RecyclerView)view.findViewById(R.id.recycler_view);
+        mRecyclerView = (RecyclerView)view.findViewById(R.id.scaffold_recycler_view);
         mRecyclerView.setItemAnimator(getItemAnimator());
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(getLayoutManager());
@@ -239,7 +239,7 @@ public abstract class RecyclerViewFragment<Adapter extends BasicRecyclerViewAdap
     }
 
     protected int[] getSwipeRefreshColorScheme() {
-        return new int[]{R.color.primary};
+        return new int[]{R.color.scaffold_color_primary};
     }
 
     protected abstract boolean isSwipeRefreshEnabled();

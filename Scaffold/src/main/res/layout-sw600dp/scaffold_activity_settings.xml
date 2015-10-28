@@ -5,8 +5,8 @@
     android:layout_height="match_parent">
 
     <android.support.v7.widget.Toolbar
-        android:id="@id/toolbar"
-        style="@style/Toolbar" />
+        android:id="@id/scaffold_toolbar"
+        style="@style/ScaffoldToolbar" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,13 +15,13 @@
         android:baselineAligned="false">
 
         <FrameLayout
-            android:id="@id/content"
+            android:id="@id/scaffold_content"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"/>
 
         <FrameLayout
-            android:id="@id/content_end_pane"
+            android:id="@id/scaffold_content_end_pane"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"/>

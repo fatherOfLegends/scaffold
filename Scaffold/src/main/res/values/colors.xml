@@ -1,8 +1,7 @@
 <resources>
-    <color name="primary">#3F51B5</color>
-    <color name="primary_dark">#1A237E</color>
-    <color name="accent">#8BC34A</color>
-    <color name="window_background">#ffffff</color>
+    <color name="scaffold_color_primary">#3F51B5</color>
+    <color name="scaffold_color_primary_dark">#1A237E</color>
+    <color name="scaffold_color_accent">#8BC34A</color>
 
     <color name="scaffold_navigation_item_divider">#ddd</color>
 </resources>

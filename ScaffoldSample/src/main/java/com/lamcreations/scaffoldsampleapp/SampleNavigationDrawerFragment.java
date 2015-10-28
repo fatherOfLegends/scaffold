@@ -14,7 +14,7 @@ public class SampleNavigationDrawerFragment extends NavigationRecyclerViewFragme
 
     @Override
     protected int getMenuResId() {
-        return R.menu.navigation_recycler_view;
+        return R.menu.scaffold_navigation_recycler_view;
     }
 
     @Override

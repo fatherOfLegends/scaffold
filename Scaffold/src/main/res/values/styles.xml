@@ -1,103 +1,97 @@
 <resources>
 
     <style name="ScaffoldLight" parent="Theme.AppCompat.Light">
-        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="drawerArrowStyle">@style/ScaffoldDrawerArrowStyle</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="actionBarSize">@dimen/abc_action_bar_default_height_material</item>
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryDark">@color/primary_dark</item>
-        <item name="colorAccent">@color/accent</item>
+        <item name="actionBarSize">?attr/actionBarSize</item>
+        <item name="colorPrimary">@color/scaffold_color_primary</item>
+        <item name="colorPrimaryDark">@color/scaffold_color_primary_dark</item>
+        <item name="colorAccent">@color/scaffold_color_accent</item>
         <item name="android:textColorPrimary">@android:color/white</item>
     </style>
 
     <style name="ScaffoldLight.DarkActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="drawerArrowStyle">@style/DrawerArrowStyle.DarkActionBar</item>
+        <item name="drawerArrowStyle">@style/ScaffoldDrawerArrowStyle.DarkActionBar</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="actionBarSize">@dimen/abc_action_bar_default_height_material</item>
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryDark">@color/primary_dark</item>
-        <item name="colorAccent">@color/accent</item>
+        <item name="actionBarSize">?attr/actionBarSize</item>
+        <item name="colorPrimary">@color/scaffold_color_primary</item>
+        <item name="colorPrimaryDark">@color/scaffold_color_primary_dark</item>
+        <item name="colorAccent">@color/scaffold_color_accent</item>
         <item name="android:textColorPrimary">@android:color/white</item>
     </style>
 
     <style name="ScaffoldNavigationView">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">match_parent</item>
-        <item name="itemIconTint">@color/navigation_drawer_item_icon_tint</item>
-        <item name="itemTextColor">@color/navigation_drawer_item_text_color</item>
+        <item name="itemIconTint">@color/scaffold_navigation_drawer_item_icon_tint</item>
+        <item name="itemTextColor">@color/scaffold_navigation_drawer_item_text_color</item>
     </style>
 
-    <style name="NestedScrollView">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="layout_behavior">@string/appbar_scrolling_view_behavior</item>
-    </style>
+    <style name="ScaffoldAppBarLayout" parent="ThemeOverlay.AppCompat.ActionBar"/>
 
-    <style name="AppBarLayout" parent="ThemeOverlay.AppCompat.ActionBar"/>
+    <style name="ScaffoldActionBarTheme" parent="ThemeOverlay.AppCompat.ActionBar"/>
 
-    <style name="ActionBarTheme" parent="ThemeOverlay.AppCompat.ActionBar"/>
-
-    <style name="Toolbar">
+    <style name="ScaffoldToolbar">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">?attr/actionBarSize</item>
         <item name="android:background">?attr/colorPrimary</item>
-        <item name="android:theme">@style/ActionBarTheme</item>
+        <item name="android:theme">@style/ScaffoldActionBarTheme</item>
     </style>
 
-    <style name="CollapsingToolbar">
+    <style name="ScaffoldCollapsingToolbar">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">?attr/actionBarSize</item>
         <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
     </style>
 
-    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+    <style name="ScaffoldDrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
         <item name="spinBars">false</item>
         <item name="color">?android:attr/textColorPrimary</item>
     </style>
 
-    <style name="DrawerArrowStyle.DarkActionBar" parent="Widget.AppCompat.DrawerArrowToggle">
+    <style name="ScaffoldDrawerArrowStyle.DarkActionBar" parent="Widget.AppCompat.DrawerArrowToggle">
         <item name="spinBars">false</item>
         <item name="color">?android:attr/textColorPrimary</item>
     </style>
 
-    <style name="HorizontalSpacer">
+    <style name="ScaffoldHorizontalSpacer">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">1dp</item>
         <item name="android:layout_weight">1</item>
     </style>
 
-    <style name="VerticalSpacer">
+    <style name="ScaffoldVerticalSpacer">
         <item name="android:layout_width">1dp</item>
         <item name="android:layout_height">0dp</item>
         <item name="android:layout_weight">1</item>
     </style>
 
-    <style name="Divider">
+    <style name="ScaffoldDivider">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
     </style>
 
-    <style name="NavigationHeaderView">
+    <style name="ScaffoldNavigationHeaderView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">180dp</item>
     </style>
 
-    <style name="NavigationViewHeaderBackgroundImage">
+    <style name="ScaffoldNavigationViewHeaderBackgroundImage">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:scaleType">centerCrop</item>
     </style>
 
-    <style name="NavigationViewHeaderBackgroundImageOverlay">
+    <style name="ScaffoldNavigationViewHeaderBackgroundImageOverlay">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:alpha">0.15</item>
         <item name="android:src">@android:color/black</item>
     </style>
 
-    <style name="NavigationViewHeaderContainer">
+    <style name="ScaffoldNavigationViewHeaderContainer">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:paddingBottom">@dimen/scaffold_navigation_header_margin</item>
@@ -106,14 +100,14 @@
         <item name="android:paddingTop">@dimen/scaffold_navigation_header_margin_top</item>
     </style>
 
-    <style name="NavigationViewHeaderAccountImageContainer">
+    <style name="ScaffoldNavigationViewHeaderAccountImageContainer">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_alignParentTop">true</item>
         <item name="android:orientation">horizontal</item>
     </style>
 
-    <style name="NavigationViewHeaderCurrentAccountImage">
+    <style name="ScaffoldNavigationViewHeaderCurrentAccountImage">
         <item name="android:layout_width">@dimen/scaffold_navigation_header_current_account_image_size</item>
         <item name="android:layout_height">@dimen/scaffold_navigation_header_current_account_image_size</item>
         <item name="riv_border_color">@android:color/white</item>
@@ -121,7 +115,7 @@
         <item name="riv_oval">true</item>
     </style>
 
-    <style name="NavigationViewHeaderAltAccountImage">
+    <style name="ScaffoldNavigationViewHeaderAltAccountImage">
         <item name="android:layout_width">@dimen/scaffold_navigation_header_alt_account_image_size</item>
         <item name="android:layout_height">@dimen/scaffold_navigation_header_alt_account_image_size</item>
         <item name="android:layout_marginLeft">@dimen/scaffold_navigation_header_alt_account_image_margin</item>
@@ -129,7 +123,7 @@
         <item name="riv_oval">true</item>
     </style>
 
-    <style name="NavigationViewHeaderAccountDropDownButton">
+    <style name="ScaffoldNavigationViewHeaderAccountDropDownButton">
         <item name="android:layout_width">56dp</item>
         <item name="android:layout_height">56dp</item>
         <item name="android:layout_gravity">bottom</item>
@@ -139,21 +133,21 @@
         <item name="android:src">@drawable/ic_arrow_drop_down_18dp</item>
     </style>
 
-    <style name="NavigationViewHeaderCurrentAccountName">
+    <style name="ScaffoldNavigationViewHeaderCurrentAccountName">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
     </style>
 
-    <style name="NavigationViewHeaderCurrentAccountEmail">
+    <style name="ScaffoldNavigationViewHeaderCurrentAccountEmail">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
     </style>
 
-    <style name="FloatingActionButton">
+    <style name="ScaffoldFloatingActionButton">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">16dp</item>
@@ -163,7 +157,7 @@
         <item name="fabSize">normal</item>
     </style>
 
-    <style name="TabLayout">
+    <style name="ScaffoldTabLayout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
@@ -173,7 +167,7 @@
         <item name="scaffoldStatusBarScrim">?attr/colorPrimaryDark</item>
     </style>
 
-    <style name="CollapsingToolbar.ExpandedTextAppearance" parent="TextAppearance.AppCompat.Display1">
+    <style name="ScaffoldCollapsingToolbar.ExpandedTextAppearance" parent="TextAppearance.AppCompat.Display1">
         <item name="android:textColor">@android:color/white</item>
     </style>
 

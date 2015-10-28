@@ -37,7 +37,7 @@ public abstract class CollapsingToolbarDrawerActivity extends DrawerActivity {
 
     @CallSuper
     protected void setupCollapsingToolbarLayout() {
-        mCollapsingToolbarLayout = (CollapsingToolbarTabLayout)findViewById(R.id.collapsing_toolbar_layout);
+        mCollapsingToolbarLayout = (CollapsingToolbarTabLayout)findViewById(R.id.scaffold_collapsing_toolbar_layout);
         ((AppBarLayout.LayoutParams)mCollapsingToolbarLayout.getLayoutParams()).setScrollFlags(getScrollFlags());
         mAppBarLayout.getLayoutParams().height = getCollapsingToolbarMaxHeight();
         ((CollapsingToolbarLayout.LayoutParams)mToolbar.getLayoutParams()).setCollapseMode(getActionbarCollapseMode());
@@ -45,7 +45,7 @@ public abstract class CollapsingToolbarDrawerActivity extends DrawerActivity {
 
     @CallSuper
     protected void setupCollapsingToolbarLayoutBackdrop() {
-        mCollapsingToolbarLayoutBackdropViewStub = (ViewStub)findViewById(R.id.collapsing_toolbar_backdrop_stub);
+        mCollapsingToolbarLayoutBackdropViewStub = (ViewStub)findViewById(R.id.scaffold_collapsing_toolbar_backdrop_stub);
         mCollapsingToolbarLayoutBackdropViewStub.setLayoutResource(getCollapsingToolbarLayoutBackdropResId());
         mCollapsingToolbarLayoutBackdropView = mCollapsingToolbarLayoutBackdropViewStub.inflate();
         CollapsingToolbarLayout.LayoutParams layoutParams =
@@ -83,6 +83,6 @@ public abstract class CollapsingToolbarDrawerActivity extends DrawerActivity {
 
     @Override
     protected int getActivityLayoutResId() {
-        return R.layout.activity_collapsing_toolbar_drawer;
+        return R.layout.scaffold_activity_collapsing_toolbar_drawer;
     }
 }

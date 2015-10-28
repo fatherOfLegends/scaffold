@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@id/coordinator_layout"
+    android:id="@id/scaffold_coordinator_layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -9,23 +9,23 @@
     android:fitsSystemWindows="true">
 
     <ViewStub
-        android:id="@id/content_stub"
+        android:id="@id/scaffold_content_stub"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:inflatedId="@+id/content"
+        android:inflatedId="@+id/scaffold_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
     <android.support.design.widget.AppBarLayout
-        android:id="@id/app_bar_layout"
+        android:id="@id/scaffold_app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <android.support.v7.widget.Toolbar
-            android:id="@id/toolbar"
-            style="@style/Toolbar">
+            android:id="@id/scaffold_toolbar"
+            style="@style/ScaffoldToolbar">
 
             <EditText
-                android:id="@id/search_edit_text"
+                android:id="@id/scaffold_search_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textAutoComplete"
@@ -34,6 +34,6 @@
     </android.support.design.widget.AppBarLayout>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@id/floating_action_button"
-        style="@style/FloatingActionButton"/>
+        android:id="@id/scaffold_floating_action_button"
+        style="@style/ScaffoldFloatingActionButton"/>
 </android.support.design.widget.CoordinatorLayout>

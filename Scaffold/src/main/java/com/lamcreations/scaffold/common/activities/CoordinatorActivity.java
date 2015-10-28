@@ -42,14 +42,14 @@ public abstract class CoordinatorActivity extends ToolbarActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mContentViewStub = (ViewStub) findViewById(R.id.content_stub);
-        mCoordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinator_layout);
+        mContentViewStub = (ViewStub) findViewById(R.id.scaffold_content_stub);
+        mCoordinatorLayout = (CoordinatorLayout) findViewById(R.id.scaffold_coordinator_layout);
         setContent(getContentLayoutResId());
         initFab();
     }
 
     protected void setContent(@LayoutRes int resId){
-        if(findViewById(R.id.content) == null && mContentViewStub != null){
+        if(findViewById(R.id.scaffold_content) == null && mContentViewStub != null){
             mContentViewStub.setLayoutResource(resId);
             mContentView = mContentViewStub.inflate();
         }
@@ -58,8 +58,8 @@ public abstract class CoordinatorActivity extends ToolbarActivity {
     protected void setupActionBar() {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar == null) {
-            mAppBarLayout = (AppBarLayout) findViewById(R.id.app_bar_layout);
-            mToolbar = (Toolbar) findViewById(R.id.toolbar);
+            mAppBarLayout = (AppBarLayout) findViewById(R.id.scaffold_app_bar_layout);
+            mToolbar = (Toolbar) findViewById(R.id.scaffold_toolbar);
             if(mToolbar.getParent().getClass().equals(AppBarLayout.class)){
                 ((AppBarLayout.LayoutParams)mToolbar.getLayoutParams()).setScrollFlags(getScrollFlags());
             }
@@ -78,7 +78,7 @@ public abstract class CoordinatorActivity extends ToolbarActivity {
     }
 
     private void initFab() {
-        mFloatingActionButton = (FloatingActionButton) findViewById(R.id.floating_action_button);
+        mFloatingActionButton = (FloatingActionButton) findViewById(R.id.scaffold_floating_action_button);
         if(mFloatingActionButton != null){
             CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams)mFloatingActionButton.getLayoutParams();
             layoutParams.setAnchorId(getFabAnchorId());
@@ -94,7 +94,7 @@ public abstract class CoordinatorActivity extends ToolbarActivity {
 
     @IdRes
     protected int getFabAnchorId(){
-        return R.id.content;
+        return R.id.scaffold_content;
     }
 
     protected int getFabAnchorGravity(){

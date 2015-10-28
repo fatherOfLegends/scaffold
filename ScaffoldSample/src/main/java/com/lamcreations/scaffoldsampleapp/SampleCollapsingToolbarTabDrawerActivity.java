@@ -55,7 +55,7 @@ public class SampleCollapsingToolbarTabDrawerActivity extends CollapsingToolbarT
 
     @Override
     protected int getFabAnchorId() {
-        return R.id.content;
+        return R.id.scaffold_content;
     }
 
     @Override

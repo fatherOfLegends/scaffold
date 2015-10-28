@@ -25,7 +25,6 @@ import android.widget.TextView;
 import com.lamcreations.scaffold.R;
 import com.lamcreations.scaffold.common.adapters.BasicRecyclerViewAdapter;
 import com.lamcreations.scaffold.common.adapters.itemDecorations.SpaceItemDecoration;
-import com.lamcreations.scaffold.common.views.NavigationViewHeader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +37,7 @@ public abstract class NavigationRecyclerViewFragment extends RecyclerViewFragmen
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mRootView = (ViewGroup) inflater.inflate(R.layout.navigation_drawer_fragment, container, false);
+        mRootView = (ViewGroup) inflater.inflate(R.layout.scaffold_navigation_recycler_view_fragment, container, false);
         container.setFitsSystemWindows(mRootView.getFitsSystemWindows());
         return mRootView;
     }
@@ -116,13 +115,13 @@ public abstract class NavigationRecyclerViewFragment extends RecyclerViewFragmen
             LayoutInflater inflater = LayoutInflater.from(getContext());
             switch (viewType) {
                 case NavigationMenuItem.HEADER:
-                    view = inflater.inflate(R.layout.navigation_item_header, parent, false);
+                    view = inflater.inflate(R.layout.scaffold_navigation_item_header, parent, false);
                     break;
                 case NavigationMenuItem.DIVIDER:
-                    view = inflater.inflate(R.layout.navigation_item_divider, parent, false);
+                    view = inflater.inflate(R.layout.scaffold_navigation_item_divider, parent, false);
                     break;
                 case NavigationMenuItem.NAVIGABLE_ITEM:
-                    view = inflater.inflate(R.layout.navigation_item_navigable_item, parent, false);
+                    view = inflater.inflate(R.layout.scaffold_navigation_item_navigable_item, parent, false);
                     break;
                 default:
                     view = new View(getContext());
@@ -412,12 +411,14 @@ public abstract class NavigationRecyclerViewFragment extends RecyclerViewFragmen
         }
 
         public int getType() {
-            if (getGroupId() == R.id.navigation_item_header) {
+            if (getGroupId() == R.id.scaffold_navigation_item_header) {
                 return HEADER;
-            } else if (getGroupId() == R.id.navigation_item_divider) {
+            } else if (getGroupId() == R.id.scaffold_navigation_item_divider) {
                 return DIVIDER;
+            } else if (getGroupId() == R.id.scaffold_navigation_item_navigable_item) {
+                return NAVIGABLE_ITEM;
             }
-            return NAVIGABLE_ITEM;
+            return -1;
         }
 
         public int getBadgeCount() {

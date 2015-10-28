@@ -13,9 +13,9 @@
         android:layout_height="32dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:tint="@color/primary"
+        android:tint="@color/scaffold_color_primary"
         android:visibility="gone"
-        android:contentDescription="@string/icon" />
+        android:contentDescription="@string/scaffold_icon" />
 
     <TextView
         android:id="@+id/navigation_item_title"

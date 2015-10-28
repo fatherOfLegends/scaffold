@@ -22,7 +22,7 @@ public abstract class DrawerActivity extends CoordinatorActivity
 
     @Override
     protected int getActivityLayoutResId() {
-        return R.layout.activity_drawer;
+        return R.layout.scaffold_activity_drawer;
     }
 
     @Override
@@ -35,7 +35,7 @@ public abstract class DrawerActivity extends CoordinatorActivity
     }
 
     protected void setupDrawerToggle() {
-        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open_drawer, R.string.close_drawer) {
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.scaffold_open_drawer, R.string.scaffold_close_drawer) {
 
             @Override
             public void onDrawerOpened(View drawerView) {

@@ -144,7 +144,7 @@ public class CollapsingToolbarTabLayout extends CollapsingToolbarLayout {
 
     private View getDummyView() {
         if (mDummyView == null) {
-            Toolbar toolBar = (Toolbar) findViewById(R.id.toolbar);
+            Toolbar toolBar = (Toolbar) findViewById(R.id.scaffold_toolbar);
             int size = toolBar.getChildCount();
             for (int i = 0; i < size; ++i) {
                 View view = toolBar.getChildAt(i);

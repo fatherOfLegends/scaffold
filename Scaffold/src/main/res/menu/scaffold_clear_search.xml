@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/clear_search"
-        android:title="@string/clear"
+        android:title="@string/scaffold_clear_search"
         android:icon="@drawable/ic_clear_36dp"
         app:showAsAction="always"/>
 </menu>

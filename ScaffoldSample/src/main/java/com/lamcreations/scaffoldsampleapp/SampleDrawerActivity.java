@@ -26,7 +26,7 @@ public class SampleDrawerActivity extends DrawerActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        replaceFragment(R.id.content, new EarthquakesFragment());
+        replaceFragment(R.id.scaffold_content, new EarthquakesFragment());
     }
 
     @Override

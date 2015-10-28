@@ -19,9 +19,9 @@ public abstract class NavigationViewFragment extends BaseFragment implements Nav
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_navigation_view, container, false);
+        View view = inflater.inflate(R.layout.scaffold_navigation_view_fragment, container, false);
         container.setFitsSystemWindows(view.getFitsSystemWindows());
-        mNavigationView = (NavigationView) view.findViewById(R.id.navigation_view);
+        mNavigationView = (NavigationView) view.findViewById(R.id.scaffold_navigation_view);
         mNavigationView.setNavigationItemSelectedListener(this);
         mNavigationView.inflateMenu(getMenuResId());
         NavigationViewHeader header = getNavigationViewHeader();
