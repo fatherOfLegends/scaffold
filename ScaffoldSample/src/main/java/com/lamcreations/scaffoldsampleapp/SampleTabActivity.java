@@ -1,7 +1,7 @@
 package com.lamcreations.scaffoldsampleapp;
 
 
-import com.lamcreations.scaffold.common.activities.TabActivity;
+import com.lamcreations.scaffold.navigation.activities.TabActivity;
 
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;

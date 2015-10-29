@@ -1,8 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (C) 2015 LAM Creations
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
 <android.support.v4.widget.DrawerLayout
-    android:id="@+id/drawer_layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
@@ -18,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inflatedId="@+id/scaffold_content"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
         <android.support.design.widget.AppBarLayout
             android:id="@id/scaffold_app_bar_layout"
@@ -27,13 +45,13 @@
 
             <android.support.v7.widget.Toolbar
                 android:id="@id/scaffold_toolbar"
-                style="@style/ScaffoldToolbar"/>
+                style="@style/ScaffoldToolbar" />
         </android.support.design.widget.AppBarLayout>
 
         <android.support.design.widget.FloatingActionButton
             android:id="@id/scaffold_floating_action_button"
-            style="@style/ScaffoldFloatingActionButton"/>
+            style="@style/ScaffoldFloatingActionButton" />
     </android.support.design.widget.CoordinatorLayout>
 
-    <include layout="@layout/scaffold_start_end_drawer_containers"/>
+    <include layout="@layout/scaffold_start_end_drawer_containers" />
 </android.support.v4.widget.DrawerLayout>

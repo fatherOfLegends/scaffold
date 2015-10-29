@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.lamcreations.scaffold.common.activities.CollapsingToolbarTabDrawerActivity;
+import com.lamcreations.scaffold.navigation.activities.CollapsingToolbarTabDrawerActivity;
 
 
 public class SampleCollapsingToolbarTabDrawerActivity extends CollapsingToolbarTabDrawerActivity {

@@ -8,7 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 
-import com.lamcreations.scaffold.common.activities.TabDrawerActivity;
+import com.lamcreations.scaffold.navigation.activities.TabDrawerActivity;
 
 
 public class SampleTabDrawerActivity extends TabDrawerActivity {

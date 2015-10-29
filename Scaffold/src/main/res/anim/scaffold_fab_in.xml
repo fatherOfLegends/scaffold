@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <!--
-  ~ Copyright (C) 2015 The Android Open Source Project
+  ~ Copyright (C) 2015 LAM Creations
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -17,15 +18,16 @@
 
 <set xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <alpha android:fromAlpha="0.0"
-           android:toAlpha="1.0"/>
+    <alpha
+        android:fromAlpha="0.0"
+        android:toAlpha="1.0" />
 
-    <scale android:fromXScale="0.0"
-           android:fromYScale="0.0"
-           android:toXScale="1.0"
-           android:toYScale="1.0"
-           android:pivotX="50%"
-           android:pivotY="50%"/>
+    <scale
+        android:fromXScale="0.0"
+        android:fromYScale="0.0"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toXScale="1.0"
+        android:toYScale="1.0" />
 
 </set>
-    <!-- From: file:/usr/local/google/buildbot/repo_clients/https___googleplex-android.googlesource.com_a_platform_manifest.git/mnc-release/frameworks/support/design/res/anim/design_fab_in.xml -->
