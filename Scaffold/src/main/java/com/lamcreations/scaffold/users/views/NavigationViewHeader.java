@@ -1,7 +1,7 @@
-package com.lamcreations.scaffold.common.views;
+package com.lamcreations.scaffold.users.views;
 
 import com.lamcreations.scaffold.R;
-import com.lamcreations.scaffold.users.UserAccount;
+import com.lamcreations.scaffold.users.models.UserAccount;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import android.content.Context;

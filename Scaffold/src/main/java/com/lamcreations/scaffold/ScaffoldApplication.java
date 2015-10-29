@@ -3,11 +3,11 @@ package com.lamcreations.scaffold;
 import android.app.Application;
 
 
-public class Scaffold extends Application {
+public class ScaffoldApplication extends Application {
 
-    protected static Scaffold sInstance = null;
+    protected static ScaffoldApplication sInstance = null;
 
-    public static Scaffold getInstance(){
+    public static ScaffoldApplication getInstance(){
         return sInstance;
     }
 

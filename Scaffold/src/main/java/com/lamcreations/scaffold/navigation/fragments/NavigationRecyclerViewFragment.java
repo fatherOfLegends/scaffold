@@ -1,4 +1,4 @@
-package com.lamcreations.scaffold.common.fragments;
+package com.lamcreations.scaffold.navigation.fragments;
 
 
 import android.content.Intent;
@@ -25,6 +25,7 @@ import android.widget.TextView;
 import com.lamcreations.scaffold.R;
 import com.lamcreations.scaffold.common.adapters.BasicRecyclerViewAdapter;
 import com.lamcreations.scaffold.common.adapters.itemDecorations.SpaceItemDecoration;
+import com.lamcreations.scaffold.common.fragments.RecyclerViewFragment;
 
 import java.util.ArrayList;
 import java.util.List;

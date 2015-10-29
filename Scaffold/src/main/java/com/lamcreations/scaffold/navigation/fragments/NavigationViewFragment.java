@@ -1,4 +1,4 @@
-package com.lamcreations.scaffold.common.fragments;
+package com.lamcreations.scaffold.navigation.fragments;
 
 
 import android.os.Bundle;
@@ -10,7 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lamcreations.scaffold.R;
-import com.lamcreations.scaffold.common.views.NavigationViewHeader;
+import com.lamcreations.scaffold.common.fragments.BaseFragment;
+import com.lamcreations.scaffold.users.views.NavigationViewHeader;
 
 public abstract class NavigationViewFragment extends BaseFragment implements NavigationView.OnNavigationItemSelectedListener {
 

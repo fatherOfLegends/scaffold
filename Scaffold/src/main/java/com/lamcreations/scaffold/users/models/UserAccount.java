@@ -1,4 +1,4 @@
-package com.lamcreations.scaffold.users;
+package com.lamcreations.scaffold.users.models;
 
 
 import android.content.Context;

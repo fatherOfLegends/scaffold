@@ -1,7 +1,7 @@
 package com.lamcreations.scaffoldsampleapp;
 
-import com.lamcreations.scaffold.common.fragments.NavigationRecyclerViewFragment;
-import com.lamcreations.scaffold.common.views.NavigationViewHeader;
+import com.lamcreations.scaffold.navigation.fragments.NavigationRecyclerViewFragment;
+import com.lamcreations.scaffold.users.views.NavigationViewHeader;
 
 
 public class SampleNavigationDrawerFragment extends NavigationRecyclerViewFragment {

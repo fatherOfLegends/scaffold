@@ -1,10 +1,10 @@
 package com.lamcreations.scaffoldsampleapp;
 
-import com.lamcreations.scaffold.Scaffold;
+import com.lamcreations.scaffold.ScaffoldApplication;
 import com.firebase.client.Firebase;
 
 
-public class SampleApplication extends Scaffold {
+public class SampleApplication extends ScaffoldApplication {
 
     protected static SampleApplication sInstance = null;
 
