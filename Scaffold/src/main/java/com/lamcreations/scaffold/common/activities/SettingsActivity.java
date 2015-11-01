@@ -1,4 +1,3 @@
-package com.lamcreations.scaffold.common.activities;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -14,6 +13,8 @@ package com.lamcreations.scaffold.common.activities;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+package com.lamcreations.scaffold.common.activities;
 
 import android.os.Bundle;
 import android.support.annotation.XmlRes;
@@ -66,7 +67,7 @@ public abstract class SettingsActivity extends ToolbarActivity
             Bundle args = new Bundle();
             args.putInt(SettingsFragment.PREFERENCE_RES_ID, getPreferenceResId(preference.getKey()));
             fragment.setArguments(args);
-            if(isDualPane()){
+            if (isDualPane()) {
                 replaceFragment(R.id.scaffold_content_end_pane, fragment);
             } else {
                 addFragmentToStack(R.id.scaffold_content, fragment);
@@ -93,7 +94,7 @@ public abstract class SettingsActivity extends ToolbarActivity
 
     @Override
     protected void onUpNavigation() {
-        if(getSupportFragmentManager().getBackStackEntryCount() > 0){
+        if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
             popFragmentStack();
         } else {
             ActivityCompat.finishAfterTransition(this);

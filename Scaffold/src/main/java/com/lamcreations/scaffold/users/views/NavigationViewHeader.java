@@ -15,10 +15,6 @@ package com.lamcreations.scaffold.users.views;
  * limitations under the License.
  */
 
-import com.lamcreations.scaffold.R;
-import com.lamcreations.scaffold.users.models.UserAccount;
-import com.makeramen.roundedimageview.RoundedImageView;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
@@ -31,6 +27,10 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.lamcreations.scaffold.R;
+import com.lamcreations.scaffold.common.views.RoundedImageView;
+import com.lamcreations.scaffold.users.models.UserAccount;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,29 +81,29 @@ public class NavigationViewHeader extends FrameLayout {
         mAccountDropDownButton = (ImageButton) findViewById(R.id.scaffold_navigation_view_account_drop_down_button);
     }
 
-    public void setHeaderImageBitmap(Bitmap bitmap){
+    public void setHeaderImageBitmap(Bitmap bitmap) {
         if (mHeaderImage != null) {
             mHeaderImage.setImageBitmap(bitmap);
         }
     }
 
-    public void setHeaderImageDrawable(Drawable drawable){
+    public void setHeaderImageDrawable(Drawable drawable) {
         if (mHeaderImage != null) {
             mHeaderImage.setImageDrawable(drawable);
         }
     }
 
-    public void setHeaderImageResource(@DrawableRes int resId){
+    public void setHeaderImageResource(@DrawableRes int resId) {
         if (mHeaderImage != null) {
             mHeaderImage.setImageResource(resId);
         }
     }
 
-    public void setHeaderImageOverlayAlpha(@FloatRange(from=0.0, to=1.0) float alpha){
+    public void setHeaderImageOverlayAlpha(@FloatRange(from = 0.0, to = 1.0) float alpha) {
         mHeaderImageOverlay.setAlpha(alpha);
     }
 
-    public Drawable getCurrentAccountImage(){
+    public Drawable getCurrentAccountImage() {
         if (mCurrentAccountImageView != null) {
             return mCurrentAccountImageView.getDrawable();
         }
@@ -160,26 +160,26 @@ public class NavigationViewHeader extends FrameLayout {
         }
     }
 
-    public void setAccountDropDownButtonClickListener(OnClickListener listener){
+    public void setAccountDropDownButtonClickListener(OnClickListener listener) {
         if (mAccountDropDownButton != null) {
             mAccountDropDownButton.setOnClickListener(listener);
         }
     }
 
     private void showDropDownMenu(boolean show) {
-        if(mAccountDropDownButton != null){
+        if (mAccountDropDownButton != null) {
             mAccountDropDownButton.setVisibility(show ? VISIBLE : GONE);
         }
     }
 
-    public boolean hasMultipleAccounts(){
+    public boolean hasMultipleAccounts() {
         return mUserAccounts.size() > 1;
     }
 
     public void addUserAccount(UserAccount userAccount) {
-        if(userAccount != null){
+        if (userAccount != null) {
             mUserAccounts.add(userAccount);
-            if(mUserAccounts.size() == 1){
+            if (mUserAccounts.size() == 1) {
                 loadUserAccount(0);
             }
             showDropDownMenu(hasMultipleAccounts());
@@ -188,15 +188,15 @@ public class NavigationViewHeader extends FrameLayout {
 
     public void addUserAccounts(List<UserAccount> userAccounts) {
         mUserAccounts.addAll(userAccounts);
-        if(mUserAccounts.size() >= 1 && mCurrentAccountIndex == -1){
+        if (mUserAccounts.size() >= 1 && mCurrentAccountIndex == -1) {
             loadUserAccount(0);
         }
         showDropDownMenu(hasMultipleAccounts());
     }
 
-    public void removeCurrentUserAccount(){
+    public void removeCurrentUserAccount() {
         mUserAccounts.remove(mCurrentAccountIndex);
-        if(mUserAccounts.size() >= 1){
+        if (mUserAccounts.size() >= 1) {
             loadUserAccount(0);
         } else {
             loadUserAccount(-1);
@@ -204,9 +204,9 @@ public class NavigationViewHeader extends FrameLayout {
         showDropDownMenu(hasMultipleAccounts());
     }
 
-    private void loadUserAccount(int index){
+    private void loadUserAccount(int index) {
         mCurrentAccountIndex = index;
-        if(mCurrentAccountIndex >= 0 && mCurrentAccountIndex < mUserAccounts.size()){
+        if (mCurrentAccountIndex >= 0 && mCurrentAccountIndex < mUserAccounts.size()) {
             UserAccount userAccount = mUserAccounts.get(mCurrentAccountIndex);
             setCurrentAccountName(userAccount.getName());
             setCurrentAccountEmail(userAccount.getEmail());
@@ -239,20 +239,20 @@ public class NavigationViewHeader extends FrameLayout {
     private void setAltAccountImages(int currentAccountIndex) {
         ArrayList<UserAccount> otherAccounts = new ArrayList<>();
         int size = mUserAccounts.size();
-        for(int i = 0; i < size; ++i){
-            if(i < currentAccountIndex){
+        for (int i = 0; i < size; ++i) {
+            if (i < currentAccountIndex) {
                 otherAccounts.add(mUserAccounts.get(i));
             } else if (i > currentAccountIndex) {
                 otherAccounts.add(i - currentAccountIndex, mUserAccounts.get(i));
             }
         }
         size = otherAccounts.size();
-        for(int i = 0; i < 3 && i < size; ++i){
+        for (int i = 0; i < 3 && i < size; ++i) {
             final int finalI = i;
             otherAccounts.get(i).getProfileImage(getContext(), new UserAccount.ImageCallback() {
                 @Override
                 public void onImageAvailable(Bitmap image) {
-                    switch (finalI){
+                    switch (finalI) {
                         case 0:
                             setFirstAltAccountImage(image);
                             break;
@@ -270,7 +270,7 @@ public class NavigationViewHeader extends FrameLayout {
         }
     }
 
-    private Drawable roundDrawable(Bitmap bitmap){
+    private Drawable roundDrawable(Bitmap bitmap) {
         return bitmap != null ? RoundedBitmapDrawableFactory.create(getResources(), bitmap) : null;
     }
 }

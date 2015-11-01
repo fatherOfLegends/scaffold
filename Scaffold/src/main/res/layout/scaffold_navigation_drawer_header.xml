@@ -36,21 +36,21 @@
             android:id="@id/scaffold_navigation_view_account_image_container"
             style="@style/ScaffoldNavigationViewHeaderAccountImageContainer">
 
-            <com.makeramen.roundedimageview.RoundedImageView
+            <com.lamcreations.scaffold.common.views.RoundedImageView
                 android:id="@id/scaffold_navigation_view_current_account_image"
                 style="@style/ScaffoldNavigationViewHeaderCurrentAccountImage" />
 
             <View style="@style/ScaffoldHorizontalSpacer" />
 
-            <com.makeramen.roundedimageview.RoundedImageView
+            <com.lamcreations.scaffold.common.views.RoundedImageView
                 android:id="@id/scaffold_navigation_view_alt_account_image_1"
                 style="@style/ScaffoldNavigationViewHeaderAltAccountImage" />
 
-            <com.makeramen.roundedimageview.RoundedImageView
+            <com.lamcreations.scaffold.common.views.RoundedImageView
                 android:id="@id/scaffold_navigation_view_alt_account_image_2"
                 style="@style/ScaffoldNavigationViewHeaderAltAccountImage" />
 
-            <com.makeramen.roundedimageview.RoundedImageView
+            <com.lamcreations.scaffold.common.views.RoundedImageView
                 android:id="@id/scaffold_navigation_view_alt_account_image_3"
                 style="@style/ScaffoldNavigationViewHeaderAltAccountImage" />
         </LinearLayout>

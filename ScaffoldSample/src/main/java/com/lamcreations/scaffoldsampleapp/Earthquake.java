@@ -1,4 +1,3 @@
-package com.lamcreations.scaffoldsampleapp;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -14,6 +13,8 @@ package com.lamcreations.scaffoldsampleapp;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+package com.lamcreations.scaffoldsampleapp;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -108,7 +109,7 @@ public class Earthquake {
             return false;
         }
 
-        Earthquake that = (Earthquake)o;
+        Earthquake that = (Earthquake) o;
 
         return !(getCode() != null ? !getCode().equals(that.getCode()) : that.getCode() != null);
 

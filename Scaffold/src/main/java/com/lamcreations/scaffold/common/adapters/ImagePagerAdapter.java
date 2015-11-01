@@ -1,4 +1,3 @@
-package com.lamcreations.scaffold.common.adapters;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -14,6 +13,8 @@ package com.lamcreations.scaffold.common.adapters;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+package com.lamcreations.scaffold.common.adapters;
 
 import android.content.Context;
 import android.support.annotation.LayoutRes;
@@ -44,7 +45,7 @@ public abstract class ImagePagerAdapter<T> extends PagerAdapter {
         notifyDataSetChanged();
     }
 
-    public T getImageUri(int position){
+    public T getImageUri(int position) {
         return mImages.get(position);
     }
 

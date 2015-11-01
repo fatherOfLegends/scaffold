@@ -1,4 +1,3 @@
-package com.lamcreations.scaffold.common.activities;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -14,6 +13,8 @@ package com.lamcreations.scaffold.common.activities;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+package com.lamcreations.scaffold.common.activities;
 
 import android.content.Intent;
 import android.graphics.Typeface;

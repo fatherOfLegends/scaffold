@@ -1,4 +1,3 @@
-package com.lamcreations.scaffold.common.activities;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -14,6 +13,8 @@ package com.lamcreations.scaffold.common.activities;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+package com.lamcreations.scaffold.common.activities;
 
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -39,12 +40,18 @@ import java.lang.annotation.RetentionPolicy;
 
 public abstract class CoordinatorActivity extends ToolbarActivity {
 
-    @IntDef(flag=true, value={AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS,
-             AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS_COLLAPSED,
-             AppBarLayout.LayoutParams.SCROLL_FLAG_EXIT_UNTIL_COLLAPSED,
-             AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL})
+    @IntDef(
+            flag = true,
+            value = {
+                    AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS,
+                    AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS_COLLAPSED,
+                    AppBarLayout.LayoutParams.SCROLL_FLAG_EXIT_UNTIL_COLLAPSED,
+                    AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL
+            }
+    )
     @Retention(RetentionPolicy.SOURCE)
-    public @interface AppBarLayoutScrollFlags {}
+    public @interface AppBarLayoutScrollFlags {
+    }
 
     protected ViewStub mContentViewStub;
     protected View mContentView;
@@ -62,8 +69,8 @@ public abstract class CoordinatorActivity extends ToolbarActivity {
         initFab();
     }
 
-    protected void setContent(@LayoutRes int resId){
-        if(findViewById(R.id.scaffold_content) == null && mContentViewStub != null){
+    protected void setContent(@LayoutRes int resId) {
+        if (findViewById(R.id.scaffold_content) == null && mContentViewStub != null) {
             mContentViewStub.setLayoutResource(resId);
             mContentView = mContentViewStub.inflate();
         }
@@ -74,8 +81,8 @@ public abstract class CoordinatorActivity extends ToolbarActivity {
         if (actionBar == null) {
             mAppBarLayout = (AppBarLayout) findViewById(R.id.scaffold_app_bar_layout);
             mToolbar = (Toolbar) findViewById(R.id.scaffold_toolbar);
-            if(mToolbar.getParent().getClass().equals(AppBarLayout.class)){
-                ((AppBarLayout.LayoutParams)mToolbar.getLayoutParams()).setScrollFlags(getScrollFlags());
+            if (mToolbar.getParent().getClass().equals(AppBarLayout.class)) {
+                ((AppBarLayout.LayoutParams) mToolbar.getLayoutParams()).setScrollFlags(getScrollFlags());
             }
             setSupportActionBar(mToolbar);
             actionBar = getSupportActionBar();
@@ -87,35 +94,35 @@ public abstract class CoordinatorActivity extends ToolbarActivity {
     }
 
     @AppBarLayoutScrollFlags
-    protected int getScrollFlags(){
+    protected int getScrollFlags() {
         return AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL | AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS;
     }
 
     private void initFab() {
         mFloatingActionButton = (FloatingActionButton) findViewById(R.id.scaffold_floating_action_button);
-        if(mFloatingActionButton != null){
-            CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams)mFloatingActionButton.getLayoutParams();
+        if (mFloatingActionButton != null) {
+            CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) mFloatingActionButton.getLayoutParams();
             layoutParams.setAnchorId(getFabAnchorId());
             layoutParams.anchorGravity = getFabAnchorGravity();
             layoutParams.setBehavior(getFabBehavior());
             boolean show = setupFab();
-            if(!show){
-                ViewGroup parent = (ViewGroup)mFloatingActionButton.getParent();
+            if (!show) {
+                ViewGroup parent = (ViewGroup) mFloatingActionButton.getParent();
                 parent.removeView(mFloatingActionButton);
             }
         }
     }
 
     @IdRes
-    protected int getFabAnchorId(){
+    protected int getFabAnchorId() {
         return R.id.scaffold_content;
     }
 
-    protected int getFabAnchorGravity(){
+    protected int getFabAnchorGravity() {
         return Gravity.BOTTOM | GravityCompat.END;
     }
 
-    protected CoordinatorLayout.Behavior<FloatingActionButton> getFabBehavior(){
+    protected CoordinatorLayout.Behavior<FloatingActionButton> getFabBehavior() {
         return new FabBehavior();
     }
 

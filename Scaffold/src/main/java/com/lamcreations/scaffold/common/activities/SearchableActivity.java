@@ -1,4 +1,3 @@
-package com.lamcreations.scaffold.common.activities;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -14,6 +13,8 @@ package com.lamcreations.scaffold.common.activities;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+package com.lamcreations.scaffold.common.activities;
 
 import android.app.SearchManager;
 import android.content.Intent;
@@ -84,10 +85,10 @@ public abstract class SearchableActivity extends CoordinatorActivity implements 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        if(showClearSearch()){
+        if (showClearSearch()) {
             getMenuInflater().inflate(R.menu.scaffold_clear_search, menu);
         }
-        if(showVoiceSearch()){
+        if (showVoiceSearch()) {
             getMenuInflater().inflate(R.menu.scaffold_voice_search, menu);
         }
         return super.onCreateOptionsMenu(menu);
@@ -96,11 +97,11 @@ public abstract class SearchableActivity extends CoordinatorActivity implements 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         MenuItem clearSearch = menu.findItem(R.id.clear_search);
-        if(clearSearch != null){
+        if (clearSearch != null) {
             clearSearch.setVisible(!getQuery().isEmpty());
         }
         MenuItem voiceSearch = menu.findItem(R.id.voice_search);
-        if(voiceSearch != null){
+        if (voiceSearch != null) {
             voiceSearch.setVisible(getQuery().isEmpty());
         }
         return super.onPrepareOptionsMenu(menu);
@@ -112,7 +113,7 @@ public abstract class SearchableActivity extends CoordinatorActivity implements 
         if (id == R.id.clear_search) {
             clearSearchQuery();
             return true;
-        } else if(id == R.id.voice_search){
+        } else if (id == R.id.voice_search) {
             beginVoiceSearch();
             return true;
         }
@@ -122,10 +123,10 @@ public abstract class SearchableActivity extends CoordinatorActivity implements 
     protected void setupActionBar() {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar == null) {
-            mAppBarLayout = (AppBarLayout)findViewById(R.id.scaffold_app_bar_layout);
-            mToolbar = (Toolbar)findViewById(R.id.scaffold_toolbar);
+            mAppBarLayout = (AppBarLayout) findViewById(R.id.scaffold_app_bar_layout);
+            mToolbar = (Toolbar) findViewById(R.id.scaffold_toolbar);
             if (mToolbar.getParent().getClass().equals(AppBarLayout.class)) {
-                ((AppBarLayout.LayoutParams)mToolbar.getLayoutParams()).setScrollFlags(getScrollFlags());
+                ((AppBarLayout.LayoutParams) mToolbar.getLayoutParams()).setScrollFlags(getScrollFlags());
             }
             setSupportActionBar(mToolbar);
             actionBar = getSupportActionBar();
@@ -142,7 +143,7 @@ public abstract class SearchableActivity extends CoordinatorActivity implements 
     }
 
     @NonNull
-    protected String getQuery(){
+    protected String getQuery() {
         return mSearchEditText.getText().toString();
     }
 
@@ -157,13 +158,13 @@ public abstract class SearchableActivity extends CoordinatorActivity implements 
     @CallSuper
     @Override
     public void afterTextChanged(Editable s) {
-        if(mPreviousQuery.isEmpty()){
+        if (mPreviousQuery.isEmpty()) {
             invalidateOptionsMenu();
-        } else if (s.length() == 0){
+        } else if (s.length() == 0) {
             invalidateOptionsMenu();
         }
 
-        if(performSearchOnQueryChange()){
+        if (performSearchOnQueryChange()) {
             performSearch(getQuery());
         }
 
@@ -174,7 +175,7 @@ public abstract class SearchableActivity extends CoordinatorActivity implements 
         mSearchEditText.setText(null);
     }
 
-    protected void beginVoiceSearch(){
+    protected void beginVoiceSearch() {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         startActivityForResult(intent, SPEECH_REQUEST_CODE);

@@ -1,4 +1,3 @@
-package com.lamcreations.scaffold.navigation.fragments;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -15,6 +14,8 @@ package com.lamcreations.scaffold.navigation.fragments;
  * limitations under the License.
  */
 
+package com.lamcreations.scaffold.navigation.fragments;
+
 import android.os.Bundle;
 import android.support.annotation.MenuRes;
 import android.support.annotation.Nullable;
@@ -27,7 +28,8 @@ import com.lamcreations.scaffold.R;
 import com.lamcreations.scaffold.common.fragments.BaseFragment;
 import com.lamcreations.scaffold.users.views.NavigationViewHeader;
 
-public abstract class NavigationViewFragment extends BaseFragment implements NavigationView.OnNavigationItemSelectedListener {
+public abstract class NavigationViewFragment extends BaseFragment
+        implements NavigationView.OnNavigationItemSelectedListener {
 
     protected NavigationView mNavigationView;
 

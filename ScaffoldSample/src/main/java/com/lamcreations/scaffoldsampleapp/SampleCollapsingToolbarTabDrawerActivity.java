@@ -1,4 +1,3 @@
-package com.lamcreations.scaffoldsampleapp;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -14,6 +13,8 @@ package com.lamcreations.scaffoldsampleapp;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+package com.lamcreations.scaffoldsampleapp;
 
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
@@ -49,7 +50,7 @@ public class SampleCollapsingToolbarTabDrawerActivity extends CollapsingToolbarT
     @Override
     protected void setupCollapsingToolbarLayoutBackdrop() {
         super.setupCollapsingToolbarLayoutBackdrop();
-        Glide.with(this).load(R.drawable.north_america).into((ImageView)mCollapsingToolbarLayoutBackdropView);
+        Glide.with(this).load(R.drawable.north_america).into((ImageView) mCollapsingToolbarLayoutBackdropView);
     }
 
     @Override

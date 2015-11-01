@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (c) 2014, Vincent Mi
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+  <declare-styleable name="RoundedImageView">
+    <attr name="riv_corner_radius" format="dimension" />
+    <attr name="riv_corner_radius_top_left" format="dimension" />
+    <attr name="riv_corner_radius_top_right" format="dimension" />
+    <attr name="riv_corner_radius_bottom_left" format="dimension" />
+    <attr name="riv_corner_radius_bottom_right" format="dimension" />
+    <attr name="riv_border_width" format="dimension" />
+    <attr name="riv_border_color" format="color" />
+    <attr name="riv_mutate_background" format="boolean" />
+    <attr name="riv_oval" format="boolean" />
+    <attr name="android:scaleType" />
+    <attr name="riv_tile_mode">
+      <enum name="clamp" value="0" />
+      <enum name="repeat" value="1" />
+      <enum name="mirror" value="2" />
+    </attr>
+    <attr name="riv_tile_mode_x">
+      <enum name="clamp" value="0" />
+      <enum name="repeat" value="1" />
+      <enum name="mirror" value="2" />
+    </attr>
+    <attr name="riv_tile_mode_y">
+      <enum name="clamp" value="0" />
+      <enum name="repeat" value="1" />
+      <enum name="mirror" value="2" />
+    </attr>
+  </declare-styleable>
+</resources>

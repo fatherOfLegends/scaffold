@@ -1,4 +1,3 @@
-package com.lamcreations.scaffoldsampleapp;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -15,10 +14,12 @@ package com.lamcreations.scaffoldsampleapp;
  * limitations under the License.
  */
 
-import com.lamcreations.scaffold.common.activities.ToolbarActivity;
+package com.lamcreations.scaffoldsampleapp;
 
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
+
+import com.lamcreations.scaffold.common.activities.ToolbarActivity;
 
 
 public class SampleToolbarActivity extends ToolbarActivity {

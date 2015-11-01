@@ -1,4 +1,3 @@
-package com.lamcreations.scaffoldsampleapp;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -14,6 +13,8 @@ package com.lamcreations.scaffoldsampleapp;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+package com.lamcreations.scaffoldsampleapp;
 
 import android.content.Intent;
 import android.support.v7.internal.view.menu.MenuBuilder;
@@ -72,7 +73,7 @@ public class PossibilitiesFragment extends RecyclerViewFragment<PossibilitiesFra
     protected void onClick(int position) {
         MenuItem item = getRecyclerViewAdapter().getItemAtPosition(position);
         Intent intent = new Intent();
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.toolbar_activity:
                 intent.setClass(getActivity(), SampleToolbarActivity.class);
                 break;
@@ -153,7 +154,7 @@ public class PossibilitiesFragment extends RecyclerViewFragment<PossibilitiesFra
                 final BasicRecyclerViewAdapter.ItemInteractionListener itemInteractionListener,
                 View itemView) {
             super(itemView);
-            mTitleTextView = (TextView)itemView.findViewById(R.id.title);
+            mTitleTextView = (TextView) itemView.findViewById(R.id.title);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

@@ -1,4 +1,3 @@
-package com.lamcreations.scaffold.common.fragments;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -14,6 +13,8 @@ package com.lamcreations.scaffold.common.fragments;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+package com.lamcreations.scaffold.common.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.CallSuper;
@@ -37,8 +38,7 @@ import com.lamcreations.scaffold.common.adapters.itemDecorations.SpaceItemDecora
 
 public abstract class RecyclerViewFragment<Adapter extends BasicRecyclerViewAdapter> extends BaseFragment
         implements BasicRecyclerViewAdapter.ItemInteractionListener,
-                   ActionMode.Callback, SwipeRefreshLayout.OnRefreshListener
-{
+        ActionMode.Callback, SwipeRefreshLayout.OnRefreshListener {
 
     protected RecyclerView mRecyclerView;
     protected ActionMode mActionMode;
@@ -96,8 +96,8 @@ public abstract class RecyclerViewFragment<Adapter extends BasicRecyclerViewAdap
         setupRecyclerView(view);
         assert mRecyclerView != null;
 
-        mSwipeRefreshLayout = (SwipeRefreshLayout)view.findViewById(R.id.scaffold_swipe_refresh_layout);
-        if(mSwipeRefreshLayout != null){
+        mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.scaffold_swipe_refresh_layout);
+        if (mSwipeRefreshLayout != null) {
             mSwipeRefreshLayout.setColorSchemeResources(getSwipeRefreshColorScheme());
             mSwipeRefreshLayout.setOnRefreshListener(this);
             mSwipeRefreshLayout.setEnabled(isSwipeRefreshEnabled());
@@ -114,13 +114,13 @@ public abstract class RecyclerViewFragment<Adapter extends BasicRecyclerViewAdap
 
     @Override
     public void onItemLongPressed(int position) {
-        if(getActionMode() != BasicRecyclerViewAdapter.ActivationMode.NONE){
+        if (getActionMode() != BasicRecyclerViewAdapter.ActivationMode.NONE) {
             if (position == -1) {
                 return;
             }
             getRecyclerViewAdapter().toggleActivation(position);
             if (mActionMode == null) {
-                mActionMode = ((AppCompatActivity)getActivity()).startSupportActionMode(this);
+                mActionMode = ((AppCompatActivity) getActivity()).startSupportActionMode(this);
             } else {
                 mActionMode.invalidate();
             }
@@ -213,11 +213,11 @@ public abstract class RecyclerViewFragment<Adapter extends BasicRecyclerViewAdap
         if (mRecyclerView != null) {
             RecyclerView.LayoutManager layoutManager = mRecyclerView.getLayoutManager();
             if (layoutManager instanceof StaggeredGridLayoutManager) {
-                int[] firstItems = new int[((StaggeredGridLayoutManager)layoutManager).getSpanCount()];
-                ((StaggeredGridLayoutManager)layoutManager).findFirstVisibleItemPositions(firstItems);
+                int[] firstItems = new int[((StaggeredGridLayoutManager) layoutManager).getSpanCount()];
+                ((StaggeredGridLayoutManager) layoutManager).findFirstVisibleItemPositions(firstItems);
                 mScrollPosition = firstItems[0];
             } else {
-                mScrollPosition = ((LinearLayoutManager)layoutManager).findFirstVisibleItemPosition();
+                mScrollPosition = ((LinearLayoutManager) layoutManager).findFirstVisibleItemPosition();
             }
             View child = layoutManager.getChildAt(0);
             mScrollOffset = child != null ? child.getTop() : 0;
@@ -227,10 +227,10 @@ public abstract class RecyclerViewFragment<Adapter extends BasicRecyclerViewAdap
     private void restoreScrollPosition() {
         if (mRecyclerView != null) {
             if (mRecyclerView.getLayoutManager() instanceof StaggeredGridLayoutManager) {
-                ((StaggeredGridLayoutManager)mRecyclerView.getLayoutManager())
+                ((StaggeredGridLayoutManager) mRecyclerView.getLayoutManager())
                         .scrollToPositionWithOffset(mScrollPosition, mScrollOffset);
             } else {
-                ((LinearLayoutManager)mRecyclerView.getLayoutManager())
+                ((LinearLayoutManager) mRecyclerView.getLayoutManager())
                         .scrollToPositionWithOffset(mScrollPosition, mScrollOffset);
             }
         }
@@ -238,7 +238,7 @@ public abstract class RecyclerViewFragment<Adapter extends BasicRecyclerViewAdap
 
     @CallSuper
     protected void setupRecyclerView(View view) {
-        mRecyclerView = (RecyclerView)view.findViewById(R.id.scaffold_recycler_view);
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.scaffold_recycler_view);
         mRecyclerView.setItemAnimator(getItemAnimator());
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(getLayoutManager());
@@ -260,6 +260,6 @@ public abstract class RecyclerViewFragment<Adapter extends BasicRecyclerViewAdap
     protected abstract boolean isSwipeRefreshEnabled();
 
     @Override
-    public void onRefresh(){
+    public void onRefresh() {
     }
 }

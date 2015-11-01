@@ -1,4 +1,3 @@
-package com.lamcreations.scaffold;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -15,6 +14,8 @@ package com.lamcreations.scaffold;
  * limitations under the License.
  */
 
+package com.lamcreations.scaffold;
+
 import android.app.Application;
 
 
@@ -22,7 +23,7 @@ public class ScaffoldApplication extends Application {
 
     protected static ScaffoldApplication sInstance = null;
 
-    public static ScaffoldApplication getInstance(){
+    public static ScaffoldApplication getInstance() {
         return sInstance;
     }
 

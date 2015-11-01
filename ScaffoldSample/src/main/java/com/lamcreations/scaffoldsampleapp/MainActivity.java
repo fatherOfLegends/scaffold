@@ -1,4 +1,3 @@
-package com.lamcreations.scaffoldsampleapp;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -15,10 +14,12 @@ package com.lamcreations.scaffoldsampleapp;
  * limitations under the License.
  */
 
-import com.lamcreations.scaffold.common.activities.ToolbarActivity;
+package com.lamcreations.scaffoldsampleapp;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
+
+import com.lamcreations.scaffold.common.activities.ToolbarActivity;
 
 
 public class MainActivity extends ToolbarActivity {
@@ -34,7 +35,7 @@ public class MainActivity extends ToolbarActivity {
     protected void setupActionBar() {
         super.setupActionBar();
         ActionBar actionBar = getSupportActionBar();
-        if(actionBar != null){
+        if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(false);
             actionBar.setHomeButtonEnabled(false);
         }

@@ -1,4 +1,3 @@
-package com.lamcreations.scaffold.common.adapters;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -15,6 +14,8 @@ package com.lamcreations.scaffold.common.adapters;
  * limitations under the License.
  */
 
+package com.lamcreations.scaffold.common.adapters;
+
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
@@ -29,7 +30,9 @@ public abstract class BasicRecyclerViewAdapter<VH extends RecyclerView.ViewHolde
     // Only one item can be selected at a time.
     private int mSelectedItem = NONE_SELECTED;
     public static int NONE_ACTIVATED = -1;
+
     protected abstract List<T> getDataList();
+
     protected boolean mMoreItemsAvailable = false;
 
     // Used to indicate Activation
@@ -42,8 +45,8 @@ public abstract class BasicRecyclerViewAdapter<VH extends RecyclerView.ViewHolde
         mActivatedItems = new ArrayList<T>();
     }
 
-    public T getItemAtPosition(int position){
-        if(getDataList().size() > position && position >= 0){
+    public T getItemAtPosition(int position) {
+        if (getDataList().size() > position && position >= 0) {
             return getDataList().get(position);
         }
         return null;
@@ -130,7 +133,7 @@ public abstract class BasicRecyclerViewAdapter<VH extends RecyclerView.ViewHolde
             positions[i] = getDataList().indexOf(mActivatedItems.get(i));
         }
         mActivatedItems.clear();
-        for(int position : positions){
+        for (int position : positions) {
             notifyItemChanged(position);
         }
     }
@@ -154,7 +157,7 @@ public abstract class BasicRecyclerViewAdapter<VH extends RecyclerView.ViewHolde
             throw new IllegalStateException("Activation mode must be MULTIPLE");
         }
         int[] activatedItemPositions = new int[mActivatedItems.size()];
-        for(int i = 0; i< mActivatedItems.size(); i++){
+        for (int i = 0; i < mActivatedItems.size(); i++) {
             activatedItemPositions[i] = getDataList().indexOf(mActivatedItems.get(i));
         }
         return activatedItemPositions;
@@ -174,7 +177,7 @@ public abstract class BasicRecyclerViewAdapter<VH extends RecyclerView.ViewHolde
         return getDataList().indexOf(ad);
     }
 
-    public void clear(){
+    public void clear() {
         getDataList().clear();
         mActivatedItems.clear();
         notifyDataSetChanged();
@@ -190,8 +193,8 @@ public abstract class BasicRecyclerViewAdapter<VH extends RecyclerView.ViewHolde
 
         /**
          * This will notify the listener that an Item has been clicked.
-         *  @param position         This position represents the position in the list
          *
+         * @param position This position represents the position in the list
          */
         void onItemClick(int position);
 
@@ -209,7 +212,7 @@ public abstract class BasicRecyclerViewAdapter<VH extends RecyclerView.ViewHolde
 
         /**
          * @param position This position represents the position in the list
-         * @param view This is the id of the view that was clicked on
+         * @param view     This is the id of the view that was clicked on
          */
         void onGenericActionClick(int position, View view);
 
@@ -220,14 +223,17 @@ public abstract class BasicRecyclerViewAdapter<VH extends RecyclerView.ViewHolde
             public void onItemClick(int position) {
 
             }
+
             @Override
             public void onItemLongPressed(int position) {
 
             }
+
             @Override
             public void onActionModeToggleClick(int position) {
 
             }
+
             @Override
             public void onGenericActionClick(int position, View view) {
 

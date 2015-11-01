@@ -1,4 +1,3 @@
-package com.lamcreations.scaffoldsampleapp;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -15,11 +14,13 @@ package com.lamcreations.scaffoldsampleapp;
  * limitations under the License.
  */
 
-import com.lamcreations.scaffold.common.activities.SplashScreenActivity;
-import com.lamcreations.scaffold.common.utils.DisplayUtils;
+package com.lamcreations.scaffoldsampleapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.lamcreations.scaffold.common.activities.SplashScreenActivity;
+import com.lamcreations.scaffold.common.utils.DisplayUtils;
 
 
 public class SplashActivity extends SplashScreenActivity {

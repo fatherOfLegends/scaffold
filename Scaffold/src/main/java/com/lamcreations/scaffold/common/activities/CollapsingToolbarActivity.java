@@ -1,4 +1,3 @@
-package com.lamcreations.scaffold.common.activities;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -15,6 +14,8 @@ package com.lamcreations.scaffold.common.activities;
  * limitations under the License.
  */
 
+package com.lamcreations.scaffold.common.activities;
+
 import android.os.Bundle;
 import android.support.annotation.CallSuper;
 import android.support.annotation.FloatRange;
@@ -27,14 +28,20 @@ import android.view.ViewStub;
 
 import com.lamcreations.scaffold.R;
 
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
 
 public abstract class CollapsingToolbarActivity extends CoordinatorActivity {
 
-    @IntDef({CollapsingToolbarLayout.LayoutParams.COLLAPSE_MODE_OFF,
-             CollapsingToolbarLayout.LayoutParams.COLLAPSE_MODE_PARALLAX,
-             CollapsingToolbarLayout.LayoutParams.COLLAPSE_MODE_PIN
+    @IntDef({
+            CollapsingToolbarLayout.LayoutParams.COLLAPSE_MODE_OFF,
+            CollapsingToolbarLayout.LayoutParams.COLLAPSE_MODE_PARALLAX,
+            CollapsingToolbarLayout.LayoutParams.COLLAPSE_MODE_PIN
     })
-    public @interface CollapseMode {}
+    @Retention(RetentionPolicy.SOURCE)
+    public @interface CollapseMode {
+    }
 
     protected CollapsingToolbarLayout mCollapsingToolbarLayout;
     protected ViewStub mCollapsingToolbarLayoutBackdropViewStub;
@@ -50,19 +57,19 @@ public abstract class CollapsingToolbarActivity extends CoordinatorActivity {
 
     @CallSuper
     protected void setupCollapsingToolbarLayout() {
-        mCollapsingToolbarLayout = (CollapsingToolbarLayout)findViewById(R.id.scaffold_collapsing_toolbar_layout);
-        ((AppBarLayout.LayoutParams)mCollapsingToolbarLayout.getLayoutParams()).setScrollFlags(getScrollFlags());
+        mCollapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.scaffold_collapsing_toolbar_layout);
+        ((AppBarLayout.LayoutParams) mCollapsingToolbarLayout.getLayoutParams()).setScrollFlags(getScrollFlags());
         mAppBarLayout.getLayoutParams().height = getCollapsingToolbarMaxHeight();
-        ((CollapsingToolbarLayout.LayoutParams)mToolbar.getLayoutParams()).setCollapseMode(getActionbarCollapseMode());
+        ((CollapsingToolbarLayout.LayoutParams) mToolbar.getLayoutParams()).setCollapseMode(getActionbarCollapseMode());
     }
 
     @CallSuper
     protected void setupCollapsingToolbarLayoutBackdrop() {
-        mCollapsingToolbarLayoutBackdropViewStub = (ViewStub)findViewById(R.id.scaffold_collapsing_toolbar_backdrop_stub);
+        mCollapsingToolbarLayoutBackdropViewStub = (ViewStub) findViewById(R.id.scaffold_collapsing_toolbar_backdrop_stub);
         mCollapsingToolbarLayoutBackdropViewStub.setLayoutResource(getCollapsingToolbarLayoutBackdropResId());
         mCollapsingToolbarLayoutBackdropView = mCollapsingToolbarLayoutBackdropViewStub.inflate();
         CollapsingToolbarLayout.LayoutParams layoutParams =
-                ((CollapsingToolbarLayout.LayoutParams)mCollapsingToolbarLayoutBackdropView.getLayoutParams());
+                ((CollapsingToolbarLayout.LayoutParams) mCollapsingToolbarLayoutBackdropView.getLayoutParams());
         layoutParams.setCollapseMode(getBackdropCollapseMode());
         layoutParams.setParallaxMultiplier(getParallaxMultiplier());
         mCollapsingToolbarLayoutBackdropView.setLayoutParams(layoutParams);
@@ -80,12 +87,12 @@ public abstract class CollapsingToolbarActivity extends CoordinatorActivity {
     }
 
     @FloatRange(from = 0.0, to = 1.0)
-    protected float getParallaxMultiplier(){
+    protected float getParallaxMultiplier() {
         return 0.0f;
     }
 
     @CollapseMode
-    protected  int getActionbarCollapseMode(){
+    protected int getActionbarCollapseMode() {
         return CollapsingToolbarLayout.LayoutParams.COLLAPSE_MODE_PIN;
     }
 

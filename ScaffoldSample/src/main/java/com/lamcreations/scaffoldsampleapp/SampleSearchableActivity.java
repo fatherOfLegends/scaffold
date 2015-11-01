@@ -1,4 +1,3 @@
-package com.lamcreations.scaffoldsampleapp;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -14,6 +13,8 @@ package com.lamcreations.scaffoldsampleapp;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+package com.lamcreations.scaffoldsampleapp;
 
 import android.support.v4.app.ActivityCompat;
 import android.widget.Toast;
@@ -51,6 +52,7 @@ public class SampleSearchableActivity extends SearchableActivity {
     protected void onUpNavigation() {
         ActivityCompat.finishAfterTransition(this);
     }
+
     @Override
     protected boolean performSearchOnQueryChange() {
         return false;

@@ -1,4 +1,3 @@
-package com.lamcreations.scaffoldsampleapp;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -15,8 +14,7 @@ package com.lamcreations.scaffoldsampleapp;
  * limitations under the License.
  */
 
-import com.bumptech.glide.Glide;
-import com.lamcreations.scaffold.common.activities.CollapsingToolbarActivity;
+package com.lamcreations.scaffoldsampleapp;
 
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
@@ -25,6 +23,9 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
+import com.lamcreations.scaffold.common.activities.CollapsingToolbarActivity;
 
 
 public class SampleCollapsingToolbarActivity extends CollapsingToolbarActivity {
@@ -46,7 +47,7 @@ public class SampleCollapsingToolbarActivity extends CollapsingToolbarActivity {
     @Override
     protected void setupCollapsingToolbarLayoutBackdrop() {
         super.setupCollapsingToolbarLayoutBackdrop();
-        Glide.with(this).load(R.drawable.north_america).into((ImageView)mCollapsingToolbarLayoutBackdropView);
+        Glide.with(this).load(R.drawable.north_america).into((ImageView) mCollapsingToolbarLayoutBackdropView);
     }
 
     @Override

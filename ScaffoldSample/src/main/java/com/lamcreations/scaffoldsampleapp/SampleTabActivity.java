@@ -1,4 +1,3 @@
-package com.lamcreations.scaffoldsampleapp;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -15,13 +14,15 @@ package com.lamcreations.scaffoldsampleapp;
  * limitations under the License.
  */
 
-import com.lamcreations.scaffold.navigation.activities.TabActivity;
+package com.lamcreations.scaffoldsampleapp;
 
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
+
+import com.lamcreations.scaffold.navigation.activities.TabActivity;
 
 
 public class SampleTabActivity extends TabActivity {

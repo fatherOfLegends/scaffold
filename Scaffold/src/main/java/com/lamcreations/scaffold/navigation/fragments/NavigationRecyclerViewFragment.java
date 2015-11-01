@@ -1,4 +1,3 @@
-package com.lamcreations.scaffold.navigation.fragments;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -14,6 +13,8 @@ package com.lamcreations.scaffold.navigation.fragments;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+package com.lamcreations.scaffold.navigation.fragments;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -44,7 +45,8 @@ import com.lamcreations.scaffold.common.fragments.RecyclerViewFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class NavigationRecyclerViewFragment extends RecyclerViewFragment<NavigationRecyclerViewFragment.NavigationRecyclerViewAdapter> {
+public abstract class NavigationRecyclerViewFragment extends
+        RecyclerViewFragment<NavigationRecyclerViewFragment.NavigationRecyclerViewAdapter> {
 
     private ViewGroup mRootView;
     private NavigationRecyclerViewAdapter mNavigationRecyclerViewAdapter;

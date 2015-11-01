@@ -1,4 +1,3 @@
-package com.lamcreations.scaffold.common.activities;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -15,11 +14,13 @@ package com.lamcreations.scaffold.common.activities;
  * limitations under the License.
  */
 
-import com.lamcreations.scaffold.R;
+package com.lamcreations.scaffold.common.activities;
 
 import android.os.Bundle;
 import android.support.annotation.DrawableRes;
 import android.widget.ImageView;
+
+import com.lamcreations.scaffold.R;
 
 
 public abstract class SplashScreenActivity extends BaseActivity {
@@ -34,7 +35,7 @@ public abstract class SplashScreenActivity extends BaseActivity {
         mSplashImage = (ImageView) findViewById(R.id.scaffold_splash_image);
     }
 
-    public void setSplashImage(@DrawableRes int resId){
+    public void setSplashImage(@DrawableRes int resId) {
         mSplashImage.setImageResource(resId);
     }
 }

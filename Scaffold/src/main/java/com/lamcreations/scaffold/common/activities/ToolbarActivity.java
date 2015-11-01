@@ -1,4 +1,3 @@
-package com.lamcreations.scaffold.common.activities;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -15,13 +14,15 @@ package com.lamcreations.scaffold.common.activities;
  * limitations under the License.
  */
 
-import com.lamcreations.scaffold.R;
+package com.lamcreations.scaffold.common.activities;
 
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+
+import com.lamcreations.scaffold.R;
 
 
 public abstract class ToolbarActivity extends BaseActivity {
@@ -37,7 +38,7 @@ public abstract class ToolbarActivity extends BaseActivity {
     }
 
     protected CharSequence getActionBarTitle() {
-        if(mActionBarTitle == null){
+        if (mActionBarTitle == null) {
             mActionBarTitle = getTitle();
         }
         return mActionBarTitle;
@@ -58,7 +59,7 @@ public abstract class ToolbarActivity extends BaseActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == android.R.id.home || item.getItemId() == R.id.home){
+        if (item.getItemId() == android.R.id.home || item.getItemId() == R.id.home) {
             onUpNavigation();
             return true;
         }

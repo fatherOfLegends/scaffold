@@ -1,4 +1,3 @@
-package com.lamcreations.scaffold.common.activities;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -15,8 +14,7 @@ package com.lamcreations.scaffold.common.activities;
  * limitations under the License.
  */
 
-import com.lamcreations.scaffold.R;
-import com.lamcreations.scaffold.common.views.AutoFitTextureView;
+package com.lamcreations.scaffold.common.activities;
 
 import android.graphics.SurfaceTexture;
 import android.media.AudioManager;
@@ -27,6 +25,9 @@ import android.view.Surface;
 import android.view.TextureView;
 import android.widget.FrameLayout;
 
+import com.lamcreations.scaffold.R;
+import com.lamcreations.scaffold.common.views.AutoFitTextureView;
+
 import static android.support.v4.view.ViewCompat.animate;
 
 
@@ -34,8 +35,7 @@ public abstract class VideoSplashScreenActivity extends BaseActivity
         implements
         TextureView.SurfaceTextureListener, MediaPlayer.OnBufferingUpdateListener,
         MediaPlayer.OnCompletionListener, MediaPlayer.OnPreparedListener,
-        MediaPlayer.OnVideoSizeChangedListener, MediaPlayer.OnSeekCompleteListener
-{
+        MediaPlayer.OnVideoSizeChangedListener, MediaPlayer.OnSeekCompleteListener {
 
     private static final String TAG = "VideoSplashScreen";
 
@@ -51,7 +51,7 @@ public abstract class VideoSplashScreenActivity extends BaseActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scaffold_activity_video_splash_screen);
         mSplashContainer = (FrameLayout) findViewById(R.id.splash_container);
-        mTextureView = (AutoFitTextureView)findViewById(R.id.auto_fit_texture_view);
+        mTextureView = (AutoFitTextureView) findViewById(R.id.auto_fit_texture_view);
         mTextureView.setSurfaceTextureListener(this);
         mTextureView.setAlpha(0f);
     }

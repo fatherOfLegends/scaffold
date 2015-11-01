@@ -1,4 +1,3 @@
-package com.lamcreations.scaffoldsampleapp;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -15,6 +14,8 @@ package com.lamcreations.scaffoldsampleapp;
  * limitations under the License.
  */
 
+package com.lamcreations.scaffoldsampleapp;
+
 import com.lamcreations.scaffold.common.activities.SettingsActivity;
 
 
@@ -22,7 +23,7 @@ public class SampleSettingsActivityWithHeaders extends SettingsActivity {
 
     @Override
     protected int getPreferenceResId(String key) {
-        if(key == null){
+        if (key == null) {
             return R.xml.settings_headers;
         }
         switch (key) {

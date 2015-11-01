@@ -1,4 +1,3 @@
-package com.lamcreations.scaffoldsampleapp;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -15,15 +14,17 @@ package com.lamcreations.scaffoldsampleapp;
  * limitations under the License.
  */
 
-import com.lamcreations.scaffold.ScaffoldApplication;
+package com.lamcreations.scaffoldsampleapp;
+
 import com.firebase.client.Firebase;
+import com.lamcreations.scaffold.ScaffoldApplication;
 
 
 public class SampleApplication extends ScaffoldApplication {
 
     protected static SampleApplication sInstance = null;
 
-    public static SampleApplication getInstance(){
+    public static SampleApplication getInstance() {
         return sInstance;
     }
 

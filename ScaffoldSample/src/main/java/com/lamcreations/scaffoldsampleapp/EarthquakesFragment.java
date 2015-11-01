@@ -1,4 +1,3 @@
-package com.lamcreations.scaffoldsampleapp;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -15,13 +14,7 @@ package com.lamcreations.scaffoldsampleapp;
  * limitations under the License.
  */
 
-import com.bumptech.glide.Glide;
-import com.lamcreations.scaffold.common.adapters.BasicRecyclerViewAdapter;
-import com.lamcreations.scaffold.common.fragments.RecyclerViewFragment;
-import com.firebase.client.ChildEventListener;
-import com.firebase.client.DataSnapshot;
-import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
+package com.lamcreations.scaffoldsampleapp;
 
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -32,6 +25,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.firebase.client.ChildEventListener;
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.lamcreations.scaffold.common.adapters.BasicRecyclerViewAdapter;
+import com.lamcreations.scaffold.common.fragments.RecyclerViewFragment;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -84,8 +85,7 @@ public class EarthquakesFragment extends RecyclerViewFragment<EarthquakesFragmen
 
     public class EarthquakesRecyclerViewAdapter
             extends BasicRecyclerViewAdapter<EarthquakeViewHolder, Earthquake>
-            implements ChildEventListener
-    {
+            implements ChildEventListener {
 
         private Firebase mFirebase;
         private List<Earthquake> mEarthQuakes = new ArrayList<>();
@@ -104,7 +104,7 @@ public class EarthquakesFragment extends RecyclerViewFragment<EarthquakesFragmen
         @Override
         public EarthquakeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             return new EarthquakeViewHolder(LayoutInflater.from(parent.getContext())
-                                                    .inflate(R.layout.earthquake_list_item, parent, false));
+                    .inflate(R.layout.earthquake_list_item, parent, false));
         }
 
         @Override
@@ -160,15 +160,15 @@ public class EarthquakesFragment extends RecyclerViewFragment<EarthquakesFragmen
         public EarthquakeViewHolder(View itemView) {
             super(itemView);
 
-            mMapImageView = (ImageView)itemView.findViewById(R.id.map);
-            mPlaceTextView = (TextView)itemView.findViewById(R.id.place);
-            mMagTextView = (TextView)itemView.findViewById(R.id.magnitude);
+            mMapImageView = (ImageView) itemView.findViewById(R.id.map);
+            mPlaceTextView = (TextView) itemView.findViewById(R.id.place);
+            mMagTextView = (TextView) itemView.findViewById(R.id.magnitude);
         }
 
         public void bind(Earthquake earthquake) {
             Glide.with(itemView.getContext()).load(getMapUrl(earthquake)).into(mMapImageView);
             mPlaceTextView.setText(earthquake.getPlace());
-            mMagTextView.setText("Magnitude " + earthquake.getMag());
+            mMagTextView.setText(String.format("Magnitude %s", earthquake.getMag()));
         }
 
         private String getMapUrl(Earthquake earthquake) {

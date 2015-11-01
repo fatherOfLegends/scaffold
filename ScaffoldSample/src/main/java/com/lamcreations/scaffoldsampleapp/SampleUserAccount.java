@@ -1,4 +1,3 @@
-package com.lamcreations.scaffoldsampleapp;
 /*
  * Copyright (C) 2015 LAM Creations
  *
@@ -15,13 +14,15 @@ package com.lamcreations.scaffoldsampleapp;
  * limitations under the License.
  */
 
+package com.lamcreations.scaffoldsampleapp;
+
+import android.content.Context;
+import android.graphics.Bitmap;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.lamcreations.scaffold.users.models.UserAccount;
-
-import android.content.Context;
-import android.graphics.Bitmap;
 
 
 public class SampleUserAccount implements UserAccount {

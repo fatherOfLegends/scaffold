@@ -1,12 +1,11 @@
-package com.lamcreations.scaffold.common.utils;
 /*
- * Copyright (C) 2015 LAM Creations
+ * Copyright (C) 2015 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *       http://www.apache.org/licenses/LICENSE-2.0
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,7 +14,7 @@ package com.lamcreations.scaffold.common.utils;
  * limitations under the License.
  */
 
-import com.lamcreations.scaffold.R;
+package com.lamcreations.scaffold.common.utils;
 
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -34,6 +33,8 @@ import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
+
+import com.lamcreations.scaffold.R;
 
 
 public class CollapsingTextHelper {
@@ -152,7 +153,7 @@ public class CollapsingTextHelper {
         }
 
         if (a.hasValue(R.styleable.TextAppearance_android_textSize)) {
-            this.mCollapsedTextSize = (float)a.getDimensionPixelSize(R.styleable.TextAppearance_android_textSize, 0);
+            this.mCollapsedTextSize = (float) a.getDimensionPixelSize(R.styleable.TextAppearance_android_textSize, 0);
         }
 
         a.recycle();
@@ -166,7 +167,7 @@ public class CollapsingTextHelper {
         }
 
         if (a.hasValue(R.styleable.TextAppearance_android_textSize)) {
-            this.mExpandedTextSize = (float)a.getDimensionPixelSize(R.styleable.TextAppearance_android_textSize, 0);
+            this.mExpandedTextSize = (float) a.getDimensionPixelSize(R.styleable.TextAppearance_android_textSize, 0);
         }
 
         a.recycle();
@@ -179,7 +180,6 @@ public class CollapsingTextHelper {
             this.mExpandedFraction = fraction;
             this.calculateOffsets();
         }
-
     }
 
     public float getExpansionFraction() {
@@ -196,9 +196,9 @@ public class CollapsingTextHelper {
 
     private void calculateOffsets() {
         float fraction = this.mExpandedFraction;
-        this.mCurrentLeft = interpolate((float)this.mExpandedBounds.left, (float)this.mCollapsedBounds.left, fraction, this.mPositionInterpolator);
+        this.mCurrentLeft = interpolate((float) this.mExpandedBounds.left, (float) this.mCollapsedBounds.left, fraction, this.mPositionInterpolator);
         this.mCurrentTop = interpolate(this.mExpandedTop, this.mCollapsedTop, fraction, this.mPositionInterpolator);
-        this.mCurrentRight = interpolate((float)this.mExpandedBounds.right, (float)this.mCollapsedBounds.right, fraction, this.mPositionInterpolator);
+        this.mCurrentRight = interpolate((float) this.mExpandedBounds.right, (float) this.mCollapsedBounds.right, fraction, this.mPositionInterpolator);
         this.setInterpolatedTextSize(interpolate(this.mExpandedTextSize, this.mCollapsedTextSize, fraction, this.mTextSizeInterpolator));
         if (this.mCollapsedTextColor != this.mExpandedTextColor) {
             this.mTextPaint.setColor(blendColors(this.mExpandedTextColor, this.mCollapsedTextColor, fraction));
@@ -218,13 +218,13 @@ public class CollapsingTextHelper {
             default:
                 textHeight = this.mTextPaint.descent() - this.mTextPaint.ascent();
                 textOffset = textHeight / 2.0F - this.mTextPaint.descent();
-                this.mCollapsedTop = (float)this.mCollapsedBounds.centerY() + textOffset;
+                this.mCollapsedTop = (float) this.mCollapsedBounds.centerY() + textOffset;
                 break;
             case 48:
-                this.mCollapsedTop = (float)this.mCollapsedBounds.top - this.mTextPaint.ascent();
+                this.mCollapsedTop = (float) this.mCollapsedBounds.top - this.mTextPaint.ascent();
                 break;
             case 80:
-                this.mCollapsedTop = (float)this.mCollapsedBounds.bottom;
+                this.mCollapsedTop = (float) this.mCollapsedBounds.bottom;
         }
 
         this.mTextPaint.setTextSize(this.mExpandedTextSize);
@@ -233,13 +233,13 @@ public class CollapsingTextHelper {
             default:
                 textHeight = this.mTextPaint.descent() - this.mTextPaint.ascent();
                 textOffset = textHeight / 2.0F - this.mTextPaint.descent();
-                this.mExpandedTop = (float)this.mExpandedBounds.centerY() + textOffset;
+                this.mExpandedTop = (float) this.mExpandedBounds.centerY() + textOffset;
                 break;
             case 48:
-                this.mExpandedTop = (float)this.mExpandedBounds.top - this.mTextPaint.ascent();
+                this.mExpandedTop = (float) this.mExpandedBounds.top - this.mTextPaint.ascent();
                 break;
             case 80:
-                this.mExpandedTop = (float)this.mExpandedBounds.bottom;
+                this.mExpandedTop = (float) this.mExpandedBounds.bottom;
         }
 
         this.mTextureAscent = this.mTextPaint.ascent();
@@ -258,10 +258,8 @@ public class CollapsingTextHelper {
             float ascent;
             if (drawTexture) {
                 ascent = this.mTextureAscent * this.mScale;
-                float var10000 = this.mTextureDescent * this.mScale;
             } else {
                 ascent = this.mTextPaint.ascent() * this.mScale;
-                float descent = this.mTextPaint.descent() * this.mScale;
             }
 
             if (drawTexture) {
@@ -297,11 +295,11 @@ public class CollapsingTextHelper {
             float availableWidth;
             float newTextSize;
             if (isClose(textSize, this.mCollapsedTextSize)) {
-                availableWidth = (float)this.mCollapsedBounds.width();
+                availableWidth = (float) this.mCollapsedBounds.width();
                 newTextSize = this.mCollapsedTextSize;
                 this.mScale = 1.0F;
             } else {
-                availableWidth = (float)this.mExpandedBounds.width();
+                availableWidth = (float) this.mExpandedBounds.width();
                 newTextSize = this.mExpandedTextSize;
                 if (isClose(textSize, this.mExpandedTextSize)) {
                     this.mScale = 1.0F;
@@ -341,11 +339,11 @@ public class CollapsingTextHelper {
             this.mTextPaint.setColor(this.mExpandedTextColor);
             int w = Math.round(this.mTextPaint.measureText(this.mTextToDraw, 0, this.mTextToDraw.length()));
             int h = Math.round(this.mTextPaint.descent() - this.mTextPaint.ascent());
-            this.mTextWidth = (float)w;
+            this.mTextWidth = (float) w;
             if (w > 0 || h > 0) {
                 this.mExpandedTitleTexture = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
                 Canvas c = new Canvas(this.mExpandedTitleTexture);
-                c.drawText(this.mTextToDraw, 0, this.mTextToDraw.length(), 0.0F, (float)h - this.mTextPaint.descent(), this.mTextPaint);
+                c.drawText(this.mTextToDraw, 0, this.mTextToDraw.length(), 0.0F, (float) h - this.mTextPaint.descent(), this.mTextPaint);
                 if (this.mTexturePaint == null) {
                     this.mTexturePaint = new Paint();
                     this.mTexturePaint.setAntiAlias(true);
@@ -400,11 +398,11 @@ public class CollapsingTextHelper {
 
     private static int blendColors(int color1, int color2, float ratio) {
         float inverseRatio = 1.0F - ratio;
-        float a = (float)Color.alpha(color1) * inverseRatio + (float)Color.alpha(color2) * ratio;
-        float r = (float)Color.red(color1) * inverseRatio + (float)Color.red(color2) * ratio;
-        float g = (float)Color.green(color1) * inverseRatio + (float)Color.green(color2) * ratio;
-        float b = (float)Color.blue(color1) * inverseRatio + (float)Color.blue(color2) * ratio;
-        return Color.argb((int)a, (int)r, (int)g, (int)b);
+        float a = (float) Color.alpha(color1) * inverseRatio + (float) Color.alpha(color2) * ratio;
+        float r = (float) Color.red(color1) * inverseRatio + (float) Color.red(color2) * ratio;
+        float g = (float) Color.green(color1) * inverseRatio + (float) Color.green(color2) * ratio;
+        float b = (float) Color.blue(color1) * inverseRatio + (float) Color.blue(color2) * ratio;
+        return Color.argb((int) a, (int) r, (int) g, (int) b);
     }
 
     private static float interpolate(float startValue, float endValue, float fraction, Interpolator interpolator) {
@@ -449,7 +447,7 @@ public class CollapsingTextHelper {
         }
 
         public static int lerp(int startValue, int endValue, float fraction) {
-            return startValue + Math.round(fraction * (float)(endValue - startValue));
+            return startValue + Math.round(fraction * (float) (endValue - startValue));
         }
 
         public static class AnimationListenerAdapter implements Animation.AnimationListener {
