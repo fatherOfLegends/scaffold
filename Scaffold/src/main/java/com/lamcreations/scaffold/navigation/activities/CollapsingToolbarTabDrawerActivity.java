@@ -28,6 +28,9 @@ import android.view.ViewStub;
 
 import com.lamcreations.scaffold.R;
 
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
 
 public abstract class CollapsingToolbarTabDrawerActivity extends TabDrawerActivity {
 
@@ -36,6 +39,7 @@ public abstract class CollapsingToolbarTabDrawerActivity extends TabDrawerActivi
             CollapsingToolbarLayout.LayoutParams.COLLAPSE_MODE_PARALLAX,
             CollapsingToolbarLayout.LayoutParams.COLLAPSE_MODE_PIN
     })
+    @Retention(RetentionPolicy.SOURCE)
     public @interface CollapseMode {
     }
 
