@@ -22,15 +22,81 @@
       <h1>
 <a id="scaffold" class="anchor" href="#scaffold" aria-hidden="true"><span class="octicon octicon-link"></span></a>Scaffold</h1>
 
-<p>An Android library designed to help you quickly create applications that follow the latest material design guidelines.
-For more information see <a href="https://github.com/lmckenzie/scaffold/wiki">the wiki</a>.</p>
+<p>An Android library designed to help you quickly create applications that follow the latest material
+design guidelines.</p>
+
+<p>For more information see <a href="https://github.com/lmckenzie/scaffold/wiki">the wiki</a>.</p>
 
 <h2>
 <a id="gradle" class="anchor" href="#gradle" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gradle</h2>
 
-<p>Scaffold is available in jcenter:</p>
+<p>Scaffold is available via jcenter. It depends on several of the <a href="http://developer.android.com/tools/support-library/features.html">Android support libraries</a>:</p>
 
-<div class="highlight highlight-source-groovy"><pre>compile <span class="pl-s"><span class="pl-pds">'</span>com.lamcreations.scaffold:scaffold:0.1.0<span class="pl-pds">'</span></span></pre></div>
+<pre><code>dependencies {
+    ...
+
+    compile 'com.lamcreations.scaffold:scaffold:0.1.0'
+
+    def androidSupportLibVersion = "23.1.0";
+    compile "com.android.support:support-v4:${androidSupportLibVersion}";
+    compile "com.android.support:appcompat-v7:${androidSupportLibVersion}";
+    compile "com.android.support:recyclerview-v7:${androidSupportLibVersion}";
+    compile "com.android.support:preference-v7:${androidSupportLibVersion}";
+    compile "com.android.support:design:${androidSupportLibVersion}";
+    compile "com.android.support:support-annotations:${androidSupportLibVersion}";
+}
+</code></pre>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Scaffold is a collection of activities, fragments and views mostly designed to be extended. By using
+these classes and following the conventions of this library you can very quickly create an Android app
+that follows the <a href="https://www.google.com/design/spec/material-design/introduction.html">material design guidelines</a> without needing to worry about a lot of boiler plate code.</p>
+
+<p>Activities that you can extend:</p>
+
+<ul>
+<li> ToolbarActivity</li>
+<li> CoordinatorActivity</li>
+<li> DrawerActivity</li>
+<li> TabActivity</li>
+<li> TabDrawerActivity</li>
+<li> CollapsingToolbarActivity</li>
+<li> CollapsingToolbarDrawerActivity</li>
+<li> CollapsingToolbarTabDrawerActivity</li>
+<li> SearchableActivity</li>
+<li> SettingsActivity</li>
+<li> SplashScreenActivity</li>
+<li> VideoSplashScreenActivity</li>
+</ul>
+
+<p>Fragments that you can extend:</p>
+
+<ul>
+<li> RecyclerViewFragment</li>
+<li> SettingsFragment</li>
+<li> NavigationViewFragment</li>
+<li> NavigationRecyclerViewFragment</li>
+</ul>
+
+<p>Views that you can use/extend:</p>
+
+<ul>
+<li> NavigationViewHeader</li>
+<li> AutoFitTextureView</li>
+<li> RoundedImageView</li>
+<li> CollapsingToolbarTabLayout</li>
+</ul>
+
+<p>Other classes you might find helpful:</p>
+
+<ul>
+<li> ImagePagerAdapter</li>
+<li> BasicRecyclerViewAdapter</li>
+</ul>
+
+<p>For more information see <a href="https://github.com/lmckenzie/scaffold/wiki">the wiki</a>.</p>
 
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
@@ -48,8 +114,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 </code></pre>
 
-<h1>
-<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h1>
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h2>
 
 <p>If you would like to contribute code to Scaffold you can do so through GitHub by
 forking the repository and sending a pull request.</p>
