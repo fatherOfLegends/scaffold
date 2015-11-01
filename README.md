@@ -4,7 +4,7 @@ Scaffold
 An Android library designed to help you quickly create applications that follow the latest material
 design guidelines.
 
-For more information see [the wiki][1].
+For more information see [the website][4] or [the wiki][1].
 
 Gradle
 ------
@@ -93,3 +93,4 @@ and style in order to keep the code as readable as possible.
  [1]: https://github.com/lmckenzie/scaffold/wiki
  [2]: http://developer.android.com/tools/support-library/features.html
  [3]: https://www.google.com/design/spec/material-design/introduction.html
+ [4]: http://lmckenzie.github.io/scaffold
