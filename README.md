@@ -46,16 +46,19 @@ Activities that you can extend:
 *  SettingsActivity
 *  SplashScreenActivity
 *  VideoSplashScreenActivity
+
 Fragments that you can extend:
 *  RecyclerViewFragment
 *  SettingsFragment
 *  NavigationViewFragment
 *  NavigationRecyclerViewFragment
+
 Views that you can use/extend:
 *  NavigationViewHeader
 *  AutoFitTextureView
 *  RoundedImageView
 *  CollapsingToolbarTabLayout
+
 Other classes you might find helpful:
 *  ImagePagerAdapter
 *  BasicRecyclerViewAdapter
