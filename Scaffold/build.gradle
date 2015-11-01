@@ -27,8 +27,9 @@ android {
 }
 
 dependencies {
-    def androidSupportLibVersion = "23.1.0";
     compile fileTree(dir: 'libs', include: ['*.jar']);
+
+    def androidSupportLibVersion = "23.1.0";
     compile "com.android.support:support-v4:${androidSupportLibVersion}";
     compile "com.android.support:appcompat-v7:${androidSupportLibVersion}";
     compile "com.android.support:recyclerview-v7:${androidSupportLibVersion}";
