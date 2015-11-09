@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+Version 1.0.1
+-------------
+Added the support for SCROLL_FLAG_SNAP in the CoordinatorActivity.
+
 Version 1.0.0
 -------------
 This is the initial release of the scaffold library. A collection of activities, fragments and views
