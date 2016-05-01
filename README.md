@@ -15,9 +15,9 @@ Scaffold is available via jcenter. It depends on several of the [Android support
 dependencies {
     ...
 
-    compile 'com.lamcreations.scaffold:scaffold:1.0.1'
+    compile 'com.lamcreations.scaffold:scaffold:1.0.2'
 
-    def androidSupportLibVersion = "23.1.0";
+    def androidSupportLibVersion = "23.3.0";
     compile "com.android.support:support-v4:${androidSupportLibVersion}";
     compile "com.android.support:appcompat-v7:${androidSupportLibVersion}";
     compile "com.android.support:recyclerview-v7:${androidSupportLibVersion}";
