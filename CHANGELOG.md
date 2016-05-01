@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+Version 1.0.2
+-------------
+Updated to support the Android Support Library version 23.3.0.
+Updated the default color palette to simplify themes.
+Fixed some minor bugs.
+
 Version 1.0.1
 -------------
 Added the support for SCROLL_FLAG_SNAP in the CoordinatorActivity.
