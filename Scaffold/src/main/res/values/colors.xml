@@ -17,9 +17,35 @@
   -->
 
 <resources>
-    <color name="scaffold_color_primary">#3F51B5</color>
-    <color name="scaffold_color_primary_dark">#1A237E</color>
-    <color name="scaffold_color_accent">#8BC34A</color>
 
-    <color name="scaffold_navigation_item_divider">#ddd</color>
+    <color name="scaffold_primary">#FF3F51B5</color>
+    <color name="scaffold_primaryDark">#FF303F9F</color>
+    <color name="scaffold_primaryLight">#FFC5CAE9</color>
+
+    <color name="scaffold_accent">#FFFF4081</color>
+    <color name="scaffold_accentDark">#FFF50057</color>
+    <color name="scaffold_accentLight">#FFFF80AB</color>
+
+    <color name="scaffold_controlNormal">@color/scaffold_iconEnabledLightBackground</color>
+    <color name="scaffold_controlActivated">@color/scaffold_accent</color>
+    <color name="scaffold_controlHighlight">@color/ripple_material_light</color>
+    <color name="scaffold_buttonNormal">@color/button_material_light</color>
+    <color name="scaffold_switchThumbNormal">@color/switch_thumb_material_light</color>
+
+    <color name="scaffold_textPrimaryLightBackground">#DE000000</color>
+    <color name="scaffold_textSecondaryLightBackground">#8A000000</color>
+    <color name="scaffold_textHintLightBackground">#61000000</color>
+    <color name="scaffold_textDisabledLightBackground">#61000000</color>
+    <color name="scaffold_dividerLightBackground">#1F000000</color>
+    <color name="scaffold_iconEnabledLightBackground">#8A000000</color>
+    <color name="scaffold_iconDisabledLightBackground">#42000000</color>
+    <color name="scaffold_textPrimaryDarkBackground">#FFFFFFFF</color>
+    <color name="scaffold_textSecondaryDarkBackground">#B3FFFFFF</color>
+    <color name="scaffold_textHintDarkBackground">#4DFFFFFF</color>
+    <color name="scaffold_textDisabledDarkBackground">#4DFFFFFF</color>
+    <color name="scaffold_dividerDarkBackground">#1FFFFFFF</color>
+    <color name="scaffold_iconEnabledDarkBackground">#FFFFFFFF</color>
+    <color name="scaffold_iconDisabledDarkBackground">#4DFFFFFF</color>
+
+    <color name="scaffold_windowBackground">#FFFAFAFA</color>
 </resources>

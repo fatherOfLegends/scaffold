@@ -20,6 +20,7 @@ import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.widget.ImageView;
@@ -44,7 +45,9 @@ public class SampleCollapsingToolbarTabDrawerActivity extends CollapsingToolbarT
     protected void setupCollapsingToolbarLayout() {
         super.setupCollapsingToolbarLayout();
         mCollapsingToolbarLayout.setTitle("North America");
-        mCollapsingToolbarLayout.setContentScrimResource(R.color.primary);
+        mCollapsingToolbarLayout.setContentScrimResource(R.color.scaffold_primary);
+        mCollapsingToolbarLayout.setExpandedTitleColor(ContextCompat.getColor(this, R.color.scaffold_textPrimaryDarkBackground));
+        mCollapsingToolbarLayout.setCollapsedTitleTextColor(ContextCompat.getColor(this, R.color.scaffold_textPrimaryDarkBackground));
     }
 
     @Override
@@ -102,5 +105,12 @@ public class SampleCollapsingToolbarTabDrawerActivity extends CollapsingToolbarT
     @Override
     protected int getInitialTabPosition() {
         return 0;
+    }
+
+    @Override
+    protected void setupTabs() {
+        super.setupTabs();
+        mTabLayout.setTabTextColors(ContextCompat.getColor(this, R.color.scaffold_textSecondaryDarkBackground),
+                ContextCompat.getColor(this, R.color.scaffold_textPrimaryDarkBackground));
     }
 }

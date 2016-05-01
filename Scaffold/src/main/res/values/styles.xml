@@ -18,26 +18,27 @@
 
 <resources>
 
-    <style name="ScaffoldLight" parent="Theme.AppCompat.Light">
-        <item name="drawerArrowStyle">@style/ScaffoldDrawerArrowStyle</item>
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <item name="actionBarSize">?attr/actionBarSize</item>
-        <item name="colorPrimary">@color/scaffold_color_primary</item>
-        <item name="colorPrimaryDark">@color/scaffold_color_primary_dark</item>
-        <item name="colorAccent">@color/scaffold_color_accent</item>
-        <item name="android:textColorPrimary">@android:color/white</item>
+    <style name="Theme.Scaffold.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/scaffold_primary</item>
+        <item name="colorPrimaryDark">@color/scaffold_primaryDark</item>
+        <item name="colorAccent">@color/scaffold_accent</item>
+        <item name="colorControlNormal">@color/scaffold_controlNormal</item>
+        <item name="colorControlActivated">@color/scaffold_controlActivated</item>
+        <item name="colorControlHighlight">@color/scaffold_controlHighlight</item>
+        <item name="colorButtonNormal">@color/scaffold_buttonNormal</item>
+        <item name="colorSwitchThumbNormal">@color/scaffold_switchThumbNormal</item>
+        <item name="android:windowBackground">@color/scaffold_windowBackground</item>
+        <item name="android:textColorPrimary">@color/scaffold_textPrimaryLightBackground</item>
+        <item name="android:textColorSecondary">@color/scaffold_textSecondaryLightBackground</item>
+        <item name="android:textColorHint">@color/scaffold_textHintLightBackground</item>
     </style>
 
-    <style name="ScaffoldLight.DarkActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="Theme.Scaffold.LightActionBar" parent="Theme.Scaffold.Base">
+        <item name="drawerArrowStyle">@style/ScaffoldDrawerArrowStyle.LightActionBar</item>
+    </style>
+
+    <style name="Theme.Scaffold.DarkActionBar" parent="Theme.Scaffold.Base">
         <item name="drawerArrowStyle">@style/ScaffoldDrawerArrowStyle.DarkActionBar</item>
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <item name="actionBarSize">?attr/actionBarSize</item>
-        <item name="colorPrimary">@color/scaffold_color_primary</item>
-        <item name="colorPrimaryDark">@color/scaffold_color_primary_dark</item>
-        <item name="colorAccent">@color/scaffold_color_accent</item>
-        <item name="android:textColorPrimary">@android:color/white</item>
     </style>
 
     <style name="ScaffoldNavigationView">
@@ -49,29 +50,31 @@
 
     <style name="ScaffoldAppBarLayout" parent="ThemeOverlay.AppCompat.ActionBar" />
 
-    <style name="ScaffoldActionBarTheme" parent="ThemeOverlay.AppCompat.ActionBar" />
+    <style name="ScaffoldActionBarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="ScaffoldToolbar">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">?attr/actionBarSize</item>
         <item name="android:background">?attr/colorPrimary</item>
         <item name="android:theme">@style/ScaffoldActionBarTheme</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
     </style>
 
     <style name="ScaffoldCollapsingToolbar">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:theme">@style/ScaffoldActionBarTheme</item>
         <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
     </style>
 
-    <style name="ScaffoldDrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+    <style name="ScaffoldDrawerArrowStyle.LightActionBar" parent="Widget.AppCompat.DrawerArrowToggle">
         <item name="spinBars">false</item>
-        <item name="color">?android:attr/textColorPrimary</item>
+        <item name="color">@color/scaffold_textPrimaryLightBackground</item>
     </style>
 
     <style name="ScaffoldDrawerArrowStyle.DarkActionBar" parent="Widget.AppCompat.DrawerArrowToggle">
         <item name="spinBars">false</item>
-        <item name="color">?android:attr/textColorPrimary</item>
+        <item name="color">@color/scaffold_textPrimaryDarkBackground</item>
     </style>
 
     <style name="ScaffoldHorizontalSpacer">

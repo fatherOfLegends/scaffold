@@ -17,7 +17,7 @@
 package com.lamcreations.scaffoldsampleapp;
 
 import android.content.Intent;
-import android.support.v7.internal.view.menu.MenuBuilder;
+import android.support.v7.view.menu.MenuBuilder;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -117,7 +117,7 @@ public class PossibilitiesFragment extends RecyclerViewFragment<PossibilitiesFra
 
         public PossibilitiesRecyclerViewAdapter(int menuResId, ActivationMode mode) {
             super(mode);
-            Menu menu = new MenuBuilder(getActivity());
+            Menu menu =  new MenuBuilder(getActivity());
             MenuInflater menuInflater = getActivity().getMenuInflater();
             menuInflater.inflate(menuResId, menu);
             int size = menu.size();

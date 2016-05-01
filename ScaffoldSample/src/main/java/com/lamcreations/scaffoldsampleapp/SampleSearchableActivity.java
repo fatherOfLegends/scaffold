@@ -17,6 +17,7 @@
 package com.lamcreations.scaffoldsampleapp;
 
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.widget.Toast;
 
 import com.lamcreations.scaffold.common.activities.SearchableActivity;
@@ -28,8 +29,8 @@ public class SampleSearchableActivity extends SearchableActivity {
     protected void setupSearchEditText() {
         super.setupSearchEditText();
         mSearchEditText.setHint(R.string.search_scaffold);
-        mSearchEditText.setTextColor(getResources().getColor(R.color.window_background));
-        mSearchEditText.setHintTextColor(getResources().getColor(R.color.window_background));
+        mSearchEditText.setTextColor(ContextCompat.getColor(this, R.color.scaffold_textPrimaryDarkBackground));
+        mSearchEditText.setHintTextColor(ContextCompat.getColor(this, R.color.scaffold_textHintDarkBackground));
         mSearchEditText.setBackground(null);
     }
 

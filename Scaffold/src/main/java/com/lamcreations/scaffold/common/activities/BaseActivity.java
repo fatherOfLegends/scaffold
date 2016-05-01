@@ -17,23 +17,16 @@
 package com.lamcreations.scaffold.common.activities;
 
 import android.content.Intent;
-import android.graphics.Typeface;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.ColorInt;
-import android.support.annotation.ColorRes;
 import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 
 import com.lamcreations.scaffold.common.config.Constants;
-import com.lamcreations.scaffold.common.utils.DisplayUtils;
 
 
 public abstract class BaseActivity extends AppCompatActivity implements FragmentManager.OnBackStackChangedListener {
@@ -128,26 +121,5 @@ public abstract class BaseActivity extends AppCompatActivity implements Fragment
     protected void popFragmentStack(String tag, int flags) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.popBackStack(tag, flags);
-    }
-
-    protected void changeAllFonts(final String fontPath) {
-        final Typeface tf = Typeface.createFromAsset(getAssets(), fontPath);
-        final View root = getWindow().getDecorView();
-        root.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
-            @Override
-            public boolean onPreDraw() {
-                root.getViewTreeObserver().removeOnPreDrawListener(this);
-                DisplayUtils.changeFonts((ViewGroup) root, tf);
-                return false;
-            }
-        });
-    }
-
-    @ColorInt
-    public int getColorRes(@ColorRes int resId) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            return getColor(resId);
-        }
-        return getResources().getColor(resId);
     }
 }

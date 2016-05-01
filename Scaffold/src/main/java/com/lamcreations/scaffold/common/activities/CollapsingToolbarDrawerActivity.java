@@ -59,6 +59,7 @@ public abstract class CollapsingToolbarDrawerActivity extends DrawerActivity {
     @CallSuper
     protected void setupCollapsingToolbarLayout() {
         mCollapsingToolbarLayout = (CollapsingToolbarTabLayout) findViewById(R.id.scaffold_collapsing_toolbar_layout);
+        assert mCollapsingToolbarLayout != null;
         ((AppBarLayout.LayoutParams) mCollapsingToolbarLayout.getLayoutParams()).setScrollFlags(getScrollFlags());
         mAppBarLayout.getLayoutParams().height = getCollapsingToolbarMaxHeight();
         ((CollapsingToolbarLayout.LayoutParams) mToolbar.getLayoutParams()).setCollapseMode(getActionbarCollapseMode());

@@ -31,7 +31,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
         android:contentDescription="@string/scaffold_icon"
-        android:tint="@color/scaffold_color_primary"
+        android:tint="@color/scaffold_primary"
         android:visibility="gone" />
 
     <TextView

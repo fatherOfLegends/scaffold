@@ -18,34 +18,38 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/navigation_item_1"
-        android:checked="true"
-        android:icon="@drawable/ic_android_36dp"
-        android:title="@string/scaffold_navigation_item_1" />
-    <item
-        android:id="@+id/navigation_item_2"
-        android:icon="@drawable/ic_android_36dp"
-        android:title="@string/scaffold_navigation_item_2" />
-    <item
-        android:id="@+id/navigation_item_3"
-        android:icon="@drawable/ic_android_36dp"
-        android:title="@string/scaffold_navigation_item_3" />
+    <group android:id="@id/scaffold_navigation_item_navigable_item">
+        <item
+            android:id="@+id/navigation_item_1"
+            android:checked="true"
+            android:icon="@drawable/ic_android_36dp"
+            android:title="@string/scaffold_navigation_item_1"/>
+        <item
+            android:id="@+id/navigation_item_2"
+            android:icon="@drawable/ic_android_36dp"
+            android:title="@string/scaffold_navigation_item_2"/>
+        <item
+            android:id="@+id/navigation_item_3"
+            android:icon="@drawable/ic_android_36dp"
+            android:title="@string/scaffold_navigation_item_3"/>
+    </group>
 
     <group android:id="@id/scaffold_navigation_item_header">
-        <item android:title="@string/scaffold_navigation_header" />
+        <item android:title="@string/scaffold_navigation_header"/>
     </group>
 
     <group android:id="@id/scaffold_navigation_item_divider">
-        <item android:title="" />
+        <item android:title=""/>
     </group>
 
-    <item
-        android:id="@+id/navigation_sub_item_1"
-        android:icon="@drawable/ic_android_36dp"
-        android:title="@string/scaffold_navigation_sub_item_1" />
-    <item
-        android:id="@+id/navigation_sub_item_2"
-        android:icon="@drawable/ic_android_36dp"
-        android:title="@string/scaffold_navigation_sub_item_2" />
+    <group android:id="@id/scaffold_navigation_item_navigable_item">
+        <item
+            android:id="@+id/navigation_sub_item_1"
+            android:icon="@drawable/ic_android_36dp"
+            android:title="@string/scaffold_navigation_sub_item_1"/>
+        <item
+            android:id="@+id/navigation_sub_item_2"
+            android:icon="@drawable/ic_android_36dp"
+            android:title="@string/scaffold_navigation_sub_item_2"/>
+    </group>
 </menu>

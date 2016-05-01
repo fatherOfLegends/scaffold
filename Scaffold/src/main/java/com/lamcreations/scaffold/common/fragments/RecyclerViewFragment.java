@@ -254,7 +254,7 @@ public abstract class RecyclerViewFragment<Adapter extends BasicRecyclerViewAdap
     }
 
     protected int[] getSwipeRefreshColorScheme() {
-        return new int[]{R.color.scaffold_color_primary};
+        return new int[]{R.color.scaffold_primary};
     }
 
     protected abstract boolean isSwipeRefreshEnabled();

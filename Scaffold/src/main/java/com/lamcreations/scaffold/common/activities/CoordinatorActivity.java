@@ -82,6 +82,7 @@ public abstract class CoordinatorActivity extends ToolbarActivity {
         if (actionBar == null) {
             mAppBarLayout = (AppBarLayout) findViewById(R.id.scaffold_app_bar_layout);
             mToolbar = (Toolbar) findViewById(R.id.scaffold_toolbar);
+            assert mToolbar != null;
             if (mToolbar.getParent().getClass().equals(AppBarLayout.class)) {
                 ((AppBarLayout.LayoutParams) mToolbar.getLayoutParams()).setScrollFlags(getScrollFlags());
             }

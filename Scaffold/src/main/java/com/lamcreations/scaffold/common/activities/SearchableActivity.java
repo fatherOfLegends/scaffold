@@ -125,6 +125,7 @@ public abstract class SearchableActivity extends CoordinatorActivity implements 
         if (actionBar == null) {
             mAppBarLayout = (AppBarLayout) findViewById(R.id.scaffold_app_bar_layout);
             mToolbar = (Toolbar) findViewById(R.id.scaffold_toolbar);
+            assert mToolbar != null;
             if (mToolbar.getParent().getClass().equals(AppBarLayout.class)) {
                 ((AppBarLayout.LayoutParams) mToolbar.getLayoutParams()).setScrollFlags(getScrollFlags());
             }
@@ -139,6 +140,7 @@ public abstract class SearchableActivity extends CoordinatorActivity implements 
     @CallSuper
     protected void setupSearchEditText() {
         mSearchEditText = (EditText) findViewById(R.id.scaffold_search_edit_text);
+        assert mSearchEditText != null;
         mSearchEditText.addTextChangedListener(this);
     }
 

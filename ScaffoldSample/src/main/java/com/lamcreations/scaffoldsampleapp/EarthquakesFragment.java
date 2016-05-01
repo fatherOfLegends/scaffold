@@ -41,7 +41,6 @@ import java.util.List;
 
 public class EarthquakesFragment extends RecyclerViewFragment<EarthquakesFragment.EarthquakesRecyclerViewAdapter> {
 
-    private static final String TAG = "EarthquakesFragment";
     public static final String MAGNITUDE = "magnitude";
     public static final String CONTINENT = "continent";
     private int mMagnitude = 5;
@@ -173,6 +172,7 @@ public class EarthquakesFragment extends RecyclerViewFragment<EarthquakesFragmen
 
         private String getMapUrl(Earthquake earthquake) {
             HashMap<String, Object> location = earthquake.getLocation();
+            //noinspection StringBufferReplaceableByString
             return new StringBuilder()
                     .append("http://maps.googleapis.com/maps/api/staticmap?")
                     .append("center=")
