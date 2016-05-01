@@ -29,8 +29,8 @@
 
     <dimen name="scaffold_tab_layout_minimum_height">48dp</dimen>
 
-    <dimen name="scaffold_left_start_drawer_width">280dp</dimen>
-    <dimen name="scaffold_right_end_drawer_width">280dp</dimen>
+    <dimen name="scaffold_left_start_drawer_width">300dp</dimen>
+    <dimen name="scaffold_right_end_drawer_width">300dp</dimen>
 
     <dimen name="scaffold_navigation_item_header_height">64dp</dimen>
     <dimen name="scaffold_navigation_item_divider_height">1dp</dimen>

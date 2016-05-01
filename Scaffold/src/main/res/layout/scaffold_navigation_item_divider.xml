@@ -20,4 +20,4 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="@dimen/scaffold_navigation_item_divider_height"
-    android:background="@color/scaffold_navigation_item_divider" />
+    android:background="@color/scaffold_dividerLightBackground" />

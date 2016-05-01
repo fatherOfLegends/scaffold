@@ -19,7 +19,7 @@
 <merge
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <FrameLayout
+    <android.support.design.internal.ScrimInsetsFrameLayout
         android:id="@+id/scaffold_left_start_drawer_container"
         android:layout_width="@dimen/scaffold_left_start_drawer_width"
         android:layout_height="match_parent"
@@ -27,7 +27,7 @@
         android:background="@android:color/white"
         android:fitsSystemWindows="true" />
 
-    <FrameLayout
+    <android.support.design.internal.ScrimInsetsFrameLayout
         android:id="@+id/scaffold_right_end_drawer_container"
         android:layout_width="@dimen/scaffold_right_end_drawer_width"
         android:layout_height="match_parent"

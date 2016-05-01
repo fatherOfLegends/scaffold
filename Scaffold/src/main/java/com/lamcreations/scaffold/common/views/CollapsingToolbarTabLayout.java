@@ -37,6 +37,7 @@ import android.view.ViewParent;
 import com.lamcreations.scaffold.R;
 import com.lamcreations.scaffold.common.utils.CollapsingTextHelper;
 
+import static android.support.v4.content.ContextCompat.getColor;
 
 public class CollapsingToolbarTabLayout extends CollapsingToolbarLayout {
 
@@ -62,8 +63,8 @@ public class CollapsingToolbarTabLayout extends CollapsingToolbarLayout {
 
     public CollapsingToolbarTabLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        super.setCollapsedTitleTextColor(getResources().getColor(android.R.color.transparent));
-        super.setExpandedTitleColor(getResources().getColor(android.R.color.transparent));
+        super.setCollapsedTitleTextColor(getColor(getContext(), android.R.color.transparent));
+        super.setExpandedTitleColor(getColor(getContext(), android.R.color.transparent));
         TypedValue tv = new TypedValue();
         if (getContext().getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true)) {
             mActionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data, getResources().getDisplayMetrics());

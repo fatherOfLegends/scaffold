@@ -18,7 +18,6 @@ package com.lamcreations.scaffold.common.views;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.ColorFilter;
@@ -30,6 +29,7 @@ import android.support.annotation.ColorInt;
 import android.support.annotation.DimenRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.IntDef;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.ImageView;
@@ -267,8 +267,8 @@ public class RoundedImageView extends ImageView {
     }
 
     private Drawable resolveResource() {
-        Resources rsrc = getResources();
-        if (rsrc == null) {
+        Context context = getContext();
+        if (context == null) {
             return null;
         }
 
@@ -276,7 +276,7 @@ public class RoundedImageView extends ImageView {
 
         if (mResource != 0) {
             try {
-                d = rsrc.getDrawable(mResource);
+                d = ContextCompat.getDrawable(context, mResource);
             } catch (Exception e) {
                 Log.w(TAG, "Unable to find resource: " + mResource, e);
                 // Don't try again.
@@ -288,6 +288,7 @@ public class RoundedImageView extends ImageView {
 
     @Override
     public void setBackground(Drawable background) {
+        //noinspection deprecation
         setBackgroundDrawable(background);
     }
 

@@ -17,6 +17,6 @@
   -->
 
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:color="@color/scaffold_color_accent" android:state_checked="true" />
+    <item android:color="@color/scaffold_accent" android:state_checked="true" />
     <item android:color="@android:color/darker_gray" />
 </selector>

@@ -22,6 +22,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -52,7 +53,9 @@ public class SampleCollapsingToolbarDrawerActivity extends CollapsingToolbarDraw
     protected void setupCollapsingToolbarLayout() {
         super.setupCollapsingToolbarLayout();
         mCollapsingToolbarLayout.setTitle("North America");
-        mCollapsingToolbarLayout.setContentScrimResource(R.color.primary);
+        mCollapsingToolbarLayout.setContentScrimResource(R.color.scaffold_primary);
+        mCollapsingToolbarLayout.setExpandedTitleColor(ContextCompat.getColor(this, R.color.scaffold_textPrimaryDarkBackground));
+        mCollapsingToolbarLayout.setCollapsedTitleTextColor(ContextCompat.getColor(this, R.color.scaffold_textPrimaryDarkBackground));
     }
 
     @Override

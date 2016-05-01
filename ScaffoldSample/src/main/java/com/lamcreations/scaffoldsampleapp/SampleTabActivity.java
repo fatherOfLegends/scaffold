@@ -19,6 +19,7 @@ package com.lamcreations.scaffoldsampleapp;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 
@@ -56,5 +57,12 @@ public class SampleTabActivity extends TabActivity {
     @Override
     protected void onUpNavigation() {
         ActivityCompat.finishAfterTransition(this);
+    }
+
+    @Override
+    protected void setupTabs() {
+        super.setupTabs();
+        mTabLayout.setTabTextColors(ContextCompat.getColor(this, R.color.scaffold_textSecondaryDarkBackground),
+                ContextCompat.getColor(this, R.color.scaffold_textPrimaryDarkBackground));
     }
 }

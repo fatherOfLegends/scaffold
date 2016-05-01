@@ -20,7 +20,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.FloatRange;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
+import android.support.annotation.LayoutRes;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.FrameLayout;
@@ -52,13 +52,11 @@ public class NavigationViewHeader extends FrameLayout {
     private List<UserAccount> mUserAccounts = new ArrayList<>();
 
     public NavigationViewHeader(Context context) {
-        super(context);
-        init();
+        this(context, null);
     }
 
     public NavigationViewHeader(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init();
+        this(context, attrs, 0);
     }
 
     public NavigationViewHeader(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -68,7 +66,7 @@ public class NavigationViewHeader extends FrameLayout {
 
     private void init() {
         setBackgroundResource(android.R.color.white);
-        LayoutInflater.from(getContext()).inflate(R.layout.scaffold_navigation_drawer_header, this, true);
+        LayoutInflater.from(getContext()).inflate(getLayoutResId(), this, true);
 
         mHeaderImage = (ImageView) findViewById(R.id.scaffold_navigation_view_header_image);
         mHeaderImageOverlay = (ImageView) findViewById(R.id.scaffold_navigation_view_header_image_overlay);
@@ -79,6 +77,11 @@ public class NavigationViewHeader extends FrameLayout {
         mCurrentAccountName = (TextView) findViewById(R.id.scaffold_navigation_view_current_account_name);
         mCurrentAccountEmail = (TextView) findViewById(R.id.scaffold_navigation_view_current_account_email);
         mAccountDropDownButton = (ImageButton) findViewById(R.id.scaffold_navigation_view_account_drop_down_button);
+    }
+
+    @LayoutRes
+    public int getLayoutResId() {
+        return R.layout.scaffold_navigation_drawer_header;
     }
 
     public void setHeaderImageBitmap(Bitmap bitmap) {
@@ -268,9 +271,5 @@ public class NavigationViewHeader extends FrameLayout {
                 }
             });
         }
-    }
-
-    private Drawable roundDrawable(Bitmap bitmap) {
-        return bitmap != null ? RoundedBitmapDrawableFactory.create(getResources(), bitmap) : null;
     }
 }

@@ -30,7 +30,7 @@ public class SplashActivity extends SplashScreenActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        int padding = DisplayUtils.screenPixels(this, 10);
+        int padding = DisplayUtils.densityPixelsToScreenPixels(this, 10);
         mSplashImage.setPadding(padding, padding, padding, padding);
         setSplashImage(R.drawable.scaffold);
 

@@ -34,7 +34,7 @@ public class SampleUserAccount implements UserAccount {
 
     @Override
     public String getEmail() {
-        return "lmckenzie@ebay.com";
+        return "larrymmckenzie@gmail.com";
     }
 
     @Override

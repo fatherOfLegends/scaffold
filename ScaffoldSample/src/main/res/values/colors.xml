@@ -18,13 +18,9 @@
 
 <resources>
 
-    <color name="primary">#FF9800</color>
-    <color name="primary_dark">#F57C00</color>
-    <color name="primary_light">#FFE0B2</color>
-    <color name="accent">#536DFE</color>
-    <color name="text_primary">#212121</color>
-    <color name="text_secondary">#727272</color>
-    <color name="divider">#B6B6B6</color>
-    <color name="window_background">#FAFAFA</color>
+    <color name="scaffold_primary">#FFFF9800</color>
+    <color name="scaffold_primaryDark">#FFF57C00</color>
+    <color name="scaffold_primaryLight">#FFFFE0B2</color>
+    <color name="scaffold_accent">#FF536DFE</color>
 
 </resources>
