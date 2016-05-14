@@ -16,6 +16,7 @@
 
 package com.lamcreations.scaffoldsampleapp;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -25,7 +26,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -33,7 +33,6 @@ import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 import com.lamcreations.scaffold.common.adapters.BasicRecyclerViewAdapter;
 import com.lamcreations.scaffold.common.fragments.RecyclerViewFragment;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -173,25 +172,21 @@ public class EarthquakesFragment extends RecyclerViewFragment<EarthquakesFragmen
             mMagTextView.setText(String.format("Magnitude %s", earthquake.getMag()));
         }
 
-        private String getMapUrl(Earthquake earthquake) {
+        private Uri getMapUrl(Earthquake earthquake) {
             HashMap<String, Object> location = earthquake.getLocation();
-            //noinspection StringBufferReplaceableByString
-            return new StringBuilder()
-                    .append("http://maps.googleapis.com/maps/api/staticmap?")
-                    .append("center=")
-                    .append(location.get("lat"))
-                    .append(",")
-                    .append(location.get("lng"))
-                    .append("&zoom=" + 8)
-                    .append("&size=")
-                    .append(getResources().getDimensionPixelSize(R.dimen.static_map_width))
-                    .append("x")
-                    .append(getResources().getDimensionPixelSize(R.dimen.static_map_height))
-                    .append("&maptype=roadmap")
-                    .append("&format=jpg")
-                    .append("&sensor=false")
-                    .append("&key=AIzaSyCcc5UuW7qa2o_Ui-3eUNsgpFADUz5jswg")
-                    .toString();
+            return Uri.parse("http://maps.googleapis.com/maps/api/staticmap")
+                .buildUpon()
+                .appendQueryParameter("center", location.get("lat") + "," +
+                    location.get("lng"))
+                .appendQueryParameter("zoom", "8")
+                .appendQueryParameter("size",
+                    getResources().getDimensionPixelSize(R.dimen.static_map_width) + "x"
+                        + getResources().getDimensionPixelSize(R.dimen.static_map_height))
+                .appendQueryParameter("maptype", "roadmap")
+                .appendQueryParameter("format", "jpg")
+                .appendQueryParameter("sensor", "false")
+                .appendQueryParameter("key", "AIzaSyCcc5UuW7qa2o_Ui-3eUNsgpFADUz5jswg")
+                .build();
         }
     }
 }
