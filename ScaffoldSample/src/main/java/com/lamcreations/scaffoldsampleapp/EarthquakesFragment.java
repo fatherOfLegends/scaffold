@@ -26,6 +26,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.bumptech.glide.Glide;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -33,6 +34,7 @@ import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 import com.lamcreations.scaffold.common.adapters.BasicRecyclerViewAdapter;
 import com.lamcreations.scaffold.common.fragments.RecyclerViewFragment;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -135,7 +137,7 @@ public class EarthquakesFragment extends RecyclerViewFragment<EarthquakesFragmen
         public void onDataChange(final DataSnapshot dataSnapshot) {
             mLoading = false;
             showProgressBar(false);
-            for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                 mEarthQuakes.add(0, snapshot.getValue(Earthquake.class));
                 notifyItemInserted(0);
             }
@@ -147,7 +149,7 @@ public class EarthquakesFragment extends RecyclerViewFragment<EarthquakesFragmen
             showProgressBar(false);
         }
 
-        public boolean isLoading(){
+        public boolean isLoading() {
             return mLoading;
         }
     }
@@ -175,18 +177,22 @@ public class EarthquakesFragment extends RecyclerViewFragment<EarthquakesFragmen
         private Uri getMapUrl(Earthquake earthquake) {
             HashMap<String, Object> location = earthquake.getLocation();
             return Uri.parse("http://maps.googleapis.com/maps/api/staticmap")
-                .buildUpon()
-                .appendQueryParameter("center", location.get("lat") + "," +
-                    location.get("lng"))
-                .appendQueryParameter("zoom", "8")
-                .appendQueryParameter("size",
-                    getResources().getDimensionPixelSize(R.dimen.static_map_width) + "x"
-                        + getResources().getDimensionPixelSize(R.dimen.static_map_height))
-                .appendQueryParameter("maptype", "roadmap")
-                .appendQueryParameter("format", "jpg")
-                .appendQueryParameter("sensor", "false")
-                .appendQueryParameter("key", "AIzaSyCcc5UuW7qa2o_Ui-3eUNsgpFADUz5jswg")
-                .build();
+                    .buildUpon()
+                    .appendQueryParameter("center", String.format("%s,%s",
+                            location.get("lat"), location.get("lng")))
+                    .appendQueryParameter("zoom", "8")
+                    .appendQueryParameter("size", String.format("%sx%s",
+                            getDimenAsString(R.dimen.static_map_width),
+                            getDimenAsString(R.dimen.static_map_height)))
+                    .appendQueryParameter("maptype", "roadmap")
+                    .appendQueryParameter("format", "jpg")
+                    .appendQueryParameter("sensor", "false")
+                    .appendQueryParameter("key", "AIzaSyCcc5UuW7qa2o_Ui-3eUNsgpFADUz5jswg")
+                    .build();
+        }
+
+        private String getDimenAsString(int dimenId) {
+            return String.valueOf(getResources().getDimensionPixelSize(dimenId));
         }
     }
 }
