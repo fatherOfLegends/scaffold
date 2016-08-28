@@ -7,7 +7,7 @@ ext {
 }
 
 android {
-    compileSdkVersion 23
+    compileSdkVersion 24
     buildToolsVersion '23.0.2'
     packagingOptions {
         exclude 'META-INF/LICENSE'
@@ -15,7 +15,7 @@ android {
     }
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 23
+        targetSdkVersion 24
         versionCode 1
         versionName "1.0"
     }
@@ -28,8 +28,9 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar']);
-    def androidSupportLibVersion = "23.4.0";
-    compile "com.android.support:support-v4:${androidSupportLibVersion}";
+    def androidSupportLibVersion = "24.2.0";
+    compile "com.android.support:support-core-utils:${androidSupportLibVersion}";
+    compile "com.android.support:support-core-ui:${androidSupportLibVersion}";
     compile "com.android.support:appcompat-v7:${androidSupportLibVersion}";
     compile "com.android.support:recyclerview-v7:${androidSupportLibVersion}";
     compile "com.android.support:preference-v7:${androidSupportLibVersion}";

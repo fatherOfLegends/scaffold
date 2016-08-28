@@ -17,8 +17,6 @@
   -->
 
 <resources>
-    <string name="app_name">Scaffold</string>
-
     <string name="scaffold_open_drawer">Open Drawer</string>
     <string name="scaffold_close_drawer">Close Drawer</string>
     <string name="scaffold_navigation_item_1">Navigation Item 1</string>
