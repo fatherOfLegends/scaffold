@@ -29,7 +29,6 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.lamcreations.scaffold.common.activities.CollapsingToolbarDrawerActivity;
 
-
 public class SampleCollapsingToolbarDrawerActivity extends CollapsingToolbarDrawerActivity {
 
     @Override
@@ -61,7 +60,8 @@ public class SampleCollapsingToolbarDrawerActivity extends CollapsingToolbarDraw
     @Override
     protected void setupCollapsingToolbarLayoutBackdrop() {
         super.setupCollapsingToolbarLayoutBackdrop();
-        Glide.with(this).load(R.drawable.north_america).into((ImageView) mCollapsingToolbarLayoutBackdropView);
+        ImageView backgroundImage = (ImageView) mCollapsingToolbarLayoutBackdropView.findViewById(R.id.collapsing_background_image);
+        Glide.with(this).load(R.drawable.north_america).into(backgroundImage);
     }
 
     @Override

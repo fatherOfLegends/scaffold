@@ -15,9 +15,17 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-
-<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.internal.ScrimInsetsFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:contentDescription="@string/scaffold_empty"
-    android:scaleType="centerCrop" />
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:id="@+id/collapsing_background_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/scaffold_empty"
+        android:fitsSystemWindows="true"
+        android:scaleType="centerCrop"/>
+</android.support.design.internal.ScrimInsetsFrameLayout>
