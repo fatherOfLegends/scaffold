@@ -1,7 +1,7 @@
 Scaffold
 ========
 
-An Android library designed to help you quickly create applications that follow the latest material
+An Android library designed to help you quickly create prototypes and production applications that follow the latest material
 design guidelines.
 
 For more information see [the website][4] or [the wiki][1].
@@ -15,10 +15,12 @@ Scaffold is available via jcenter. It depends on several of the [Android support
 dependencies {
     ...
 
-    compile 'com.lamcreations.scaffold:scaffold:1.0.2'
+    compile 'com.lamcreations.scaffold:scaffold:1.0.3'
+    
+    def androidSupportLibVersion = "24.2.0";
 
-    def androidSupportLibVersion = "23.3.0";
-    compile "com.android.support:support-v4:${androidSupportLibVersion}";
+    compile "com.android.support:support-core-utils:${androidSupportLibVersion}";
+    compile "com.android.support:support-core-ui:${androidSupportLibVersion}";
     compile "com.android.support:appcompat-v7:${androidSupportLibVersion}";
     compile "com.android.support:recyclerview-v7:${androidSupportLibVersion}";
     compile "com.android.support:preference-v7:${androidSupportLibVersion}";

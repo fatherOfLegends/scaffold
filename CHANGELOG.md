@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+Version 1.0.3
+-------------
+Updated to support the Android Support Library version 24.2.0.
+Updated some shared resource names.
+Fixed some minor UI bugs in the sample app.
+
 Version 1.0.2
 -------------
 Updated to support the Android Support Library version 23.3.0.
