@@ -21,7 +21,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/clear_search"
-        android:icon="@drawable/ic_clear_36dp"
+        android:icon="@drawable/scaffold_ic_clear_36dp"
         android:title="@string/scaffold_clear_search"
         app:showAsAction="always" />
 </menu>

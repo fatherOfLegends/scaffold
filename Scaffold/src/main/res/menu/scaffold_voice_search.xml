@@ -21,7 +21,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/voice_search"
-        android:icon="@drawable/abc_ic_voice_search_api_mtrl_alpha"
+        android:icon="@drawable/scaffold_ic_mic_24dp"
         android:title="@string/scaffold_voice_search"
         app:showAsAction="always" />
 

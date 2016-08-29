@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ScaffoldToolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:theme">@style/ScaffoldActionBarTheme</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="android:elevation">3dp</item>
+    </style>
+
+    <style name="ScaffoldTabToolbar" parent="ScaffoldToolbar">
+        <item name="android:elevation">0dp</item>
+    </style>
+</resources>

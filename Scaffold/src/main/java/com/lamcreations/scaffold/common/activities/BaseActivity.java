@@ -26,8 +26,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.lamcreations.scaffold.common.config.Constants;
-
+import com.lamcreations.scaffold.common.config.ScaffoldConstants;
 
 public abstract class BaseActivity extends AppCompatActivity implements FragmentManager.OnBackStackChangedListener {
 
@@ -48,8 +47,8 @@ public abstract class BaseActivity extends AppCompatActivity implements Fragment
     protected Bundle getArguments() {
         Bundle args = new Bundle();
         Intent intent = getIntent();
-        if (intent.hasExtra(Constants.ARGS)) {
-            args.putAll(intent.getBundleExtra(Constants.ARGS));
+        if (intent.hasExtra(ScaffoldConstants.ARGS)) {
+            args.putAll(intent.getBundleExtra(ScaffoldConstants.ARGS));
         }
         return args;
     }

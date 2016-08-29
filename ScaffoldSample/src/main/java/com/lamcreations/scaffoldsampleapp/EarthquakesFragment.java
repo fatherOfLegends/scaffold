@@ -16,6 +16,7 @@
 
 package com.lamcreations.scaffoldsampleapp;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -27,17 +28,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 import com.lamcreations.scaffold.common.adapters.BasicRecyclerViewAdapter;
 import com.lamcreations.scaffold.common.fragments.RecyclerViewFragment;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
 
 public class EarthquakesFragment extends RecyclerViewFragment<EarthquakesFragment.EarthquakesRecyclerViewAdapter> {
 
@@ -58,8 +58,17 @@ public class EarthquakesFragment extends RecyclerViewFragment<EarthquakesFragmen
     }
 
     @Override
+    public void onViewCreated(final View view, final Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        showProgressBar(getRecyclerViewAdapter().isLoading());
+    }
+
+    @Override
     protected EarthquakesRecyclerViewAdapter getRecyclerViewAdapter() {
-        return new EarthquakesRecyclerViewAdapter(getActionMode());
+        if (mRecyclerView.getAdapter() == null) {
+            return new EarthquakesRecyclerViewAdapter(getActionMode());
+        }
+        return (EarthquakesRecyclerViewAdapter) mRecyclerView.getAdapter();
     }
 
     @Override
@@ -82,17 +91,30 @@ public class EarthquakesFragment extends RecyclerViewFragment<EarthquakesFragmen
         return false;
     }
 
+    private void showProgressBar(final boolean show) {
+        if ((show && !mSwipeRefreshLayout.isRefreshing()) ||
+                (!show && mSwipeRefreshLayout.isRefreshing())) {
+            mSwipeRefreshLayout.post(new Runnable() {
+                @Override
+                public void run() {
+                    mSwipeRefreshLayout.setRefreshing(show);
+                }
+            });
+        }
+    }
+
     public class EarthquakesRecyclerViewAdapter
             extends BasicRecyclerViewAdapter<EarthquakeViewHolder, Earthquake>
-            implements ChildEventListener {
+            implements ValueEventListener {
 
+        private boolean mLoading = true;
         private Firebase mFirebase;
         private List<Earthquake> mEarthQuakes = new ArrayList<>();
 
         public EarthquakesRecyclerViewAdapter(ActivationMode mode) {
             super(mode);
             mFirebase = new Firebase("https://publicdata-earthquakes.firebaseio.com/by_continent/" + mContinent + "/" + mMagnitude + "/");
-            mFirebase.orderByChild("updated").limitToFirst(50).addChildEventListener(this);
+            mFirebase.orderByChild("updated").limitToFirst(50).addListenerForSingleValueEvent(this);
         }
 
         @Override
@@ -112,43 +134,25 @@ public class EarthquakesFragment extends RecyclerViewFragment<EarthquakesFragmen
         }
 
         @Override
-        public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-            mEarthQuakes.add(0, dataSnapshot.getValue(Earthquake.class));
-            notifyItemInserted(0);
-        }
-
-        @Override
-        public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-            Earthquake earthquake = dataSnapshot.getValue(Earthquake.class);
-            int index = mEarthQuakes.indexOf(earthquake);
-            if (index > -1) {
-                mEarthQuakes.remove(index);
-                mEarthQuakes.add(index, earthquake);
-                notifyItemChanged(index);
+        public void onDataChange(final DataSnapshot dataSnapshot) {
+            mLoading = false;
+            showProgressBar(false);
+            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                mEarthQuakes.add(0, snapshot.getValue(Earthquake.class));
+                notifyItemInserted(0);
             }
-        }
-
-        @Override
-        public void onChildRemoved(DataSnapshot dataSnapshot) {
-            Earthquake earthquake = dataSnapshot.getValue(Earthquake.class);
-            int index = mEarthQuakes.indexOf(earthquake);
-            if (index > -1) {
-                mEarthQuakes.remove(index);
-                notifyItemRemoved(index);
-            }
-        }
-
-        @Override
-        public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
         }
 
         @Override
         public void onCancelled(FirebaseError firebaseError) {
+            mLoading = false;
+            showProgressBar(false);
+        }
 
+        public boolean isLoading() {
+            return mLoading;
         }
     }
-
 
     public class EarthquakeViewHolder extends RecyclerView.ViewHolder {
 
@@ -170,25 +174,25 @@ public class EarthquakesFragment extends RecyclerViewFragment<EarthquakesFragmen
             mMagTextView.setText(String.format("Magnitude %s", earthquake.getMag()));
         }
 
-        private String getMapUrl(Earthquake earthquake) {
+        private Uri getMapUrl(Earthquake earthquake) {
             HashMap<String, Object> location = earthquake.getLocation();
-            //noinspection StringBufferReplaceableByString
-            return new StringBuilder()
-                    .append("http://maps.googleapis.com/maps/api/staticmap?")
-                    .append("center=")
-                    .append(location.get("lat"))
-                    .append(",")
-                    .append(location.get("lng"))
-                    .append("&zoom=" + 8)
-                    .append("&size=")
-                    .append(getResources().getDimensionPixelSize(R.dimen.static_map_width))
-                    .append("x")
-                    .append(getResources().getDimensionPixelSize(R.dimen.static_map_height))
-                    .append("&maptype=roadmap")
-                    .append("&format=jpg")
-                    .append("&sensor=false")
-                    .append("&key=AIzaSyCcc5UuW7qa2o_Ui-3eUNsgpFADUz5jswg")
-                    .toString();
+            return Uri.parse("http://maps.googleapis.com/maps/api/staticmap")
+                    .buildUpon()
+                    .appendQueryParameter("center", String.format("%s,%s",
+                            location.get("lat"), location.get("lng")))
+                    .appendQueryParameter("zoom", "8")
+                    .appendQueryParameter("size", String.format("%sx%s",
+                            getDimenAsString(R.dimen.static_map_width),
+                            getDimenAsString(R.dimen.static_map_height)))
+                    .appendQueryParameter("maptype", "roadmap")
+                    .appendQueryParameter("format", "jpg")
+                    .appendQueryParameter("sensor", "false")
+                    .appendQueryParameter("key", "AIzaSyCcc5UuW7qa2o_Ui-3eUNsgpFADUz5jswg")
+                    .build();
+        }
+
+        private String getDimenAsString(int dimenId) {
+            return String.valueOf(getResources().getDimensionPixelSize(dimenId));
         }
     }
 }

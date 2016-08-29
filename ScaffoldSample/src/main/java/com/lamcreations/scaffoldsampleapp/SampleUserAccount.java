@@ -29,12 +29,12 @@ public class SampleUserAccount implements UserAccount {
 
     @Override
     public String getName() {
-        return "Larry McKenzie";
+        return "Larry";
     }
 
     @Override
     public String getEmail() {
-        return "larrymmckenzie@gmail.com";
+        return "lam.creations.06@gmail.com";
     }
 
     @Override
