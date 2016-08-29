@@ -12,7 +12,7 @@
   <body>
     <section class="page-header">
       <h1 class="project-name">Scaffold</h1>
-      <h2 class="project-tagline">Scaffold is a library designed to help you quickly create android applications that follow the material design guidelines.   </h2>
+      <h2 class="project-tagline">Scaffold is a library designed to help you quickly create android prototypes and production applications that follow the material design guidelines.   </h2>
       <a href="https://github.com/lmckenzie/scaffold" class="btn">View on GitHub</a>
       <a href="https://github.com/lmckenzie/scaffold/zipball/master" class="btn">Download .zip</a>
       <a href="https://github.com/lmckenzie/scaffold/tarball/master" class="btn">Download .tar.gz</a>
@@ -22,7 +22,7 @@
       <h1>
 <a id="scaffold" class="anchor" href="#scaffold" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Scaffold</h1>
 
-<p>An Android library designed to help you quickly create applications that follow the latest material
+<p>An Android library designed to help you quickly create prototypes and production applications that follow the latest material
 design guidelines.</p>
 
 <p>For more information see <a href="http://lmckenzie.github.io/scaffold">the website</a> or <a href="https://github.com/lmckenzie/scaffold/wiki">the wiki</a>.</p>
@@ -35,10 +35,12 @@ design guidelines.</p>
 <pre><code>dependencies {
     ...
 
-    compile 'com.lamcreations.scaffold:scaffold:1.0.2'
+    compile 'com.lamcreations.scaffold:scaffold:1.0.3'
 
-    def androidSupportLibVersion = "23.3.0";
-    compile "com.android.support:support-v4:${androidSupportLibVersion}";
+    def androidSupportLibVersion = "24.2.0";
+
+    compile "com.android.support:support-core-utils:${androidSupportLibVersion}";
+    compile "com.android.support:support-core-ui:${androidSupportLibVersion}";
     compile "com.android.support:appcompat-v7:${androidSupportLibVersion}";
     compile "com.android.support:recyclerview-v7:${androidSupportLibVersion}";
     compile "com.android.support:preference-v7:${androidSupportLibVersion}";
