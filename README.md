@@ -15,10 +15,10 @@ Scaffold is available via jcenter. It depends on several of the [Android support
 dependencies {
     ...
 
-    compile 'com.lamcreations.scaffold:scaffold:1.0.3'
-    
-    def androidSupportLibVersion = "24.2.0";
 
+    def androidSupportLibVersion = "24.2.1";
+
+    compile "com.lamcreations.scaffold:scaffold:${androidSupportLibVersion}"
     compile "com.android.support:support-core-utils:${androidSupportLibVersion}";
     compile "com.android.support:support-core-ui:${androidSupportLibVersion}";
     compile "com.android.support:appcompat-v7:${androidSupportLibVersion}";

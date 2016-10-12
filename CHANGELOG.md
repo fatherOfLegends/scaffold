@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+Version 24.2.1
+--------------
+Updated to support the Android Support Library version 24.2.1.
+Changed versioning to align with the support library because it is so tightly coupled.
+
 Version 1.0.3
 -------------
 Updated to support the Android Support Library version 24.2.0.
