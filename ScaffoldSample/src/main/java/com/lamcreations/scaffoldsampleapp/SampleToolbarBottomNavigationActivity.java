@@ -26,4 +26,10 @@ public class SampleToolbarBottomNavigationActivity extends ToolbarBottomNavigati
         Toast.makeText(this, item.getTitle(), Toast.LENGTH_SHORT).show();
         return true;
     }
+
+    @Override
+    protected void onUpNavigation() {
+        super.onUpNavigation();
+        onBackPressed();
+    }
 }

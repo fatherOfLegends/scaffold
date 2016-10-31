@@ -18,6 +18,6 @@
 
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:color="@color/scaffold_iconEnabledDarkBackground" android:state_checked="true" />
-    <item android:color="@color/scaffold_iconDisabledDarkBackground" android:state_enabled="false" />
-    <item android:color="@color/scaffold_iconDisabledDarkBackground" />
+    <item android:color="@color/scaffold_textDisabledDarkBackground" android:state_enabled="false" />
+    <item android:color="@color/scaffold_textSecondaryDarkBackground" />
 </selector>
