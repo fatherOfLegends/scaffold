@@ -16,13 +16,19 @@
   ~ limitations under the License.
   -->
 
-<resources>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <style name="AppTheme" parent="Theme.Scaffold.Light.DarkActionBar">
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
-    </style>
+    <FrameLayout
+        android:id="@id/scaffold_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
-    <style name="AppTheme.TranslucentStatus" parent="AppTheme">
-    </style>
-
-</resources>
+    <android.support.design.widget.BottomNavigationView
+        android:id="@id/scaffold_bottom_navigation_view"
+        style="@style/ScaffoldBottomNavigationViewLight"/>
+</LinearLayout>

@@ -16,13 +16,8 @@
   ~ limitations under the License.
   -->
 
-<resources>
-
-    <style name="AppTheme" parent="Theme.Scaffold.Light.DarkActionBar">
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
-    </style>
-
-    <style name="AppTheme.TranslucentStatus" parent="AppTheme">
-    </style>
-
-</resources>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/scaffold_textPrimaryDarkBackground" android:state_checked="true" />
+    <item android:color="@color/scaffold_textDisabledDarkBackground" android:state_checked="true" />
+    <item android:color="@color/scaffold_textHintDarkBackground" />
+</selector>

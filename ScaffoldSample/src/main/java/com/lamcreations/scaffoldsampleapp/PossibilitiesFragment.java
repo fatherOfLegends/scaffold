@@ -35,7 +35,6 @@ import com.lamcreations.scaffold.common.fragments.RecyclerViewFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class PossibilitiesFragment extends RecyclerViewFragment<PossibilitiesFragment.PossibilitiesRecyclerViewAdapter> {
 
     private PossibilitiesRecyclerViewAdapter mPossibilitiesRecyclerViewAdapter;
@@ -107,6 +106,12 @@ public class PossibilitiesFragment extends RecyclerViewFragment<PossibilitiesFra
             case R.id.settings_activity_headers:
                 intent.setClass(getActivity(), SampleSettingsActivityWithHeaders.class);
                 break;
+            case R.id.toolbar_bottom_navigation_activity:
+                intent.setClass(getActivity(), SampleToolbarBottomNavigationActivity.class);
+                break;
+            case R.id.bottom_navigation_activity:
+                intent.setClass(getActivity(), SampleBottomNavigationActivity.class);
+                break;
         }
         startActivity(intent);
     }
@@ -115,9 +120,9 @@ public class PossibilitiesFragment extends RecyclerViewFragment<PossibilitiesFra
 
         private List<MenuItem> mPossibilities = new ArrayList<>();
 
-        public PossibilitiesRecyclerViewAdapter(int menuResId, ActivationMode mode) {
+        PossibilitiesRecyclerViewAdapter(int menuResId, ActivationMode mode) {
             super(mode);
-            Menu menu =  new MenuBuilder(getActivity());
+            Menu menu = new MenuBuilder(getActivity());
             MenuInflater menuInflater = getActivity().getMenuInflater();
             menuInflater.inflate(menuResId, menu);
             int size = menu.size();
@@ -145,12 +150,11 @@ public class PossibilitiesFragment extends RecyclerViewFragment<PossibilitiesFra
         }
     }
 
-
     public class PossibilitiesViewHolder extends RecyclerView.ViewHolder {
 
         private TextView mTitleTextView;
 
-        public PossibilitiesViewHolder(
+        PossibilitiesViewHolder(
                 final BasicRecyclerViewAdapter.ItemInteractionListener itemInteractionListener,
                 View itemView) {
             super(itemView);
@@ -170,7 +174,7 @@ public class PossibilitiesFragment extends RecyclerViewFragment<PossibilitiesFra
             });
         }
 
-        public void bind(MenuItem item) {
+        void bind(MenuItem item) {
             mTitleTextView.setText(item.getTitle());
         }
     }

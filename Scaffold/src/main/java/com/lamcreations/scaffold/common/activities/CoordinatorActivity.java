@@ -27,7 +27,6 @@ import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
-import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
 
@@ -55,7 +54,6 @@ public abstract class CoordinatorActivity extends ToolbarActivity {
     }
 
     protected ViewStub mContentViewStub;
-    protected View mContentView;
     protected AppBarLayout mAppBarLayout;
 
     protected CoordinatorLayout mCoordinatorLayout;
@@ -71,7 +69,7 @@ public abstract class CoordinatorActivity extends ToolbarActivity {
     }
 
     protected void setContent(@LayoutRes int resId) {
-        if (findViewById(R.id.scaffold_content) == null && mContentViewStub != null) {
+        if (mContentView == null && mContentViewStub != null) {
             mContentViewStub.setLayoutResource(resId);
             mContentView = mContentViewStub.inflate();
         }

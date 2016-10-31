@@ -19,6 +19,11 @@
 <resources>
     <string name="scaffold_open_drawer">Open Drawer</string>
     <string name="scaffold_close_drawer">Close Drawer</string>
+    <string name="scaffold_bottom_navigation_item_1">Item 1</string>
+    <string name="scaffold_bottom_navigation_item_2">Item 2</string>
+    <string name="scaffold_bottom_navigation_item_3">Item 3</string>
+    <string name="scaffold_bottom_navigation_item_4">Item 4</string>
+    <string name="scaffold_bottom_navigation_item_5">Item 5</string>
     <string name="scaffold_navigation_item_1">Navigation Item 1</string>
     <string name="scaffold_navigation_item_2">Navigation Item 2</string>
     <string name="scaffold_navigation_item_3">Navigation Item 3</string>

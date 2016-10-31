@@ -35,6 +35,7 @@
     <item name="scaffold_navigation_view" type="id" />
     <item name="scaffold_tab_layout" type="id" />
     <item name="scaffold_search_edit_text" type="id" />
+    <item name="scaffold_bottom_navigation_view" type="id" />
 
     <item name="scaffold_navigation_view_header_image" type="id" />
     <item name="scaffold_navigation_view_header_image_overlay" type="id" />

@@ -17,10 +17,10 @@
 package com.lamcreations.scaffold.common.activities;
 
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.lamcreations.scaffold.R;
 
@@ -29,12 +29,14 @@ public abstract class ToolbarActivity extends BaseActivity {
 
     protected CharSequence mActionBarTitle;
     protected Toolbar mToolbar;
+    protected View mContentView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getActivityLayoutResId());
+
         setupActionBar();
+        mContentView = findViewById(R.id.scaffold_content);
     }
 
     protected CharSequence getActionBarTitle() {
@@ -66,8 +68,10 @@ public abstract class ToolbarActivity extends BaseActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    protected abstract void onUpNavigation();
+    @Override
+    protected int getActivityLayoutResId() {
+        return R.layout.scaffold_activity_toolbar;
+    }
 
-    @LayoutRes
-    protected abstract int getActivityLayoutResId();
+    protected abstract void onUpNavigation();
 }

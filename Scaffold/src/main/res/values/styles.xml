@@ -19,6 +19,7 @@
 <resources>
 
     <style name="Theme.Scaffold.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="scaffoldTheme">true</item>
         <item name="colorPrimary">@color/scaffold_primary</item>
         <item name="colorPrimaryDark">@color/scaffold_primaryDark</item>
         <item name="colorAccent">@color/scaffold_accent</item>
@@ -27,14 +28,26 @@
         <item name="colorControlHighlight">@color/scaffold_controlHighlight</item>
         <item name="colorButtonNormal">@color/scaffold_buttonNormal</item>
         <item name="colorSwitchThumbNormal">@color/scaffold_switchThumbNormal</item>
+
+        <item name="android:windowBackground">@color/scaffold_windowBackgroundDark</item>
+        <item name="android:textColorPrimary">@color/scaffold_textPrimaryDarkBackground</item>
+        <item name="android:textColorSecondary">@color/scaffold_textSecondaryDarkBackground</item>
+        <item name="android:textColorHint">@color/scaffold_textHintDarkBackground</item>
+    </style>
+
+    <style name="Theme.Scaffold.Base.Light" parent="Theme.Scaffold.Base">
         <item name="android:windowBackground">@color/scaffold_windowBackground</item>
         <item name="android:textColorPrimary">@color/scaffold_textPrimaryLightBackground</item>
         <item name="android:textColorSecondary">@color/scaffold_textSecondaryLightBackground</item>
         <item name="android:textColorHint">@color/scaffold_textHintLightBackground</item>
     </style>
 
-    <style name="Theme.Scaffold.LightActionBar" parent="Theme.Scaffold.Base">
+    <style name="Theme.Scaffold.Light.LightActionBar" parent="Theme.Scaffold.Base.Light">
         <item name="drawerArrowStyle">@style/ScaffoldDrawerArrowStyle.LightActionBar</item>
+    </style>
+
+    <style name="Theme.Scaffold.Light.DarkActionBar" parent="Theme.Scaffold.Base.Light">
+        <item name="drawerArrowStyle">@style/ScaffoldDrawerArrowStyle.DarkActionBar</item>
     </style>
 
     <style name="Theme.Scaffold.DarkActionBar" parent="Theme.Scaffold.Base">
@@ -205,6 +218,17 @@
 
     <style name="ScaffoldCollapsingToolbar.ExpandedTextAppearance" parent="TextAppearance.AppCompat.Display1">
         <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="ScaffoldBottomNavigationViewLight">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="ScaffoldBottomNavigationView" parent="ScaffoldBottomNavigationViewLight">
+        <item name="itemBackground">@color/scaffold_primary</item>
+        <item name="itemIconTint">@color/scaffold_bottom_navigation_item_icon_tint</item>
+        <item name="itemTextColor">@color/scaffold_bottom_navigation_item_text_color</item>
     </style>
 
 </resources>
