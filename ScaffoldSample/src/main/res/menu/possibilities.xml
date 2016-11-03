@@ -60,4 +60,12 @@
     <item
         android:id="@+id/settings_activity_headers"
         android:title="@string/settings_activity_with_headers" />
+
+    <item
+        android:id="@+id/bottom_navigation_activity"
+        android:title="@string/bottom_navigation_scaffold" />
+
+    <item
+        android:id="@+id/toolbar_bottom_navigation_activity"
+        android:title="@string/toolbar_bottom_navigation_scaffold" />
 </menu>

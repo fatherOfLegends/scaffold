@@ -62,6 +62,8 @@
             android:name=".SampleTabDrawerActivity"
             android:theme="@style/AppTheme.TranslucentStatus" />
         <activity android:name=".SampleToolbarActivity" />
+        <activity android:name=".SampleBottomNavigationActivity" />
+        <activity android:name=".SampleToolbarBottomNavigationActivity" />
     </application>
 
 </manifest>

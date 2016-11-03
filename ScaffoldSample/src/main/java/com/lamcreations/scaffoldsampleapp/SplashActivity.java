@@ -23,9 +23,7 @@ import android.widget.ImageView;
 import com.lamcreations.scaffold.common.activities.SplashScreenActivity;
 import com.lamcreations.scaffold.common.utils.DisplayUtils;
 
-
 public class SplashActivity extends SplashScreenActivity {
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

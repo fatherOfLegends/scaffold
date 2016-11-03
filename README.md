@@ -16,7 +16,7 @@ dependencies {
     ...
 
 
-    def androidSupportLibVersion = "24.2.1";
+    def androidSupportLibVersion = "25.0.0";
 
     compile "com.lamcreations.scaffold:scaffold:${androidSupportLibVersion}"
     compile "com.android.support:support-core-utils:${androidSupportLibVersion}";
@@ -36,7 +36,9 @@ these classes and following the conventions of this library you can very quickly
 that follows the [material design guidelines][3] without needing to worry about a lot of boiler plate code.
 
 Activities that you can extend:
+*  BottomNavigationActivity
 *  ToolbarActivity
+*  ToolbarBottomNavigationActivity
 *  CoordinatorActivity
 *  DrawerActivity
 *  TabActivity

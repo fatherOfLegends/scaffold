@@ -22,7 +22,6 @@ import android.widget.ImageView;
 
 import com.lamcreations.scaffold.R;
 
-
 public abstract class SplashScreenActivity extends BaseActivity {
 
     protected ImageView mSplashImage;
@@ -30,12 +29,16 @@ public abstract class SplashScreenActivity extends BaseActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.scaffold_activity_splash_screen);
 
         mSplashImage = (ImageView) findViewById(R.id.scaffold_splash_image);
     }
 
     public void setSplashImage(@DrawableRes int resId) {
         mSplashImage.setImageResource(resId);
+    }
+
+    @Override
+    protected int getActivityLayoutResId() {
+        return R.layout.scaffold_activity_splash_screen;
     }
 }

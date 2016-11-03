@@ -20,6 +20,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.IdRes;
+import android.support.annotation.LayoutRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -27,6 +28,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.lamcreations.scaffold.common.config.ScaffoldConstants;
+import com.lamcreations.scaffold.common.utils.ScaffoldThemeUtils;
 
 public abstract class BaseActivity extends AppCompatActivity implements FragmentManager.OnBackStackChangedListener {
 
@@ -37,8 +39,14 @@ public abstract class BaseActivity extends AppCompatActivity implements Fragment
         super.onCreate(savedInstanceState);
 
         mHandler = new Handler();
+        setContentView(getActivityLayoutResId());
         getSupportFragmentManager().addOnBackStackChangedListener(this);
+
+        ScaffoldThemeUtils.checkScaffoldTheme(this);
     }
+
+    @LayoutRes
+    protected abstract int getActivityLayoutResId();
 
     @Override
     public void onBackStackChanged() {

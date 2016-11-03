@@ -48,4 +48,5 @@
     <color name="scaffold_iconDisabledDarkBackground">#4DFFFFFF</color>
 
     <color name="scaffold_windowBackground">#FFFAFAFA</color>
+    <color name="scaffold_windowBackgroundDark">#FF303030</color>
 </resources>

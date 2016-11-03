@@ -16,13 +16,18 @@
   ~ limitations under the License.
   -->
 
-<resources>
-
-    <style name="AppTheme" parent="Theme.Scaffold.Light.DarkActionBar">
-        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
-    </style>
-
-    <style name="AppTheme.TranslucentStatus" parent="AppTheme">
-    </style>
-
-</resources>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_item_1"
+        android:checked="true"
+        android:icon="@drawable/scaffold_ic_android_24dp"
+        android:title="@string/scaffold_bottom_navigation_item_1"/>
+    <item
+        android:id="@+id/navigation_item_2"
+        android:icon="@drawable/scaffold_ic_android_24dp"
+        android:title="@string/scaffold_bottom_navigation_item_2"/>
+    <item
+        android:id="@+id/navigation_item_3"
+        android:icon="@drawable/scaffold_ic_android_24dp"
+        android:title="@string/scaffold_bottom_navigation_item_3"/>
+</menu>

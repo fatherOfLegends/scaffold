@@ -1,6 +1,14 @@
 Change Log
 ==========
 
+Version 25.0.0
+--------------
+- Updated to support the Android Support Library version 25.0.0.
+- Refactored styles and themes to allow for a dark theme.
+- Added a check to notify developers that they are using the wrong theme.
+- Created two activities for implementing the bottom navigation view.
+- Added examples of the new activities to the sample app.
+
 Version 24.2.1
 --------------
 Updated to support the Android Support Library version 24.2.1.
