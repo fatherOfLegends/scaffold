@@ -68,4 +68,8 @@
     <item
         android:id="@+id/toolbar_bottom_navigation_activity"
         android:title="@string/toolbar_bottom_navigation_scaffold" />
+
+    <item
+        android:id="@+id/coordinator_bottom_navigation_activity"
+        android:title="@string/coordinator_bottom_navigation_scaffold" />
 </menu>

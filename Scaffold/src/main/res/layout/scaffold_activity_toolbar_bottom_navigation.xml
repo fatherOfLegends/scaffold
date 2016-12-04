@@ -26,11 +26,16 @@
         android:id="@id/scaffold_toolbar"
         style="@style/ScaffoldToolbar"/>
 
-    <FrameLayout
-        android:id="@id/scaffold_content"
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1">
+
+        <FrameLayout
+            android:id="@id/scaffold_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </android.support.design.widget.CoordinatorLayout>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@id/scaffold_bottom_navigation_view"

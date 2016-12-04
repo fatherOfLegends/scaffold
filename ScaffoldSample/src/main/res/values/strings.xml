@@ -33,6 +33,7 @@
     <string name="search_scaffold">Search Scaffold</string>
     <string name="toolbar_bottom_navigation_scaffold">Toolbar Activity w/ Bottom Nav</string>
     <string name="bottom_navigation_scaffold">Bottom Navigation Activity</string>
+    <string name="coordinator_bottom_navigation_scaffold">Coordinator Bottom Navigation Activity</string>
 
     <string name="title_activity_settings">Settings</string>
     <string name="pref_header_general">General</string>

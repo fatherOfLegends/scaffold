@@ -17,7 +17,6 @@
 package com.lamcreations.scaffold.common.views.behaviors;
 
 import android.content.Context;
-import android.os.Build;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewCompat;
@@ -25,20 +24,16 @@ import android.support.v4.view.ViewPropertyAnimatorListener;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
-
-import com.lamcreations.scaffold.R;
-
 
 public class FabBehavior extends FloatingActionButton.Behavior {
 
     private static final Interpolator INTERPOLATOR = new FastOutSlowInInterpolator();
     private boolean mIsAnimatingOut = false;
+    private boolean mHideOnScroll = true;
 
     public FabBehavior(Context context, AttributeSet attrs) {
-        super();
+        super(context, attrs);
     }
 
     public FabBehavior() {
@@ -48,15 +43,13 @@ public class FabBehavior extends FloatingActionButton.Behavior {
     @Override
     public boolean onStartNestedScroll(final CoordinatorLayout coordinatorLayout, final FloatingActionButton child,
                                        final View directTargetChild, final View target, final int nestedScrollAxes) {
-        return nestedScrollAxes == ViewCompat.SCROLL_AXIS_VERTICAL
-                || super.onStartNestedScroll(coordinatorLayout, child, directTargetChild, target, nestedScrollAxes);
+        return nestedScrollAxes == ViewCompat.SCROLL_AXIS_VERTICAL;
     }
 
     @Override
     public void onNestedScroll(final CoordinatorLayout coordinatorLayout, final FloatingActionButton child,
                                final View target, final int dxConsumed, final int dyConsumed,
                                final int dxUnconsumed, final int dyUnconsumed) {
-        super.onNestedScroll(coordinatorLayout, child, target, dxConsumed, dyConsumed, dxUnconsumed, dyUnconsumed);
         if (dyConsumed > 0 && !this.mIsAnimatingOut && child.getVisibility() == View.VISIBLE) {
             animateOut(child);
         } else if (dyConsumed < 0 && child.getVisibility() != View.VISIBLE) {
@@ -65,8 +58,13 @@ public class FabBehavior extends FloatingActionButton.Behavior {
     }
 
     private void animateOut(final FloatingActionButton button) {
-        if (Build.VERSION.SDK_INT >= 14) {
-            ViewCompat.animate(button).scaleX(0.0F).scaleY(0.0F).alpha(0.0F).setInterpolator(INTERPOLATOR).withLayer()
+        if (mHideOnScroll) {
+            ViewCompat.animate(button)
+                    .scaleX(0.0F)
+                    .scaleY(0.0F)
+                    .alpha(0.0F)
+                    .setInterpolator(INTERPOLATOR)
+                    .withLayer()
                     .setListener(new ViewPropertyAnimatorListener() {
                         public void onAnimationStart(View view) {
                             FabBehavior.this.mIsAnimatingOut = true;
@@ -81,39 +79,28 @@ public class FabBehavior extends FloatingActionButton.Behavior {
                             view.setVisibility(View.GONE);
                         }
                     }).start();
-        } else {
-            Animation anim = AnimationUtils.loadAnimation(button.getContext(), R.anim.scaffold_fab_out);
-            anim.setInterpolator(INTERPOLATOR);
-            anim.setDuration(200L);
-            anim.setAnimationListener(new Animation.AnimationListener() {
-                public void onAnimationStart(Animation animation) {
-                    FabBehavior.this.mIsAnimatingOut = true;
-                }
-
-                public void onAnimationEnd(Animation animation) {
-                    FabBehavior.this.mIsAnimatingOut = false;
-                    button.setVisibility(View.GONE);
-                }
-
-                @Override
-                public void onAnimationRepeat(final Animation animation) {
-                }
-            });
-            button.startAnimation(anim);
         }
     }
 
     private void animateIn(FloatingActionButton button) {
-        button.setVisibility(View.VISIBLE);
-        if (Build.VERSION.SDK_INT >= 14) {
-            ViewCompat.animate(button).scaleX(1.0F).scaleY(1.0F).alpha(1.0F)
-                    .setInterpolator(INTERPOLATOR).withLayer().setListener(null)
+        if (mHideOnScroll) {
+            button.setVisibility(View.VISIBLE);
+            ViewCompat.animate(button)
+                    .scaleX(1.0F)
+                    .scaleY(1.0F)
+                    .alpha(1.0F)
+                    .setInterpolator(INTERPOLATOR)
+                    .withLayer()
+                    .setListener(null)
                     .start();
-        } else {
-            Animation anim = AnimationUtils.loadAnimation(button.getContext(), R.anim.scaffold_fab_in);
-            anim.setDuration(200L);
-            anim.setInterpolator(INTERPOLATOR);
-            button.startAnimation(anim);
         }
+    }
+
+    public boolean isHideOnScroll() {
+        return mHideOnScroll;
+    }
+
+    public void setHideOnScroll(final boolean hideOnScroll) {
+        mHideOnScroll = hideOnScroll;
     }
 }
