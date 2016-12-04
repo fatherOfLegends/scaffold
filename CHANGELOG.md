@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+Version 25.0.1
+--------------
+- Updated to support the Android Support Library version 25.0.1.
+- Created an activity for implementing the bottom navigation view with a CoordinatorLayout.
+- Added an example of the new activity to the sample app.
+
 Version 25.0.0
 --------------
 - Updated to support the Android Support Library version 25.0.0.

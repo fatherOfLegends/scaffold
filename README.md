@@ -16,7 +16,7 @@ dependencies {
     ...
 
 
-    def androidSupportLibVersion = "25.0.0";
+    def androidSupportLibVersion = "25.0.1";
 
     compile "com.lamcreations.scaffold:scaffold:${androidSupportLibVersion}"
     compile "com.android.support:support-core-utils:${androidSupportLibVersion}";
@@ -40,6 +40,7 @@ Activities that you can extend:
 *  ToolbarActivity
 *  ToolbarBottomNavigationActivity
 *  CoordinatorActivity
+*  CoordinatorBottomNavigationActivity
 *  DrawerActivity
 *  TabActivity
 *  TabDrawerActivity
@@ -66,6 +67,8 @@ Views that you can use/extend:
 Other classes you might find helpful:
 *  ImagePagerAdapter
 *  BasicRecyclerViewAdapter
+*  FabBehavior
+*  BottomNavigationBehavior
 
 For more information see [the wiki][1].
 
