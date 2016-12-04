@@ -21,6 +21,7 @@ import android.support.annotation.IdRes;
 import android.support.annotation.IntDef;
 import android.support.annotation.LayoutRes;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.GravityCompat;
@@ -31,13 +32,13 @@ import android.view.ViewGroup;
 import android.view.ViewStub;
 
 import com.lamcreations.scaffold.R;
+import com.lamcreations.scaffold.common.views.behaviors.BottomNavigationBehavior;
 import com.lamcreations.scaffold.common.views.behaviors.FabBehavior;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-
-public abstract class CoordinatorActivity extends ToolbarActivity {
+public abstract class CoordinatorBottomNavigationActivity extends ToolbarBottomNavigationActivity {
 
     @IntDef(
             flag = true,
@@ -68,6 +69,11 @@ public abstract class CoordinatorActivity extends ToolbarActivity {
         initFab();
     }
 
+    @Override
+    protected int getActivityLayoutResId() {
+        return R.layout.scaffold_activity_coordinator_bottom_navigation;
+    }
+
     protected void setContent(@LayoutRes int resId) {
         if (mContentView == null && mContentViewStub != null) {
             mContentViewStub.setLayoutResource(resId);
@@ -94,6 +100,17 @@ public abstract class CoordinatorActivity extends ToolbarActivity {
         actionBar.setTitle(getActionBarTitle());
     }
 
+    @Override
+    protected void setupBottomNavigationView() {
+        super.setupBottomNavigationView();
+        ViewGroup.LayoutParams layoutParams = mBottomNavigationView.getLayoutParams();
+        if (layoutParams instanceof CoordinatorLayout.LayoutParams) {
+            CoordinatorLayout.LayoutParams coordinatorLayoutParams = ((CoordinatorLayout.LayoutParams) layoutParams);
+            coordinatorLayoutParams.setBehavior(getBottomNavigationBehavior());
+            coordinatorLayoutParams.insetEdge = Gravity.BOTTOM;
+        }
+    }
+
     @AppBarLayoutScrollFlags
     protected int getScrollFlags() {
         return AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL |
@@ -106,10 +123,10 @@ public abstract class CoordinatorActivity extends ToolbarActivity {
         if (mFloatingActionButton != null) {
             ViewGroup.LayoutParams layoutParams = mFloatingActionButton.getLayoutParams();
             if (layoutParams instanceof CoordinatorLayout.LayoutParams) {
-                CoordinatorLayout.LayoutParams coordLayoutParams = (CoordinatorLayout.LayoutParams) layoutParams;
-                coordLayoutParams.setAnchorId(getFabAnchorId());
-                coordLayoutParams.anchorGravity = getFabAnchorGravity();
-                coordLayoutParams.setBehavior(getFabBehavior());
+                CoordinatorLayout.LayoutParams coordinatorLayoutParams = (CoordinatorLayout.LayoutParams) layoutParams;
+                coordinatorLayoutParams.setAnchorId(getFabAnchorId());
+                coordinatorLayoutParams.anchorGravity = getFabAnchorGravity();
+                coordinatorLayoutParams.setBehavior(getFabBehavior());
             }
             boolean show = setupFab();
             if (!show) {
@@ -129,7 +146,13 @@ public abstract class CoordinatorActivity extends ToolbarActivity {
     }
 
     protected CoordinatorLayout.Behavior<FloatingActionButton> getFabBehavior() {
-        return new FabBehavior();
+        FabBehavior fabBehavior = new FabBehavior();
+        fabBehavior.setHideOnScroll(false);
+        return fabBehavior;
+    }
+
+    protected CoordinatorLayout.Behavior<BottomNavigationView> getBottomNavigationBehavior() {
+        return new BottomNavigationBehavior();
     }
 
     @LayoutRes

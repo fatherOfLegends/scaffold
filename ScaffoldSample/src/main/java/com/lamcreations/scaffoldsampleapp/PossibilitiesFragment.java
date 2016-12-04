@@ -112,6 +112,9 @@ public class PossibilitiesFragment extends RecyclerViewFragment<PossibilitiesFra
             case R.id.bottom_navigation_activity:
                 intent.setClass(getActivity(), SampleBottomNavigationActivity.class);
                 break;
+            case R.id.coordinator_bottom_navigation_activity:
+                intent.setClass(getActivity(), SampleCoordinatorBottomNavigationActivity.class);
+                break;
         }
         startActivity(intent);
     }

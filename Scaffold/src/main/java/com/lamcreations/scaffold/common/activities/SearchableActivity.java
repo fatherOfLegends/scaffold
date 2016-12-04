@@ -22,9 +22,7 @@ import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.support.annotation.CallSuper;
 import android.support.annotation.NonNull;
-import android.support.design.widget.AppBarLayout;
 import android.support.v7.app.ActionBar;
-import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
@@ -34,7 +32,6 @@ import android.widget.EditText;
 import com.lamcreations.scaffold.R;
 
 import java.util.List;
-
 
 public abstract class SearchableActivity extends CoordinatorActivity implements TextWatcher {
 
@@ -121,20 +118,11 @@ public abstract class SearchableActivity extends CoordinatorActivity implements 
     }
 
     protected void setupActionBar() {
+        super.setupActionBar();
         ActionBar actionBar = getSupportActionBar();
-        if (actionBar == null) {
-            mAppBarLayout = (AppBarLayout) findViewById(R.id.scaffold_app_bar_layout);
-            mToolbar = (Toolbar) findViewById(R.id.scaffold_toolbar);
-            assert mToolbar != null;
-            if (mToolbar.getParent().getClass().equals(AppBarLayout.class)) {
-                ((AppBarLayout.LayoutParams) mToolbar.getLayoutParams()).setScrollFlags(getScrollFlags());
-            }
-            setSupportActionBar(mToolbar);
-            actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayShowTitleEnabled(false);
         }
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        actionBar.setDisplayShowTitleEnabled(false);
     }
 
     @CallSuper
