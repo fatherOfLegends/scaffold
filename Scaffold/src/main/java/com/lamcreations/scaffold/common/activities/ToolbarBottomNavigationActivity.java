@@ -26,7 +26,7 @@ import com.lamcreations.scaffold.R;
 public abstract class ToolbarBottomNavigationActivity extends ToolbarActivity
         implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-    BottomNavigationView mBottomNavigationView;
+    protected BottomNavigationView mBottomNavigationView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
