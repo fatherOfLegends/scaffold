@@ -1,0 +1,8 @@
+title: Scaffold
+description: Scaffold is a library designed to help you quickly create android prototypes and production applications that follow the material design guidelines.   
+google_analytics: UA-17267890-14
+show_downloads: true
+theme: jekyll-theme-cayman
+
+gems:
+  - jekyll-mentions
