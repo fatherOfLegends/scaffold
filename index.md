@@ -36,6 +36,7 @@ these classes and following the conventions of this library you can very quickly
 that follows the [material design guidelines][3] without needing to worry about a lot of boiler plate code.
 
 Activities that you can extend:
+
 *  BottomNavigationActivity
 *  ToolbarActivity
 *  ToolbarBottomNavigationActivity
@@ -53,18 +54,21 @@ Activities that you can extend:
 *  VideoSplashScreenActivity
 
 Fragments that you can extend:
+
 *  RecyclerViewFragment
 *  SettingsFragment
 *  NavigationViewFragment
 *  NavigationRecyclerViewFragment
 
 Views that you can use/extend:
+
 *  NavigationViewHeader
 *  AutoFitTextureView
 *  RoundedImageView
 *  CollapsingToolbarTabLayout
 
 Other classes you might find helpful:
+
 *  ImagePagerAdapter
 *  BasicRecyclerViewAdapter
 *  FabBehavior
