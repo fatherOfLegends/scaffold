@@ -3,12 +3,12 @@ apply plugin: 'com.android.library'
 ext {
     PUBLISH_GROUP_ID = 'com.lamcreations.scaffold'
     PUBLISH_ARTIFACT_ID = 'scaffold'
-    PUBLISH_VERSION = '25.1.0'
+    PUBLISH_VERSION = '25.3.1'
 }
 
 android {
     compileSdkVersion 25
-    buildToolsVersion '25.0.1'
+    buildToolsVersion '25.0.2'
     packagingOptions {
         exclude 'META-INF/LICENSE'
         exclude 'META-INF/NOTICE'
@@ -28,7 +28,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar']);
-    def androidSupportLibVersion = "25.1.0";
+    def androidSupportLibVersion = "25.3.1";
     compile "com.android.support:support-core-utils:${androidSupportLibVersion}";
     compile "com.android.support:support-core-ui:${androidSupportLibVersion}";
     compile "com.android.support:appcompat-v7:${androidSupportLibVersion}";
