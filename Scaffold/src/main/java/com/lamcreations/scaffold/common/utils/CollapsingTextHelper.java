@@ -16,6 +16,7 @@
 
 package com.lamcreations.scaffold.common.utils;
 
+import android.annotation.SuppressLint;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -37,6 +38,7 @@ import android.view.animation.LinearInterpolator;
 import com.lamcreations.scaffold.R;
 
 
+@SuppressWarnings("unused")
 public class CollapsingTextHelper {
 
     private static final boolean USE_SCALING_TEXTURE;
@@ -60,7 +62,6 @@ public class CollapsingTextHelper {
     private Bitmap mExpandedTitleTexture;
     private Paint mTexturePaint;
     private float mTextureAscent;
-    private float mTextureDescent;
     private float mCurrentLeft;
     private float mCurrentRight;
     private float mCurrentTop;
@@ -146,6 +147,7 @@ public class CollapsingTextHelper {
 
     }
 
+    @SuppressLint("PrivateResource")
     public void setCollapsedTextAppearance(int resId) {
         TypedArray a = this.mView.getContext().obtainStyledAttributes(resId, R.styleable.TextAppearance);
         if (a.hasValue(R.styleable.TextAppearance_android_textColor)) {
@@ -160,6 +162,7 @@ public class CollapsingTextHelper {
         this.recalculate();
     }
 
+    @SuppressLint("PrivateResource")
     public void setExpandedTextAppearance(int resId) {
         TypedArray a = this.mView.getContext().obtainStyledAttributes(resId, R.styleable.TextAppearance);
         if (a.hasValue(R.styleable.TextAppearance_android_textColor)) {
@@ -243,7 +246,7 @@ public class CollapsingTextHelper {
         }
 
         this.mTextureAscent = this.mTextPaint.ascent();
-        this.mTextureDescent = this.mTextPaint.descent();
+        final float textureDescent = this.mTextPaint.descent();
         this.clearTexture();
     }
 
@@ -418,7 +421,7 @@ public class CollapsingTextHelper {
     }
 
 
-    public static class MathUtils {
+    private static class MathUtils {
 
         MathUtils() {
         }
@@ -427,7 +430,7 @@ public class CollapsingTextHelper {
             return amount < low ? low : (amount > high ? high : amount);
         }
 
-        public static float constrain(float amount, float low, float high) {
+        static float constrain(float amount, float low, float high) {
             return amount < low ? low : (amount > high ? high : amount);
         }
     }
@@ -442,7 +445,7 @@ public class CollapsingTextHelper {
         AnimationUtils() {
         }
 
-        public static float lerp(float startValue, float endValue, float fraction) {
+        static float lerp(float startValue, float endValue, float fraction) {
             return startValue + fraction * (endValue - startValue);
         }
 

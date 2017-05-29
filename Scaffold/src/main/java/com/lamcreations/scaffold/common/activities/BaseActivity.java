@@ -30,6 +30,7 @@ import android.view.View;
 import com.lamcreations.scaffold.common.config.ScaffoldConstants;
 import com.lamcreations.scaffold.common.utils.ScaffoldThemeUtils;
 
+@SuppressWarnings("unused")
 public abstract class BaseActivity extends AppCompatActivity implements FragmentManager.OnBackStackChangedListener {
 
     protected Handler mHandler;

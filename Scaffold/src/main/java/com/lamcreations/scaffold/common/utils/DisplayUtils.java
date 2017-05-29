@@ -20,6 +20,7 @@ import android.content.Context;
 import android.util.DisplayMetrics;
 
 
+@SuppressWarnings("unused")
 public class DisplayUtils {
 
     public static int densityPixelsToScreenPixels(Context context, int densityPixels) {

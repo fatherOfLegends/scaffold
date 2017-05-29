@@ -20,15 +20,16 @@ import android.os.Bundle;
 import android.support.annotation.MenuRes;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.lamcreations.scaffold.R;
-import com.lamcreations.scaffold.common.fragments.BaseFragment;
 import com.lamcreations.scaffold.users.views.NavigationViewHeader;
 
-public abstract class NavigationViewFragment extends BaseFragment
+@SuppressWarnings("unused")
+public abstract class NavigationViewFragment extends Fragment
         implements NavigationView.OnNavigationItemSelectedListener {
 
     protected NavigationView mNavigationView;

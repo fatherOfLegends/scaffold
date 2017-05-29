@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+@SuppressWarnings({"WeakerAccess", "unused"})
 public abstract class BasicRecyclerViewAdapter<VH extends RecyclerView.ViewHolder, T> extends RecyclerView.Adapter<VH> {
 
     public static int NONE_SELECTED = -1;
@@ -42,7 +43,7 @@ public abstract class BasicRecyclerViewAdapter<VH extends RecyclerView.ViewHolde
 
     public BasicRecyclerViewAdapter(ActivationMode mode) {
         mActivationMode = mode;
-        mActivatedItems = new ArrayList<T>();
+        mActivatedItems = new ArrayList<>();
     }
 
     public T getItemAtPosition(int position) {

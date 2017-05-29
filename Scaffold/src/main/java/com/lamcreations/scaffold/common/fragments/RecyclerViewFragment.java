@@ -19,6 +19,7 @@ package com.lamcreations.scaffold.common.fragments;
 import android.os.Bundle;
 import android.support.annotation.CallSuper;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ActionMode;
@@ -36,7 +37,7 @@ import com.lamcreations.scaffold.common.adapters.BasicRecyclerViewAdapter;
 import com.lamcreations.scaffold.common.adapters.itemDecorations.SpaceItemDecoration;
 
 
-public abstract class RecyclerViewFragment<Adapter extends BasicRecyclerViewAdapter> extends BaseFragment
+public abstract class RecyclerViewFragment<Adapter extends BasicRecyclerViewAdapter> extends Fragment
         implements BasicRecyclerViewAdapter.ItemInteractionListener,
         ActionMode.Callback, SwipeRefreshLayout.OnRefreshListener {
 

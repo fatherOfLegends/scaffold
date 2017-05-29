@@ -21,6 +21,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 
+@SuppressWarnings("unused")
 public class GridSpaceItemDecoration extends RecyclerView.ItemDecoration {
     private int mSpace;
 

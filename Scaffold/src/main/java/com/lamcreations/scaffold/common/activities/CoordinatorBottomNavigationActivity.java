@@ -18,7 +18,6 @@ package com.lamcreations.scaffold.common.activities;
 
 import android.os.Bundle;
 import android.support.annotation.IdRes;
-import android.support.annotation.IntDef;
 import android.support.annotation.LayoutRes;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.BottomNavigationView;
@@ -32,27 +31,11 @@ import android.view.ViewGroup;
 import android.view.ViewStub;
 
 import com.lamcreations.scaffold.R;
+import com.lamcreations.scaffold.common.views.AppBarLayoutScrollFlags;
 import com.lamcreations.scaffold.common.views.behaviors.BottomNavigationBehavior;
 import com.lamcreations.scaffold.common.views.behaviors.FabBehavior;
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-
 public abstract class CoordinatorBottomNavigationActivity extends ToolbarBottomNavigationActivity {
-
-    @IntDef(
-            flag = true,
-            value = {
-                    AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS,
-                    AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS_COLLAPSED,
-                    AppBarLayout.LayoutParams.SCROLL_FLAG_EXIT_UNTIL_COLLAPSED,
-                    AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL,
-                    AppBarLayout.LayoutParams.SCROLL_FLAG_SNAP
-            }
-    )
-    @Retention(RetentionPolicy.SOURCE)
-    public @interface AppBarLayoutScrollFlags {
-    }
 
     protected ViewStub mContentViewStub;
     protected AppBarLayout mAppBarLayout;

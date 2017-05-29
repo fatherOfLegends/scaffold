@@ -68,6 +68,7 @@ public abstract class NavigationRecyclerViewFragment extends
         }
     }
 
+    @SuppressWarnings("RestrictedApi")
     @Override
     protected NavigationRecyclerViewAdapter getRecyclerViewAdapter() {
         if (mNavigationRecyclerViewAdapter == null) {
@@ -108,12 +109,12 @@ public abstract class NavigationRecyclerViewFragment extends
 
     protected abstract View getNavigationViewHeader();
 
-    protected class NavigationRecyclerViewAdapter extends BasicRecyclerViewAdapter<NavigationItemViewHolder, NavigationMenuItem> {
+    class NavigationRecyclerViewAdapter extends BasicRecyclerViewAdapter<NavigationItemViewHolder, NavigationMenuItem> {
 
         @NonNull
         private List<NavigationMenuItem> mNavigationMenuItems = new ArrayList<>();
 
-        public NavigationRecyclerViewAdapter(Menu menu, ActivationMode mode) {
+        NavigationRecyclerViewAdapter(Menu menu, ActivationMode mode) {
             super(mode);
             int size = menu.size();
             for (int i = 0; i < size; i++) {
@@ -158,20 +159,20 @@ public abstract class NavigationRecyclerViewFragment extends
         }
     }
 
-    protected class NavigationItemViewHolder extends RecyclerView.ViewHolder {
+    class NavigationItemViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView mIconImageView;
         private TextView mTitleTextView;
         private TextView mBadgeTextView;
 
-        public NavigationItemViewHolder(View itemView) {
+        NavigationItemViewHolder(View itemView) {
             super(itemView);
             mIconImageView = (ImageView) itemView.findViewById(R.id.navigation_item_icon);
             mTitleTextView = (TextView) itemView.findViewById(R.id.navigation_item_title);
             mBadgeTextView = (TextView) itemView.findViewById(R.id.navigation_item_badge);
         }
 
-        public void bind(NavigationMenuItem item) {
+        void bind(NavigationMenuItem item) {
             setIcon(item.getIcon());
             setTitle(item.getTitle());
             setBadgeCount(item.getBadgeCount());
@@ -209,16 +210,17 @@ public abstract class NavigationRecyclerViewFragment extends
         }
     }
 
-    protected class NavigationMenuItem implements MenuItem {
+    @SuppressWarnings("unused")
+    class NavigationMenuItem implements MenuItem {
 
-        public static final int HEADER = 0;
-        public static final int DIVIDER = 1;
-        public static final int NAVIGABLE_ITEM = 2;
+        static final int HEADER = 0;
+        static final int DIVIDER = 1;
+        static final int NAVIGABLE_ITEM = 2;
 
         private MenuItem mMenuItem;
         private int mBadgeCount;
 
-        public NavigationMenuItem(@NonNull MenuItem menuItem) {
+        NavigationMenuItem(@NonNull MenuItem menuItem) {
             mMenuItem = menuItem;
         }
 
@@ -427,7 +429,7 @@ public abstract class NavigationRecyclerViewFragment extends
             return mMenuItem.setOnActionExpandListener(listener);
         }
 
-        public int getType() {
+        int getType() {
             if (getGroupId() == R.id.scaffold_navigation_item_header) {
                 return HEADER;
             } else if (getGroupId() == R.id.scaffold_navigation_item_divider) {
@@ -438,7 +440,7 @@ public abstract class NavigationRecyclerViewFragment extends
             return -1;
         }
 
-        public int getBadgeCount() {
+        int getBadgeCount() {
             return mBadgeCount;
         }
 
