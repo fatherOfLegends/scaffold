@@ -60,7 +60,7 @@ public class RoundedDrawable extends Drawable {
         int BOTTOM_LEFT = 3;
     }
 
-    public static final String TAG = "RoundedDrawable";
+    private static final String TAG = "RoundedDrawable";
     public static final int DEFAULT_BORDER_COLOR = Color.BLACK;
 
     private final RectF mBounds = new RectF();

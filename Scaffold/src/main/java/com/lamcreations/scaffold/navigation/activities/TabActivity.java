@@ -18,35 +18,16 @@ package com.lamcreations.scaffold.navigation.activities;
 
 import android.os.Bundle;
 import android.support.annotation.CallSuper;
-import android.support.annotation.IntDef;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 
 import com.lamcreations.scaffold.R;
 import com.lamcreations.scaffold.common.activities.CoordinatorActivity;
-
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-
+import com.lamcreations.scaffold.navigation.TabLayoutGravity;
+import com.lamcreations.scaffold.navigation.TabLayoutMode;
 
 public abstract class TabActivity extends CoordinatorActivity {
-
-    @IntDef({
-            TabLayout.MODE_FIXED,
-            TabLayout.MODE_SCROLLABLE
-    })
-    @Retention(RetentionPolicy.SOURCE)
-    public @interface TabLayoutMode {
-    }
-
-    @IntDef({
-            TabLayout.GRAVITY_CENTER,
-            TabLayout.GRAVITY_FILL
-    })
-    @Retention(RetentionPolicy.SOURCE)
-    public @interface TabLayoutGravity {
-    }
 
     public static final String CURRENT_TAB_POSITION = "currentTabPosition";
     protected TabLayout mTabLayout;

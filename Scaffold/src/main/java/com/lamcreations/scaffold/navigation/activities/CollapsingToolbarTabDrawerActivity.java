@@ -19,7 +19,6 @@ package com.lamcreations.scaffold.navigation.activities;
 import android.os.Bundle;
 import android.support.annotation.CallSuper;
 import android.support.annotation.FloatRange;
-import android.support.annotation.IntDef;
 import android.support.annotation.LayoutRes;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -27,21 +26,9 @@ import android.view.View;
 import android.view.ViewStub;
 
 import com.lamcreations.scaffold.R;
-
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-
+import com.lamcreations.scaffold.common.views.CollapseMode;
 
 public abstract class CollapsingToolbarTabDrawerActivity extends TabDrawerActivity {
-
-    @IntDef({
-            CollapsingToolbarLayout.LayoutParams.COLLAPSE_MODE_OFF,
-            CollapsingToolbarLayout.LayoutParams.COLLAPSE_MODE_PARALLAX,
-            CollapsingToolbarLayout.LayoutParams.COLLAPSE_MODE_PIN
-    })
-    @Retention(RetentionPolicy.SOURCE)
-    public @interface CollapseMode {
-    }
 
     protected CollapsingToolbarLayout mCollapsingToolbarLayout;
     protected ViewStub mCollapsingToolbarLayoutBackdropViewStub;

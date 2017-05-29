@@ -30,6 +30,7 @@ import android.view.View;
 import com.lamcreations.scaffold.R;
 
 
+@SuppressWarnings("unused")
 public abstract class DrawerActivity extends CoordinatorActivity
         implements DrawerLayout.DrawerListener {
 

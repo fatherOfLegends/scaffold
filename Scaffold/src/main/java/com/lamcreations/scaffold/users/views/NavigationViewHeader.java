@@ -36,6 +36,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+@SuppressWarnings("unused")
 public class NavigationViewHeader extends FrameLayout {
 
     private ImageView mHeaderImage;

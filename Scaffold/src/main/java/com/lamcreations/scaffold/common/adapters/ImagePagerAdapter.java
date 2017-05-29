@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+@SuppressWarnings({"unused", "WeakerAccess"})
 public abstract class ImagePagerAdapter<T> extends PagerAdapter {
 
     private List<T> mImages = new ArrayList<>();

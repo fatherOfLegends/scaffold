@@ -16,11 +16,11 @@
 
 package com.lamcreations.scaffoldsampleapp;
 
+import android.app.Application;
+
 import com.firebase.client.Firebase;
-import com.lamcreations.scaffold.ScaffoldApplication;
 
-
-public class SampleApplication extends ScaffoldApplication {
+public class SampleApplication extends Application {
 
     protected static SampleApplication sInstance = null;
 
