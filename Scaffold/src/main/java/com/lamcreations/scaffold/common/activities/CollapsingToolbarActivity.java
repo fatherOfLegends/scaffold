@@ -44,7 +44,7 @@ public abstract class CollapsingToolbarActivity extends CoordinatorActivity {
 
     @CallSuper
     protected void setupCollapsingToolbarLayout() {
-        mCollapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.scaffold_collapsing_toolbar_layout);
+        mCollapsingToolbarLayout = findViewById(R.id.scaffold_collapsing_toolbar_layout);
         assert mCollapsingToolbarLayout != null;
         ((AppBarLayout.LayoutParams) mCollapsingToolbarLayout.getLayoutParams()).setScrollFlags(getScrollFlags());
         mAppBarLayout.getLayoutParams().height = getCollapsingToolbarMaxHeight();
@@ -53,7 +53,7 @@ public abstract class CollapsingToolbarActivity extends CoordinatorActivity {
 
     @CallSuper
     protected void setupCollapsingToolbarLayoutBackdrop() {
-        mCollapsingToolbarLayoutBackdropViewStub = (ViewStub) findViewById(R.id.scaffold_collapsing_toolbar_backdrop_stub);
+        mCollapsingToolbarLayoutBackdropViewStub = findViewById(R.id.scaffold_collapsing_toolbar_backdrop_stub);
         mCollapsingToolbarLayoutBackdropViewStub.setLayoutResource(getCollapsingToolbarLayoutBackdropResId());
         mCollapsingToolbarLayoutBackdropView = mCollapsingToolbarLayoutBackdropViewStub.inflate();
         CollapsingToolbarLayout.LayoutParams layoutParams =

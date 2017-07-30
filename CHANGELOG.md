@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+Version 26.0.0
+--------------
+- Updated to support the Android Support Library version 26.0.0.
+
 Version 25.3.1
 --------------
 - Updated to support the Android Support Library version 25.3.1.

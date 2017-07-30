@@ -30,9 +30,9 @@ import android.support.annotation.DimenRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.IntDef;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.widget.ImageView;
 
 import com.lamcreations.scaffold.R;
 import com.lamcreations.scaffold.common.graphics.drawable.RoundedDrawable;
@@ -41,8 +41,9 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 @SuppressWarnings("UnusedDeclaration")
-public class RoundedImageView extends ImageView {
+public class RoundedImageView extends AppCompatImageView {
 
+    @SuppressWarnings("WeakerAccess")
     @IntDef({
             Corner.TOP_LEFT, Corner.TOP_RIGHT,
             Corner.BOTTOM_LEFT, Corner.BOTTOM_RIGHT

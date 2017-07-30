@@ -167,9 +167,9 @@ public abstract class NavigationRecyclerViewFragment extends
 
         NavigationItemViewHolder(View itemView) {
             super(itemView);
-            mIconImageView = (ImageView) itemView.findViewById(R.id.navigation_item_icon);
-            mTitleTextView = (TextView) itemView.findViewById(R.id.navigation_item_title);
-            mBadgeTextView = (TextView) itemView.findViewById(R.id.navigation_item_badge);
+            mIconImageView = itemView.findViewById(R.id.navigation_item_icon);
+            mTitleTextView = itemView.findViewById(R.id.navigation_item_title);
+            mBadgeTextView = itemView.findViewById(R.id.navigation_item_badge);
         }
 
         void bind(NavigationMenuItem item) {

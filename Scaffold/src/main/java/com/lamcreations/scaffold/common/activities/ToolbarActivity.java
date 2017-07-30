@@ -49,7 +49,7 @@ public abstract class ToolbarActivity extends BaseActivity {
     protected void setupActionBar() {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar == null) {
-            mToolbar = (Toolbar) findViewById(R.id.scaffold_toolbar);
+            mToolbar = findViewById(R.id.scaffold_toolbar);
             setSupportActionBar(mToolbar);
             actionBar = getSupportActionBar();
         }

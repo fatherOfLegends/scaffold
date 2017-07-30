@@ -50,8 +50,8 @@ public abstract class VideoSplashScreenActivity extends BaseActivity
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scaffold_activity_video_splash_screen);
-        mSplashContainer = (FrameLayout) findViewById(R.id.splash_container);
-        mTextureView = (AutoFitTextureView) findViewById(R.id.auto_fit_texture_view);
+        mSplashContainer = findViewById(R.id.splash_container);
+        mTextureView = findViewById(R.id.auto_fit_texture_view);
         assert mTextureView != null;
         mTextureView.setSurfaceTextureListener(this);
         mTextureView.setAlpha(0f);

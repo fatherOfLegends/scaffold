@@ -127,7 +127,7 @@ public abstract class SearchableActivity extends CoordinatorActivity implements 
 
     @CallSuper
     protected void setupSearchEditText() {
-        mSearchEditText = (EditText) findViewById(R.id.scaffold_search_edit_text);
+        mSearchEditText = findViewById(R.id.scaffold_search_edit_text);
         assert mSearchEditText != null;
         mSearchEditText.addTextChangedListener(this);
     }

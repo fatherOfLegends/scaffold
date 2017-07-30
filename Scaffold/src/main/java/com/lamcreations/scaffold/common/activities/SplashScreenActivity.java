@@ -30,7 +30,7 @@ public abstract class SplashScreenActivity extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mSplashImage = (ImageView) findViewById(R.id.scaffold_splash_image);
+        mSplashImage = findViewById(R.id.scaffold_splash_image);
     }
 
     public void setSplashImage(@DrawableRes int resId) {

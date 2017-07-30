@@ -69,15 +69,15 @@ public class NavigationViewHeader extends FrameLayout {
         setBackgroundResource(android.R.color.white);
         LayoutInflater.from(getContext()).inflate(getLayoutResId(), this, true);
 
-        mHeaderImage = (ImageView) findViewById(R.id.scaffold_navigation_view_header_image);
-        mHeaderImageOverlay = (ImageView) findViewById(R.id.scaffold_navigation_view_header_image_overlay);
-        mCurrentAccountImageView = (RoundedImageView) findViewById(R.id.scaffold_navigation_view_current_account_image);
-        mAltAccountImageView1 = (RoundedImageView) findViewById(R.id.scaffold_navigation_view_alt_account_image_1);
-        mAltAccountImageView2 = (RoundedImageView) findViewById(R.id.scaffold_navigation_view_alt_account_image_2);
-        mAltAccountImageView3 = (RoundedImageView) findViewById(R.id.scaffold_navigation_view_alt_account_image_3);
-        mCurrentAccountName = (TextView) findViewById(R.id.scaffold_navigation_view_current_account_name);
-        mCurrentAccountEmail = (TextView) findViewById(R.id.scaffold_navigation_view_current_account_email);
-        mAccountDropDownButton = (ImageButton) findViewById(R.id.scaffold_navigation_view_account_drop_down_button);
+        mHeaderImage = findViewById(R.id.scaffold_navigation_view_header_image);
+        mHeaderImageOverlay = findViewById(R.id.scaffold_navigation_view_header_image_overlay);
+        mCurrentAccountImageView = findViewById(R.id.scaffold_navigation_view_current_account_image);
+        mAltAccountImageView1 = findViewById(R.id.scaffold_navigation_view_alt_account_image_1);
+        mAltAccountImageView2 = findViewById(R.id.scaffold_navigation_view_alt_account_image_2);
+        mAltAccountImageView3 = findViewById(R.id.scaffold_navigation_view_alt_account_image_3);
+        mCurrentAccountName = findViewById(R.id.scaffold_navigation_view_current_account_name);
+        mCurrentAccountEmail = findViewById(R.id.scaffold_navigation_view_current_account_email);
+        mAccountDropDownButton = findViewById(R.id.scaffold_navigation_view_account_drop_down_button);
     }
 
     @LayoutRes
