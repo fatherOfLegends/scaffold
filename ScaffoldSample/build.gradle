@@ -13,8 +13,8 @@ android {
         applicationId "com.lamcreations.scaffoldsampleapp"
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 2531
-        versionName "25.3.1"
+        versionCode 2600
+        versionName "26.0.0"
     }
 
     buildTypes {
