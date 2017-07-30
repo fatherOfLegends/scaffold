@@ -1,6 +1,7 @@
 package com.lamcreations.scaffold.common.views.behaviors;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
@@ -12,6 +13,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.Interpolator;
 
+@SuppressWarnings("unused")
 public class BottomNavigationBehavior extends CoordinatorLayout.Behavior<BottomNavigationView> {
 
     private static final Interpolator INTERPOLATOR = new FastOutSlowInInterpolator();
@@ -54,15 +56,16 @@ public class BottomNavigationBehavior extends CoordinatorLayout.Behavior<BottomN
     }
 
     @Override
-    public boolean onStartNestedScroll(final CoordinatorLayout coordinatorLayout, final BottomNavigationView child,
-                                       final View directTargetChild, final View target, final int nestedScrollAxes) {
+    public boolean onStartNestedScroll(@NonNull final CoordinatorLayout coordinatorLayout, @NonNull final BottomNavigationView child,
+                                       @NonNull final View directTargetChild, @NonNull final View target, final int nestedScrollAxes,
+                                       @ViewCompat.NestedScrollType int type) {
         return nestedScrollAxes == ViewCompat.SCROLL_AXIS_VERTICAL;
     }
 
     @Override
-    public void onNestedScroll(final CoordinatorLayout coordinatorLayout, final BottomNavigationView child,
-                               final View target, final int dxConsumed, final int dyConsumed,
-                               final int dxUnconsumed, final int dyUnconsumed) {
+    public void onNestedScroll(@NonNull final CoordinatorLayout coordinatorLayout, @NonNull final BottomNavigationView child,
+                               @NonNull final View target, final int dxConsumed, final int dyConsumed,
+                               final int dxUnconsumed, final int dyUnconsumed, @ViewCompat.NestedScrollType int type) {
         if (dyConsumed > 0 && !this.mIsAnimatingOut) {
             animateOut(child);
         } else if (dyConsumed < 0) {

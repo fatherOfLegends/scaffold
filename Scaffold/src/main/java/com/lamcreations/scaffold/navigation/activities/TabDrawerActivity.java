@@ -61,8 +61,8 @@ public abstract class TabDrawerActivity extends DrawerActivity {
     @CallSuper
     protected void setupTabs() {
         PagerAdapter pagerAdapter = getPagerAdapter();
-        mTabLayout = (TabLayout) findViewById(R.id.scaffold_tab_layout);
-        mViewPager = (ViewPager) findViewById(R.id.scaffold_content);
+        mTabLayout = findViewById(R.id.scaffold_tab_layout);
+        mViewPager = findViewById(R.id.scaffold_content);
         assert mViewPager != null;
         mViewPager.setAdapter(pagerAdapter);
         mViewPager.setOffscreenPageLimit(1);

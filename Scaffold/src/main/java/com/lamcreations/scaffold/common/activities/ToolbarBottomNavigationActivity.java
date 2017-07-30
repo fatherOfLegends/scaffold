@@ -37,7 +37,7 @@ public abstract class ToolbarBottomNavigationActivity extends ToolbarActivity
 
     @CallSuper
     protected void setupBottomNavigationView() {
-        mBottomNavigationView = (BottomNavigationView) findViewById(R.id.scaffold_bottom_navigation_view);
+        mBottomNavigationView = findViewById(R.id.scaffold_bottom_navigation_view);
         mBottomNavigationView.inflateMenu(getBottomBarMenuResId());
         mBottomNavigationView.setOnNavigationItemSelectedListener(this);
     }

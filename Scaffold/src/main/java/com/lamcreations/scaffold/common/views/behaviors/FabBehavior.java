@@ -17,6 +17,7 @@
 package com.lamcreations.scaffold.common.views.behaviors;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewCompat;
@@ -26,6 +27,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.Interpolator;
 
+@SuppressWarnings("unused")
 public class FabBehavior extends FloatingActionButton.Behavior {
 
     private static final Interpolator INTERPOLATOR = new FastOutSlowInInterpolator();
@@ -41,18 +43,19 @@ public class FabBehavior extends FloatingActionButton.Behavior {
     }
 
     @Override
-    public boolean onStartNestedScroll(final CoordinatorLayout coordinatorLayout, final FloatingActionButton child,
-                                       final View directTargetChild, final View target, final int nestedScrollAxes) {
+    public boolean onStartNestedScroll(@NonNull final CoordinatorLayout coordinatorLayout, @NonNull final FloatingActionButton child,
+                                       @NonNull final View directTargetChild, @NonNull final View target, final int nestedScrollAxes,
+                                       @ViewCompat.NestedScrollType int type) {
         return nestedScrollAxes == ViewCompat.SCROLL_AXIS_VERTICAL;
     }
 
     @Override
-    public void onNestedScroll(final CoordinatorLayout coordinatorLayout, final FloatingActionButton child,
-                               final View target, final int dxConsumed, final int dyConsumed,
-                               final int dxUnconsumed, final int dyUnconsumed) {
-        if (dyConsumed > 0 && !this.mIsAnimatingOut && child.getVisibility() == View.VISIBLE) {
+    public void onNestedScroll(@NonNull final CoordinatorLayout coordinatorLayout, @NonNull final FloatingActionButton child,
+                               @NonNull final View target, final int dxConsumed, final int dyConsumed,
+                               final int dxUnconsumed, final int dyUnconsumed, @ViewCompat.NestedScrollType int type) {
+        if (dyConsumed > 0 && !this.mIsAnimatingOut && child.getScaleX() > 0f) {
             animateOut(child);
-        } else if (dyConsumed < 0 && child.getVisibility() != View.VISIBLE) {
+        } else if (dyConsumed < 0 && child.getScaleX() == 0f) {
             animateIn(child);
         }
     }
@@ -76,7 +79,6 @@ public class FabBehavior extends FloatingActionButton.Behavior {
 
                         public void onAnimationEnd(View view) {
                             FabBehavior.this.mIsAnimatingOut = false;
-                            view.setVisibility(View.GONE);
                         }
                     }).start();
         }

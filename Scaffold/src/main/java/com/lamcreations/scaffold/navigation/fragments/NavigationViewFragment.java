@@ -39,7 +39,7 @@ public abstract class NavigationViewFragment extends Fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.scaffold_navigation_view_fragment, container, false);
         container.setFitsSystemWindows(view.getFitsSystemWindows());
-        mNavigationView = (NavigationView) view.findViewById(R.id.scaffold_navigation_view);
+        mNavigationView = view.findViewById(R.id.scaffold_navigation_view);
         mNavigationView.setNavigationItemSelectedListener(this);
         mNavigationView.inflateMenu(getMenuResId());
         NavigationViewHeader header = getNavigationViewHeader();

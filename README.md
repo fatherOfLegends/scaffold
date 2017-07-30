@@ -16,7 +16,7 @@ dependencies {
     ...
 
 
-    def androidSupportLibVersion = "25.3.1";
+    def androidSupportLibVersion = "26.0.0";
 
     compile "com.lamcreations.scaffold:scaffold:${androidSupportLibVersion}"
     compile "com.android.support:support-core-utils:${androidSupportLibVersion}";

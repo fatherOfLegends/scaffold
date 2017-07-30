@@ -161,7 +161,7 @@ public class CollapsingToolbarTabLayout extends CollapsingToolbarLayout {
 
     private View getDummyView() {
         if (mDummyView == null) {
-            Toolbar toolBar = (Toolbar) findViewById(R.id.scaffold_toolbar);
+            Toolbar toolBar = findViewById(R.id.scaffold_toolbar);
             int size = toolBar.getChildCount();
             for (int i = 0; i < size; ++i) {
                 View view = toolBar.getChildAt(i);
@@ -268,7 +268,7 @@ public class CollapsingToolbarTabLayout extends CollapsingToolbarLayout {
     }
 
 
-    static class ViewGroupUtilsHoneycomb {
+    private static class ViewGroupUtilsHoneycomb {
 
         private static final ThreadLocal<Matrix> sMatrix = new ThreadLocal<>();
         private static final ThreadLocal<RectF> sRectF = new ThreadLocal<>();
@@ -277,7 +277,7 @@ public class CollapsingToolbarTabLayout extends CollapsingToolbarLayout {
         ViewGroupUtilsHoneycomb() {
         }
 
-        public static void offsetDescendantRect(ViewGroup group, View child, Rect rect) {
+        static void offsetDescendantRect(ViewGroup group, View child, Rect rect) {
             Matrix m = sMatrix.get();
             if (m == null) {
                 m = new Matrix();

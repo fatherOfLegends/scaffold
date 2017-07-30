@@ -25,7 +25,6 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBar;
-import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.ViewGroup;
 import android.view.ViewStub;
@@ -46,8 +45,8 @@ public abstract class CoordinatorBottomNavigationActivity extends ToolbarBottomN
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mContentViewStub = (ViewStub) findViewById(R.id.scaffold_content_stub);
-        mCoordinatorLayout = (CoordinatorLayout) findViewById(R.id.scaffold_coordinator_layout);
+        mContentViewStub = findViewById(R.id.scaffold_content_stub);
+        mCoordinatorLayout = findViewById(R.id.scaffold_coordinator_layout);
         setContent(getContentLayoutResId());
         initFab();
     }
@@ -67,8 +66,8 @@ public abstract class CoordinatorBottomNavigationActivity extends ToolbarBottomN
     protected void setupActionBar() {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar == null) {
-            mAppBarLayout = (AppBarLayout) findViewById(R.id.scaffold_app_bar_layout);
-            mToolbar = (Toolbar) findViewById(R.id.scaffold_toolbar);
+            mAppBarLayout = findViewById(R.id.scaffold_app_bar_layout);
+            mToolbar = findViewById(R.id.scaffold_toolbar);
             assert mToolbar != null;
             ViewGroup.LayoutParams layoutParams = mToolbar.getLayoutParams();
             if (layoutParams instanceof AppBarLayout.LayoutParams) {
@@ -102,7 +101,7 @@ public abstract class CoordinatorBottomNavigationActivity extends ToolbarBottomN
     }
 
     private void initFab() {
-        mFloatingActionButton = (FloatingActionButton) findViewById(R.id.scaffold_floating_action_button);
+        mFloatingActionButton = findViewById(R.id.scaffold_floating_action_button);
         if (mFloatingActionButton != null) {
             ViewGroup.LayoutParams layoutParams = mFloatingActionButton.getLayoutParams();
             if (layoutParams instanceof CoordinatorLayout.LayoutParams) {

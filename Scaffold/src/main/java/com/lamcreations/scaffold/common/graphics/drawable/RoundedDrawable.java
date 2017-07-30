@@ -46,6 +46,7 @@ import java.util.Set;
 @SuppressWarnings("UnusedDeclaration")
 public class RoundedDrawable extends Drawable {
 
+    @SuppressWarnings("WeakerAccess")
     @IntDef({
             Corner.TOP_LEFT,
             Corner.TOP_RIGHT,
